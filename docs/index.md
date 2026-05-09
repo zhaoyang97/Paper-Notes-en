@@ -1,6 +1,6 @@
 ---
 title: "AI Conference Paper Notes | 9000+ In-Depth Summaries"
-description: "9000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ICLR, CVPR, ACL, NeurIPS, AAAI, ICCV, ECCV across 6 venues and 45 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
+description: "9000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ACL, CVPR, ICLR, AAAI, NeurIPS, ICCV, ICML, ECCV across 6 venues and 45 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
 search:
   exclude: true
 hide:
@@ -14,7 +14,7 @@ hide:
 
 # 📚 AI Conference Paper Notes
 
-<p class="hero-subtitle">AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas.<br>Covers ICLR · CVPR · ACL · NeurIPS · ICML · AAAI · ICCV · ECCV<br>Continuously updated</p>
+<p class="hero-subtitle">AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas.<br>Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV<br>Continuously updated</p>
 
 <div class="hero-stats">
 <div class="stat"><span class="stat-number">9475</span><span class="stat-label">Notes</span></div>

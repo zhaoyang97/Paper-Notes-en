@@ -115,15 +115,21 @@
 .conf-card .area-tag {
   display: inline-block;
   background: var(--md-default-fg-color--lightest);
-  color: var(--md-default-fg-color--light);
+  color: rgba(0, 0, 0, 0.72);
   padding: 0.12rem 0.4rem;
   border-radius: 4px;
   font-size: 0.68rem;
+  font-weight: 500;
   line-height: 1.35;
   white-space: nowrap;
   text-decoration: none;
   transition: background 0.15s, color 0.15s;
   cursor: pointer;
+}
+
+[data-md-color-scheme="slate"] .conf-card .area-tag {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .conf-card .area-tag:hover {

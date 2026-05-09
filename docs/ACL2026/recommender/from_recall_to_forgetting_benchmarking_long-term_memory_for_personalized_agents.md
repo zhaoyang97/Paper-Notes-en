@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
 description: >-
-  [ACL 2026][Long-Term Memory Benchmark] This paper proposes the Memora benchmark and FAMA metric, extending long-term memory evaluation from shallow fact retrieval to memory consolidation and mutation handling spanning weeks to months, revealing systematic failures of existing LLMs and memory agents when processing frequent knowledge updates.
+  [ACL 2026][Recommender Systems][long-term memory benchmark] This paper proposes the Memora benchmark and the FAMA metric, extending long-term memory evaluation beyond shallow fact retrieval to memory consolidation and mutation handling spanning weeks to months, revealing systematic failures of existing LLMs and memory agents under frequent knowledge updates.
 tags:
   - ACL 2026
-  - Long-Term Memory Benchmark
-  - Memory Consolidation
-  - Memory Mutation
-  - Recommendation Systems
-  - Personalized Agent
+  - Recommender Systems
+  - long-term memory benchmark
+  - memory consolidation
+  - memory mutation
+  - forgetting-aware evaluation
+  - personalized agent
   - Memora
   - FAMA
 date: 2026-05-08
 content_hash: 2045f4ae5ed5a350
 ---
+
 # From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents
 
 **Conference**: ACL 2026  

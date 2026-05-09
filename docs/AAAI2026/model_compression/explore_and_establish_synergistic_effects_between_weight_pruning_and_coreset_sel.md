@@ -164,10 +164,10 @@ On ResNet-18/CIFAR-10, SWaST-cut achieves 93.15% accuracy at 90% pruning ratio, 
 
 ## Related Papers
 
+- [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 - [\[AAAI 2026\] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs](dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be.md)
 - [\[AAAI 2026\] Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning](share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear.md)
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
-- [\[CVPR 2026\] Understanding and Enforcing Weight Disentanglement in Task Arithmetic](../../CVPR2026/model_compression/understanding_and_enforcing_weight_disentanglement_in_task_arithmetic.md)
 - [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
 
 <!-- RELATED:END -->

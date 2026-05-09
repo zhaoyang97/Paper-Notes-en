@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-Hop QA] This paper proposes Multi-Focus Attention Instruction (MFAI) as a semantic probe to reveal the "weakest-link effect" in multi-hop QA — multi-hop reasoning performance is determined by the absolute position of the least visible evidence rather than inter-fact distance, failures stem primarily from retrieval bottlenecks rather than reasoning deficits, and System-2 reasoning models effectively resist positional bias and misleading attention cues.
+  [ACL 2026][LLM Reasoning][Multi-Hop QA] This paper proposes Multi-Focus Attention Instruction (MFAI) as a semantic probe to reveal the "weakest link effect" in multi-hop QA — multi-hop reasoning performance is determined by the absolute position of the least visible evidence bucket rather than the inter-fact distance. Failures primarily stem from a recognition bottleneck rather than reasoning deficits, and System-2 reasoning models can effectively resist positional bias and misleading attention cues.
 tags:
   - ACL 2026
   - LLM Reasoning
   - Multi-Hop QA
   - Positional Bias
-  - Weakest-Link Effect
+  - Weakest Link Effect
   - Attention Guidance
   - System-2 Reasoning
 date: 2026-05-08
 content_hash: d1efe282355d5421
 ---
+
 # Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck
 
 **Conference**: ACL 2026
@@ -128,10 +129,10 @@ No training is involved. Five LLMs are evaluated: Qwen2.5-7B/14B-Instruct, Llama
 
 ## Related Papers
 
-- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
 - [\[ACL 2026\] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference](march_evaluating_the_intersection_of_ambiguity_interpretation_and_multi-hop_infe.md)
 - [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](dissecting_failure_dynamics_in_large_language_model_reasoning.md)
 - [\[ACL 2026\] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective](decoupling_the_effect_of_chain-of-thought_reasoning_a_human_label_variation_pers.md)
-- [\[ACL 2026\] Explicit Trait Inference for Multi-Agent Coordination](explicit_trait_inference_for_multi-agent_coordination.md)
+- [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
+- [\[AAAI 2026\] A Reasoning Paradigm for Named Entity Recognition](../../AAAI2026/llm_reasoning/a_reasoning_paradigm_for_named_entity_recognition.md)
 
 <!-- RELATED:END -->

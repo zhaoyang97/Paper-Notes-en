@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 description: >-
-  [ACL 2026][Other][Supply Chain Simulation] Using LLM agents (DeepSeek/GPT series) to simulate a multi-stage supply chain in the classic Beer Distribution Game, systematically studying how cognitive heterogeneity (reasoning capability differences) affects system behavior; findings show LLM agents reproduce human-like bullwhip effects and myopic behavior, and that information sharing can effectively mitigate these adverse effects.
+  [ACL 2026][supply chain simulation] This paper deploys LLM agents (DeepSeek/GPT series) in the classic beer distribution game to simulate multi-stage supply chains, systematically investigating how cognitive heterogeneity (differences in reasoning capability) affects system behavior. The findings demonstrate that LLM agents can reproduce human-observed bullwhip effects and myopic behaviors, and that information sharing effectively mitigates these adverse effects.
 tags:
   - ACL 2026
-  - Other
-  - Supply Chain Simulation
-  - Cognitive Heterogeneity
-  - Bullwhip Effect
-  - LLM Agents
-  - Beer Distribution Game
+  - supply chain simulation
+  - cognitive heterogeneity
+  - bullwhip effect
+  - LLM agents
+  - beer distribution game
 date: 2026-05-08
 content_hash: 1630d97389aeb8b4
 ---
+
 # Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation
 
 **Conference**: ACL 2026
@@ -131,8 +131,8 @@ Mitigation effect of information sharing:
 
 - [\[AAAI 2026\] A Phase Transition for Opinion Dynamics with Competing Biases](../../AAAI2026/others/a_phase_transition_for_opinion_dynamics_with_competing_biase.md)
 - [\[NeurIPS 2025\] A Differentiable Model of Supply-Chain Shocks](../../NeurIPS2025/others/a_differentiable_model_of_supply-chain_shocks.md)
-- [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](../../AAAI2026/others/ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
-- [\[ACL 2025\] Consistent Client Simulation for Motivational Interviewing-based Counseling](../../ACL2025/others/consistent_client_simulation_for_motivational_interviewing-based_counseling.md)
+- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](../../CVPR2026/others/feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
+- [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](../../AAAI2026/others/deviation_dynamics_in_cardinal_hedonic_games.md)
+- [\[ICLR 2026\] From Movement to Cognitive Maps: RNNs Reveal How Locomotor Development Shapes Hippocampal Spatial Coding](../../ICLR2026/others/from_movement_to_cognitive_maps.md)
 
 <!-- RELATED:END -->

@@ -171,8 +171,8 @@ $$
 
 - [\[ICLR 2026\] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and.md)
 - [\[ICCV 2025\] SignRep: Enhancing Self-Supervised Sign Representations](../../ICCV2025/multilingual_mt/signrep_enhancing_self-supervised_sign_representations.md)
-- [\[NeurIPS 2025\] MergeBench: A Benchmark for Merging Domain-Specialized LLMs](../../NeurIPS2025/multilingual_mt/mergebench_a_benchmark_for_merging_domain-specialized_llms.md)
-- [\[AAAI 2026\] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective](../../AAAI2026/multilingual_mt/how_does_alignment_enhance_llms_multilingual_capabilities_a_language_neurons_per.md)
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/multilingual_mt/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[ACL 2026\] Vocab Diet: Reshaping the Vocabulary of LLMs via Vector Arithmetic](../../ACL2026/multilingual_mt/vocab_diet_reshaping_the_vocabulary_of_llms_via_vector_arithmetic.md)
+- [\[ACL 2026\] What Factors Affect LLMs and RLLMs in Financial Question Answering?](../../ACL2026/multilingual_mt/what_factors_affect_llms_and_rllms_in_financial_question_answering.md)
 
 <!-- RELATED:END -->

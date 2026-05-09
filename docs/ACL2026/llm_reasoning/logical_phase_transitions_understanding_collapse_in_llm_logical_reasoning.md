@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Logical Reasoning] This paper discovers a "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading smoothly. It proposes a Logical Complexity Metric (LoCM) to quantify this phenomenon, and designs a Neuro-Symbolic Curriculum Tuning (NSCT) framework that achieves average accuracy improvements of +1.26 over naive prompting and +3.95 over CoT across five benchmarks, via adaptive neuro-symbolic alignment and complexity-aware curriculum optimization.
+  [ACL 2026][LLM Reasoning][logical reasoning] This paper identifies a "logical phase transition" phenomenon in LLM logical reasoning—performance collapses abruptly at specific complexity thresholds rather than degrading smoothly. The authors propose a Logical Complexity Metric (LoCM) to quantify this phenomenon, and design a Neuro-Symbolic Curriculum Tuning (NSCT) framework that achieves average accuracy gains of +1.26 over naive prompting and +3.95 over CoT across five benchmarks via adaptive neuro-symbolic alignment and complexity-aware curriculum optimization.
 tags:
   - ACL 2026
   - LLM Reasoning
-  - Logical Reasoning
-  - Phase Transition
-  - Curriculum Learning
-  - Neuro-Symbolic Alignment
-  - Reasoning Collapse
+  - logical reasoning
+  - phase transition
+  - curriculum learning
+  - neuro-symbolic alignment
+  - reasoning collapse
 date: 2026-05-08
 content_hash: 028ef5085cc68721
 ---
+
 # Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 
 **Conference**: ACL 2026
@@ -128,7 +129,7 @@ Standard token-level cross-entropy loss: $\mathcal{L}(\theta) = -\mathbb{E}[\sum
 - [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
 - [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
 - [\[ICLR 2026\] Agentified Assessment of Logical Reasoning Agents](../../ICLR2026/llm_reasoning/agentified_assessment_of_logical_reasoning_agents.md)
-- [\[ACL 2025\] Enhancing Retrieval Systems with Inference-Time Logical Reasoning](../../ACL2025/llm_reasoning/enhancing_retrieval_systems_with_inference-time_logical_reasoning.md)
-- [\[ACL 2025\] LogicPro: Improving Complex Logical Reasoning via Program-Guided Learning](../../ACL2025/llm_reasoning/logicpro_program_guided_reasoning.md)
+- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
+- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
 
 <!-- RELATED:END -->

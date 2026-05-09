@@ -157,7 +157,7 @@ The paper comprises 6 tables and 17 figures across 32 pages. Ablation experiment
 - [\[ICLR 2026\] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation](../../ICLR2026/medical_imaging/exo-plore_exploring_exoskeleton_control_space_through_human-aligned_simulation.md)
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
 - [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
-- [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](../../NeurIPS2025/medical_imaging/flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
+- [\[ACL 2026\] Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering](../../ACL2026/medical_imaging/beyond_prompt_fine-grained_simulation_of_cognitively_impaired_standardized_patie.md)
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
 
 <!-- RELATED:END -->

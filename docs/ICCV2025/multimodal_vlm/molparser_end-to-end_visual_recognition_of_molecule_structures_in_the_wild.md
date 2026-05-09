@@ -167,6 +167,6 @@ The Swin-T visual encoder trained by MolParser can serve as a molecular fingerpr
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
-- [\[ICCV 2025\] orderchain towards general instruct-tuning for stimulating the ordinal understan](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
 
 <!-- RELATED:END -->

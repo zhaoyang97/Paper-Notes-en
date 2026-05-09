@@ -12,7 +12,7 @@ tags:
   - Chinese internet slang
   - cross-cultural understanding
 date: 2026-05-08
-content_hash: 17a81b72eba58f98
+content_hash: f6870b4410ab34e7
 ---
 
 # Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language

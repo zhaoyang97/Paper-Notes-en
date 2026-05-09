@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Which Bird Does Not Have Wings: Negative-Constrained KGQA with Schema-Guided Semantic Matching and Self-Directed Refinement
 description: >-
-  [ACL 2026][Graph Learning][KGQA] Defines the NEST KGQA task for negation-constrained knowledge graph QA, introduces PyLF logical form, and proposes CUCKOO framework with schema-guided semantic matching achieving SOTA on GrailQA and NestKGQA.
+  [ACL 2026][Graph Learning][Knowledge Graph QA] This paper defines the NEST KGQA task and NestKGQA dataset for negation-constrained knowledge graph QA, designs PyLF (Python-format logical form) for clear negation expression, and proposes CUCKOO framework with constraint-aware draft generation, schema-guided semantic matching, and self-directed refinement, achieving efficient and precise answers for multi-constraint questions in few-shot settings.
 tags:
   - ACL 2026
   - Graph Learning

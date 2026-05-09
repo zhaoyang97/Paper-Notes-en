@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reward Modeling for Scientific Writing Evaluation
 description: >-
-  [ACL 2026][LLMAlignment][奖励模型] 本文提出 SciRM 和 SciRM-Ref 两个针对科学写作评估的开源奖励模型，通过两阶段Reinforcement Learning（GRPO）分别优化评估偏好和推理能力，实现了在多种科学写作任务上的细粒度多方面评估，并能泛化到未见过的评估任务和标准。
+  [ACL 2026][LLM Alignment][Reward Model] This paper proposes SciRM and SciRM-Ref, two open-source reward models tailored for scientific writing evaluation. Through two-stage reinforcement learning (GRPO) that separately optimizes evaluation preference and reasoning ability, these models achieve fine-grained multi-aspect evaluation across diverse scientific writing tasks and generalize to unseen evaluation tasks and criteria.
 tags:
   - ACL 2026
   - LLM Alignment
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: f8086db4eec1443f
 ---
+
 # Reward Modeling for Scientific Writing Evaluation
 
 **Conference**: ACL 2026
@@ -50,21 +51,21 @@ The input consists of three components: a task query $q$ (the scientific text to
 
 1. **Stage 1: Evaluation Preference Optimization**
 
-   - **Function**: Teaches the model to perform accurate scientific writing evaluation conditioned on a given constitution.
-   - **Mechanism**: Optimized using the GRPO algorithm. The reward function adopts a hierarchical structure: outputs missing a `<score>` tag receive $-0.5$; non-numeric outputs receive $0$; numeric outputs outside the valid range receive $0.25$; valid but incorrect scores receive $0.5$; correct scores receive $1.5$. A length penalty function $f(L,T)$ is additionally introduced to apply a quadratic penalty when outputs are too short or too long, preventing reward hacking.
-   - **Design Motivation**: The hierarchical reward design distinguishes between different error types (format errors vs. semantic errors) and guides the model toward incremental improvement. The length penalty addresses the degenerate behavior of outputting only a score while skipping the reasoning process.
+    - **Function**: Teaches the model to perform accurate scientific writing evaluation conditioned on a given constitution.
+    - **Mechanism**: Optimized using the GRPO algorithm. The reward function adopts a hierarchical structure: outputs missing a `<score>` tag receive $-0.5$; non-numeric outputs receive $0$; numeric outputs outside the valid range receive $0.25$; valid but incorrect scores receive $0.5$; correct scores receive $1.5$. A length penalty function $f(L,T)$ is additionally introduced to apply a quadratic penalty when outputs are too short or too long, preventing reward hacking.
+    - **Design Motivation**: The hierarchical reward design distinguishes between different error types (format errors vs. semantic errors) and guides the model toward incremental improvement. The length penalty addresses the degenerate behavior of outputting only a score while skipping the reasoning process.
 
 2. **Stage 2: Reasoning Enhancement via Self-Reflection**
 
-   - **Function**: Enhances the model's capacity for self-reflection and correction, enabling it to revisit criteria when uncertain.
-   - **Mechanism**: The output of the Stage 1 model is taken with the score stripped, retaining only the reasoning; a reflection prompt is appended to instruct the model to re-examine the criteria before producing a final score. The reward function considers both the initial score $s_i$ and the final score $s_f$: self-correction ($s_i \neq s^*$ and $s_f = s^*$) receives the highest reward of $1.0$, while regression ($s_i = s^*$ and $s_f \neq s^*$) incurs the heaviest penalty of $-1.0$.
-   - **Design Motivation**: This encourages the model to actively correct errors during reasoning while penalizing unstable behavior of switching from correct to incorrect. It addresses the inability of constitutional AI approaches—which internalize rules into weights—to dynamically adapt to new criteria.
+    - **Function**: Enhances the model's capacity for self-reflection and correction, enabling it to revisit criteria when uncertain.
+    - **Mechanism**: The output of the Stage 1 model is taken with the score stripped, retaining only the reasoning; a reflection prompt is appended to instruct the model to re-examine the criteria before producing a final score. The reward function considers both the initial score $s_i$ and the final score $s_f$: self-correction ($s_i \neq s^*$ and $s_f = s^*$) receives the highest reward of $1.0$, while regression ($s_i = s^*$ and $s_f \neq s^*$) incurs the heaviest penalty of $-1.0$.
+    - **Design Motivation**: This encourages the model to actively correct errors during reasoning while penalizing unstable behavior of switching from correct to incorrect. It addresses the inability of constitutional AI approaches—which internalize rules into weights—to dynamically adapt to new criteria.
 
 3. **Multi-Task Joint Training**
 
-   - **Function**: Improves generalization across different rubrics and evaluation dimensions.
-   - **Mechanism**: Training data encompasses multiple scientific writing tasks (consistency, positioning type, and positioning consistency for related work evaluation; actionability, grounding, verifiability, and helpfulness for review quality assessment) across different scoring scales (binary and 1–5).
-   - **Design Motivation**: Single-task training tends to overfit to specific rubrics, whereas joint training enables the model to acquire meta-evaluation capabilities rather than memorizing task-specific patterns.
+    - **Function**: Improves generalization across different rubrics and evaluation dimensions.
+    - **Mechanism**: Training data encompasses multiple scientific writing tasks (consistency, positioning type, and positioning consistency for related work evaluation; actionability, grounding, verifiability, and helpfulness for review quality assessment) across different scoring scales (binary and 1–5).
+    - **Design Motivation**: Single-task training tends to overfit to specific rubrics, whereas joint training enables the model to acquire meta-evaluation capabilities rather than memorizing task-specific patterns.
 
 ### Loss & Training
 
@@ -126,9 +127,9 @@ The model is fine-tuned from Qwen2.5-7B using LoRA. Both stages use the GRPO alg
 ## Related Papers
 
 - [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
-- [\[ACL 2025\] Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization](../../ACL2025/llm_alignment/rethinking_reward_model_evaluation_through_the_lens_of_reward_overoptimization.md)
-- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](../../NeurIPS2025/llm_alignment/responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[ACL 2025\] AgentRM: Enhancing Agent Generalization with Reward Modeling](../../ACL2025/llm_alignment/agentrm_enhancing_agent_generalization_with_reward_modeling.md)
+- [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](../../ICLR2026/llm_alignment/chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
+- [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](../../NeurIPS2025/llm_alignment/provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
+- [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
 
 <!-- RELATED:END -->

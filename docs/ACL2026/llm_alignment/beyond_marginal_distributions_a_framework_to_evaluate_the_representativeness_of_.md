@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 description: >-
-  [ACL 2026][LLMAlignment][DemographicAlignment] This paper proposes an LLM representativeness evaluation framework that goes beyond marginal distributions, assessing demographic alignment models by jointly examining marginal response distributions and cross-question correlation structures. It finds that while fine-tuning and persona prompting improve marginal distribution approximation, neither faithfully reproduces the multivariate correlation patterns observed in human values surveys.
+  [ACL 2026][LLM Alignment][demographic alignment] This paper proposes a representativeness evaluation framework for LLMs that goes beyond marginal distributions by jointly examining marginal response distributions and cross-question correlation structures to assess demographic-aligned models. The findings reveal that while fine-tuning and persona prompting improve the approximation of marginal distributions, neither faithfully reproduces the multivariate correlation patterns observed in human values surveys.
 tags:
   - ACL 2026
   - LLM Alignment
-  - Demographic Alignment
-  - Correlation Structure
-  - Marginal Distribution
-  - Values Survey
-  - Representativeness Evaluation
+  - demographic alignment
+  - correlation structure
+  - marginal distributions
+  - values surveys
+  - representativeness evaluation
 date: 2026-05-08
 content_hash: 2bebcac0deb0affa
 ---
+
 # Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs
 
 **Conference**: ACL 2026
@@ -131,10 +132,10 @@ OpinionGPT employs LoRA adapters fine-tuned on subgroup-specific Reddit data. Th
 
 ## Related Papers
 
-- [\[ACL 2025\] Beyond Surface-Level Patterns: An Essence-Driven Defense Framework Against Jailbreak Attacks in LLMs](../../ACL2025/llm_alignment/beyond_surface-level_patterns_an_essence-driven_defense_framework_against_jailbr.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](../../ICLR2026/llm_alignment/beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
 - [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](../../CVPR2026/llm_alignment/bias_reward_models_t2i.md)
 - [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](../../ICLR2026/llm_alignment/beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
+- [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](../../ICLR2026/llm_alignment/cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
 
 <!-- RELATED:END -->

@@ -189,6 +189,6 @@ The complete dynamic scheduler closes approximately 13% of the gap to the theore
 - [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](../../ICLR2026/medical_imaging/knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
 - [\[AAAI 2026\] From Policy to Logic for Efficient and Interpretable Coverage Assessment](from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment.md)
 - [\[AAAI 2026\] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification](federated_clip_for_resource-efficient_heterogeneous_medical_image_classification.md)
-- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
+- [\[ACL 2026\] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine](../../ACL2026/medical_imaging/ritek_a_dataset_for_large_language_models_complex_reasoning_over_textual_knowled.md)
 
 <!-- RELATED:END -->

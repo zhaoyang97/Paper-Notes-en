@@ -138,8 +138,8 @@ The integration of expert knowledge with deep learning is an underappreciated di
 
 - [\[CVPR 2026\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](../../CVPR2026/medical_imaging/human_knowledge_integrated_multimodal_learning_for.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
+- [\[ACL 2026\] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset](../../ACL2026/medical_imaging/omnicompliance-100k_a_multi-domain_rule-grounded_real-world_safety_compliance_da.md)
 - [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](../../ICLR2026/medical_imaging/moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](../../NeurIPS2025/medical_imaging/mira_medical_time_series_foundation_model_for_real-world_health_data.md)
-- [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](../../CVPR2026/medical_imaging/xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
 
 <!-- RELATED:END -->

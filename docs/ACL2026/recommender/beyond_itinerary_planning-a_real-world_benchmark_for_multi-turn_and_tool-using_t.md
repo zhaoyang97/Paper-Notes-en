@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 description: >-
-  [ACL 2026][Travel Planning Benchmark] Introduces TravelBench, the first travel planning benchmark integrating real user queries, implicit user preferences, multi-turn interactions, unsolvable task recognition, and 10 real-world tools, enabling reproducible evaluation via a sandbox environment and revealing uneven performance of frontier models across different capability dimensions.
+  [ACL 2026][Recommender Systems][travel planning benchmark] This paper proposes TravelBench, the first travel planning benchmark that integrates real user queries, implicit user preferences, multi-turn interaction, unsolvable task recognition, and 10 real-world tools. It enables reproducible evaluation through a sandbox environment and reveals that state-of-the-art models exhibit uneven performance across different capability dimensions.
 tags:
   - ACL 2026
-  - Travel Planning Benchmark
-  - Tool Use
   - Recommender Systems
-  - Implicit Preferences
-  - Unsolvable Tasks
+  - travel planning benchmark
+  - tool use
+  - multi-turn dialogue
+  - implicit preferences
+  - unsolvable tasks
 date: 2026-05-08
 content_hash: 3a8a7f8b5d71c3d9
 ---
+
 # Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks
 
 **Conference**: ACL 2026
@@ -131,9 +133,9 @@ A three-tier evaluation is employed: (1) rule-based criteria compute accuracy fo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints](../../NeurIPS2025/recommender/wide-horizon_thinking_and_simulation-based_evaluation_for_real-world_llm_plannin.md)
+- [\[ACL 2026\] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling](horizon_a_benchmark_for_in-the-wild_user_behaviour_modeling.md)
 - [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](../../AAAI2026/recommender/tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
 - [\[AAAI 2026\] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning](../../AAAI2026/recommender/travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](../../AAAI2026/recommender/tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
-- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
+- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
 
 <!-- RELATED:END -->

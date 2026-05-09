@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Structured Pruning] GRASPrune jointly prunes FFN channels and KV head groups under a global budget via Projected STE, achieving 12.18 PPL at 50% parameter retention on LLaMA-2-7B with only 6 minutes on a single A100.
+  [ACL 2026][Robotics][Structured Pruning] GRASPrune proposes a globally budget-constrained structured pruning framework that enforces hard mask budget constraints at every training step via Projected Straight-Through Estimator (Projected STE), jointly pruning FFN channels and KV head groups, achieving 12.18 PPL at 50% parameter retention on LLaMA-2-7B with only 6 minutes of single A100 training.
 tags:
   - ACL 2026
-  - Robotics & Embodied AI
+  - Robotics
   - Structured Pruning
   - Global Budget
   - Gating Learning
   - KV Head Pruning
+  - Projected STE
 content_hash: 0d9a6141308f4b17
 ---
 

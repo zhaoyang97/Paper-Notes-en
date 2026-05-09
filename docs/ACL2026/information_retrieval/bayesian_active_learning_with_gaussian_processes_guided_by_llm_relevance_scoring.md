@@ -50,21 +50,21 @@ BAGEL proceeds in two stages: (1) **Warm-start initialization**—the query itse
 
 1. **Query-Specific Gaussian Process**:
 
-   - **Function**: Models the query–passage relevance function over the embedding space.
-   - **Mechanism**: The GP takes passage embeddings $\mathbf{x}_p$ as input and LLM relevance scores as output; the posterior predictive mean $\mu_q(\mathbf{x}_{p_*})$ and variance $\sigma_q^2(\mathbf{x}_{p_*})$ provide relevance estimates and uncertainty, respectively.
-   - **Design Motivation**: The GP kernel (RBF) naturally models smooth relevance structure in the embedding space and supports signal propagation.
+    - **Function**: Models the query–passage relevance function over the embedding space.
+    - **Mechanism**: The GP takes passage embeddings $\mathbf{x}_p$ as input and LLM relevance scores as output; the posterior predictive mean $\mu_q(\mathbf{x}_{p_*})$ and variance $\sigma_q^2(\mathbf{x}_{p_*})$ provide relevance estimates and uncertainty, respectively.
+    - **Design Motivation**: The GP kernel (RBF) naturally models smooth relevance structure in the embedding space and supports signal propagation.
 
 2. **UCB Acquisition Function for Active Exploration**:
 
-   - **Function**: Balances exploration of high-uncertainty regions with exploitation of high predicted relevance.
-   - **Mechanism**: $a^{\text{UCB}}(\mathbf{x}) = \mu_q(\mathbf{x}) + \sqrt{\beta}\,\sigma_q(\mathbf{x})$, where $\beta$ controls the exploration–exploitation trade-off; at each step, the unlabeled passage with the highest acquisition score is selected.
-   - **Design Motivation**: Pure exploitation risks local optima, while pure exploration wastes the budget; UCB naturally balances both.
+    - **Function**: Balances exploration of high-uncertainty regions with exploitation of high predicted relevance.
+    - **Mechanism**: $a^{\text{UCB}}(\mathbf{x}) = \mu_q(\mathbf{x}) + \sqrt{\beta}\,\sigma_q(\mathbf{x})$, where $\beta$ controls the exploration–exploitation trade-off; at each step, the unlabeled passage with the highest acquisition score is selected.
+    - **Design Motivation**: Pure exploitation risks local optima, while pure exploration wastes the budget; UCB naturally balances both.
 
 3. **Warm-Start Initialization Strategy**:
 
-   - **Function**: Mitigates the cold-start problem and provides high-quality initial signals.
-   - **Mechanism**: The query embedding $\mathbf{x}_q$ is treated as the maximum-relevance observation, combined with LLM scores for top-$M$ densely retrieved passages to form the initial observation set $\mathcal{D}_q^{(0)}$.
-   - **Design Motivation**: The query itself is naturally the most relevant "passage," providing a strong positive signal and an initial anchor for the GP.
+    - **Function**: Mitigates the cold-start problem and provides high-quality initial signals.
+    - **Mechanism**: The query embedding $\mathbf{x}_q$ is treated as the maximum-relevance observation, combined with LLM scores for top-$M$ densely retrieved passages to form the initial observation set $\mathcal{D}_q^{(0)}$.
+    - **Design Motivation**: The query itself is naturally the most relevant "passage," providing a strong positive signal and an initial anchor for the GP.
 
 ### Loss & Training
 

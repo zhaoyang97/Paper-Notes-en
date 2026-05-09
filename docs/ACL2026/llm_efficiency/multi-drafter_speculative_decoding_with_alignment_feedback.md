@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Drafter Speculative Decoding with Alignment Feedback
 description: >-
-  [ACL 2026][LLM Efficiency][Speculative Decoding] MetaSD models multi-drafter speculative decoding as a multi-armed bandit problem with Block Divergence reward, dynamically selecting the best-aligned drafter for the target LLM.
+  [ACL 2026][LLM Efficiency][Speculative Decoding] MetaSD is a unified framework integrating multiple heterogeneous drafters into speculative decoding, modeling drafter selection as a multi-armed bandit problem with Block Divergence (BD) reward signals to dynamically select the most aligned drafter, consistently outperforming single-drafter methods in both black-box and white-box configurations.
 tags:
   - ACL 2026
   - LLM Efficiency
@@ -10,6 +10,7 @@ tags:
   - Multi-Armed Bandit
   - Multi-Drafter
   - Alignment Feedback
+  - Inference Acceleration
 content_hash: 5ac96b5ea4720e71
 ---
 
@@ -57,6 +58,6 @@ MetaSD-UCB automatically approaches near-optimal expert drafter performance with
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](../../NeurIPS2025/llm_efficiency/omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
-- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](../../NeurIPS2025/llm_efficiency/moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
+- [\[ACL 2026\] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration](specbound_adaptive_bounded_self-speculation_with_layer-wise_confidence_calibrati.md)
 
 <!-- RELATED:END -->

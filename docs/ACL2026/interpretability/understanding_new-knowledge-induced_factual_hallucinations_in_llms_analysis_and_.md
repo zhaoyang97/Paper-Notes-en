@@ -50,21 +50,21 @@ A synthetic dataset, Biography-Reasoning (fictional entities × 4 attribute type
 
 1. **Controlled Synthetic Dataset: Biography-Reasoning**
 
-   - **Function**: Precisely control the type and proportion of known/unknown knowledge to isolate causal factors of hallucination.
-   - **Mechanism**: Four attributes are defined for fictional entities (birth year, death year, profession, university), each corresponding to a distinct knowledge type. Four QA tasks and twelve reasoning tasks (single-step, comparative, and novel reasoning) are constructed. Continued pre-training makes a subset of knowledge "known," while the remainder stays "unknown"; SFT then mixes these at varying proportions.
-   - **Design Motivation**: Real datasets do not permit precise control over which knowledge is known to the model; the synthetic dataset eliminates this confound.
+    - **Function**: Precisely control the type and proportion of known/unknown knowledge to isolate causal factors of hallucination.
+    - **Mechanism**: Four attributes are defined for fictional entities (birth year, death year, profession, university), each corresponding to a distinct knowledge type. Four QA tasks and twelve reasoning tasks (single-step, comparative, and novel reasoning) are constructed. Continued pre-training makes a subset of knowledge "known," while the remainder stays "unknown"; SFT then mixes these at varying proportions.
+    - **Design Motivation**: Real datasets do not permit precise control over which knowledge is known to the model; the synthetic dataset eliminates this confound.
 
 2. **Attention Analysis and KnownPatch**
 
-   - **Function**: Reveal the hallucination mechanism and provide a lightweight mitigation.
-   - **Mechanism**: Attention changes directed at key entities (name tokens) are analyzed in middle-to-late layers (layers 12–24). Key findings: learning new knowledge significantly reduces attention to key entities (the drop in attention values strongly correlates with hallucination severity), while learning known knowledge enhances attention to key entities. Based on this, KnownPatch is proposed: a small proportion of known-knowledge samples (5–20%) is injected at the end of training, leveraging the attention-boosting effect of known knowledge to repair the attention patterns disrupted by new knowledge.
-   - **Design Motivation**: If hallucinations stem from disrupted attention patterns, restoring correct attention patterns should alleviate hallucinations without requiring the removal of all new knowledge from training data.
+    - **Function**: Reveal the hallucination mechanism and provide a lightweight mitigation.
+    - **Mechanism**: Attention changes directed at key entities (name tokens) are analyzed in middle-to-late layers (layers 12–24). Key findings: learning new knowledge significantly reduces attention to key entities (the drop in attention values strongly correlates with hallucination severity), while learning known knowledge enhances attention to key entities. Based on this, KnownPatch is proposed: a small proportion of known-knowledge samples (5–20%) is injected at the end of training, leveraging the attention-boosting effect of known knowledge to repair the attention patterns disrupted by new knowledge.
+    - **Design Motivation**: If hallucinations stem from disrupted attention patterns, restoring correct attention patterns should alleviate hallucinations without requiring the removal of all new knowledge from training data.
 
 3. **Hallucination Propagation Mechanism Analysis**
 
-   - **Function**: Reveal how hallucinations propagate from training tasks to test tasks.
-   - **Mechanism**: Task variants that are lexically similar but semantically different, and semantically similar but lexically different, are constructed. Results show that hallucination propagation is driven primarily by lexical similarity (token overlap) rather than semantic similarity. As attention weights are normalized over all input tokens, a drop in attention to key entities causes excess attention to flow to surrounding context tokens; test samples sharing vocabulary with unknown-knowledge training samples are thus more susceptible.
-   - **Design Motivation**: Understanding the propagation mechanism helps predict which tasks are most vulnerable to hallucinations, enabling targeted countermeasures.
+    - **Function**: Reveal how hallucinations propagate from training tasks to test tasks.
+    - **Mechanism**: Task variants that are lexically similar but semantically different, and semantically similar but lexically different, are constructed. Results show that hallucination propagation is driven primarily by lexical similarity (token overlap) rather than semantic similarity. As attention weights are normalized over all input tokens, a drop in attention to key entities causes excess attention to flow to surrounding context tokens; test samples sharing vocabulary with unknown-knowledge training samples are thus more susceptible.
+    - **Design Motivation**: Understanding the propagation mechanism helps predict which tasks are most vulnerable to hallucinations, enabling targeted countermeasures.
 
 ### Loss & Training
 

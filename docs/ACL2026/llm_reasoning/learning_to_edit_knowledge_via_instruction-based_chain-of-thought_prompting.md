@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting
 description: >-
-  [ACL 2026][LLM Inference][To be added] To be supplemented after reading the paper in depth
+  [ACL 2026][LLM Reasoning][To be supplemented] To be supplemented after thorough reading.
 tags:
   - ACL 2026
-  - LLM Inference
-  - To be added
+  - LLM Reasoning
+  - To be supplemented
 date: 2026-05-08
 content_hash: 73adda83c76b555e
 ---
+
 # Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting
 
 **Conference**: ACL 2026
@@ -148,3 +149,15 @@ To be supplemented after thorough reading.
 - Experimental Thoroughness: Pending
 - Writing Quality: Pending
 - Value: Pending
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
+- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
+- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
+- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
+
+<!-- RELATED:END -->

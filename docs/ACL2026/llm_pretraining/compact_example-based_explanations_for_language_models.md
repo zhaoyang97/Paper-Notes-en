@@ -51,21 +51,21 @@ The selection quality evaluation is formalized as a gradient reconstruction prob
 
 1. **Selection Relevance Score**:
 
-   - **Function**: Quantifies the overall quality of a selected training sample set as an explanation.
-   - **Mechanism**: $\xi^{SR} = \frac{\mathbb{E}[\|G(\omega)\|^2]}{\mathbb{E}[\|G(\omega) - At_\omega\|^2]}$, i.e., the ratio of the expected squared gradient norm to the expected squared reconstruction error. Values $> 0$ dB indicate that the selected samples provide useful information; values $< 0$ dB indicate performance worse than a zero-vector baseline.
-   - **Design Motivation**: Reconstruction capability in gradient space directly reflects the explanatory power of training samples over model decisions, and assesses samples as a group rather than scoring them independently.
+    - **Function**: Quantifies the overall quality of a selected training sample set as an explanation.
+    - **Mechanism**: $\xi^{SR} = \frac{\mathbb{E}[\|G(\omega)\|^2]}{\mathbb{E}[\|G(\omega) - At_\omega\|^2]}$, i.e., the ratio of the expected squared gradient norm to the expected squared reconstruction error. Values $> 0$ dB indicate that the selected samples provide useful information; values $< 0$ dB indicate performance worse than a zero-vector baseline.
+    - **Design Motivation**: Reconstruction capability in gradient space directly reflects the explanatory power of training samples over model decisions, and assesses samples as a group rather than scoring them independently.
 
 2. **Constrained Projection**:
 
-   - **Function**: Ensures that the linear combination coefficients satisfy explanation semantics.
-   - **Mechanism**: A non-negativity constraint is imposed on coefficients $t$ (preventing irrelevant samples from gaining weight through cancellation) along with a normalization constraint ($\sum t = 1$, rendering $t$ interpretable as relative importance). The unconstrained least-squares solution is first computed, then projected onto the unit simplex.
-   - **Design Motivation**: Unconstrained least squares may yield negative coefficients, implying that certain "explanation" samples are in fact contradicting the prediction.
+    - **Function**: Ensures that the linear combination coefficients satisfy explanation semantics.
+    - **Mechanism**: A non-negativity constraint is imposed on coefficients $t$ (preventing irrelevant samples from gaining weight through cancellation) along with a normalization constraint ($\sum t = 1$, rendering $t$ interpretable as relative importance). The unconstrained least-squares solution is first computed, then projected onto the unit simplex.
+    - **Design Motivation**: Unconstrained least squares may yield negative coefficients, implying that certain "explanation" samples are in fact contradicting the prediction.
 
 3. **Influence-Representativeness Balanced Selection Strategy**:
 
-   - **Function**: Replaces the naive "select top-k by influence" strategy.
-   - **Mechanism**: The selection process jointly considers influence scores and inter-sample diversity/representativeness to avoid redundant selections and dominance by global outliers.
-   - **Design Motivation**: Experiments demonstrate that naive top-k selection frequently underperforms random selection, as global outliers and redundant information degrade explanation quality.
+    - **Function**: Replaces the naive "select top-k by influence" strategy.
+    - **Mechanism**: The selection process jointly considers influence scores and inter-sample diversity/representativeness to avoid redundant selections and dominance by global outliers.
+    - **Design Motivation**: Experiments demonstrate that naive top-k selection frequently underperforms random selection, as global outliers and redundant information degrade explanation quality.
 
 ### Loss & Training
 

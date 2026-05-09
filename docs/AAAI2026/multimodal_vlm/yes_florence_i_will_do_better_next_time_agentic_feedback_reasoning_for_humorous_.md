@@ -169,7 +169,7 @@ Key finding: FLoReNce's Macro-F1 gain exceeds its Accuracy gain, indicating that
 - [\[AAAI 2026\] CAMU: Context Augmentation for Meme Understanding](trace_textual_relevance_augmentation_and_contextual_encoding_for_multimodal_hate.md)
 - [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[AAAI 2026\] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay](see_symbolize_act_grounding_vlms_with_spatial_representations_for_better_gamepla.md)
-- [\[AAAI 2026\] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)
+- [\[ACL 2026\] All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction](../../ACL2026/multimodal_vlm/all_changes_may_have_invariant_principles_improving_ever-shifting_harmful_meme_d.md)
 - [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](../../NeurIPS2025/multimodal_vlm/better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
 
 <!-- RELATED:END -->

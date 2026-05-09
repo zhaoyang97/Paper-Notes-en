@@ -110,6 +110,6 @@ CARE consists of two components: (1) **Anatomy-aware evaluation metrics**—a fr
 - [\[NeurIPS 2025\] Lagrangian neural ODEs: Measuring the existence of a Lagrangian with Helmholtz metrics](lagrangian_neural_odes_measuring_the_existence_of_a_lagrangian_with_helmholtz_me.md)
 - [\[NeurIPS 2025\] Sign-In to the Lottery: Reparameterized Sparse Training from Scratch](sign-in_to_the_lottery_reparameterizing_sparse_training_from_scratch.md)
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](../../ICCV2025/others/intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
-- [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
+- [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](../../ICCV2025/others/switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
 
 <!-- RELATED:END -->

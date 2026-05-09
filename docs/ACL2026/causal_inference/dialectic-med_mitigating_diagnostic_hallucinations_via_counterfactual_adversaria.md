@@ -2,10 +2,11 @@
 title: >-
   [Paper Note] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 description: >-
-  [ACL 2026][Causal Inference][Medical AI] Dialectic-Med implements Popperian falsificationism through multi-agent adversarial dialectical reasoning with a visual falsification module, achieving SOTA on three medical VQA benchmarks with 12.5% explanation faithfulness improvement.
+  [ACL 2026][Causal Inference][Medical Hallucination] Dialectic-Med, inspired by Popperian falsificationism, uses three-agent adversarial dialectical reasoning (proposer for diagnostic hypotheses, opponent with visual falsification module for proactively retrieving contradictory visual evidence, and mediator with weighted consensus graph), achieving SOTA on MIMIC-CXR-VQA, VQA-RAD, and PathVQA with 12.5% explanation faithfulness improvement.
 tags:
   - ACL 2026
   - Causal Inference
+  - Medical Hallucination
   - Multi-Agent Debate
   - Counterfactual Reasoning
   - Visual Falsification
@@ -60,6 +61,6 @@ Dialectic-Med, inspired by Popperian falsificationism, uses three-agent adversar
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](../../NeurIPS2025/causal_inference/a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] AgentTrace: Causal Graph Tracing for Root Cause Analysis in Deployed Multi-Agent Systems](../../ICLR2026/causal_inference/agenttrace_causal_graph_tracing_for_root_cause_analysis_in_deployed_multi-agent_.md)
 - [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](../../CVPR2026/causal_inference/fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
-- [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
+- [\[ICLR 2026\] Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models](../../ICLR2026/causal_inference/flattery_fluff_and_fog_diagnosing_and_mitigating_idiosyncratic_biases_in_prefere.md)
 
 <!-- RELATED:END -->

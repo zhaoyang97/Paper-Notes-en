@@ -165,6 +165,6 @@ The parameter $\gamma \in [-1,1]$ controls the strength of PU/NU learning: $\gam
 - [\[ICLR 2026\] Contamination Detection for VLMs using Multi-Modal Semantic Perturbation](../../ICLR2026/multimodal_vlm/contamination_detection_for_vlms_using_multi-modal_semantic_perturbation.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[AAAI 2026\] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)
-- [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
+- [\[ACL 2026\] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis](../../ACL2026/multimodal_vlm/aica-bench_holistically_examining_the_capabilities_of_vlms_in_affective_image_co.md)
 
 <!-- RELATED:END -->

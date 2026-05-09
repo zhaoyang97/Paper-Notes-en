@@ -53,25 +53,28 @@ The L2T framework automatically converts raw text into structured input–output
 ### Key Designs
 
 1. **Four-Level, 14-Category Language Learning Tasks**
-   - **Function**: Provide multi-granularity structured linguistic stimuli during pre-training.
-   - **Mechanism**:
-     - *Character-level* (4 tasks): character counting, masked character reconstruction, space restoration, typo correction — targeting morphological awareness.
-     - *Word-level* (5 tasks): final-word prediction, masked word reconstruction, random word correction, word reordering, token-type counting — breaking linear sequential dependencies and promoting structural inference.
-     - *Sentence-level* (2 tasks): irrelevant sentence deletion, sentence reordering — requiring inter-sentence relational understanding.
-     - *Discourse-level* (3 tasks): infilling, suffix completion, word-to-text generation — supporting global coherence and disambiguation.
-   - **Design Motivation**: Analogous to how humans improve morphological awareness through error correction, acquire syntactic structure through reordering, and develop global coherence through completion tasks.
+
+    - **Function**: Provide multi-granularity structured linguistic stimuli during pre-training.
+    - **Mechanism**:
+      - *Character-level* (4 tasks): character counting, masked character reconstruction, space restoration, typo correction — targeting morphological awareness.
+      - *Word-level* (5 tasks): final-word prediction, masked word reconstruction, random word correction, word reordering, token-type counting — breaking linear sequential dependencies and promoting structural inference.
+      - *Sentence-level* (2 tasks): irrelevant sentence deletion, sentence reordering — requiring inter-sentence relational understanding.
+      - *Discourse-level* (3 tasks): infilling, suffix completion, word-to-text generation — supporting global coherence and disambiguation.
+    - **Design Motivation**: Analogous to how humans improve morphological awareness through error correction, acquire syntactic structure through reordering, and develop global coherence through completion tasks.
 
 2. **Two Data Scenario Designs**
-   - **Function**: Validate the robustness of L2T under different resource conditions.
-   - **Mechanism**:
-     - *Disjoint* (data-abundant): 100B tokens split into two halves — one for CLM, the other for generating L2T samples (~36B raw + ~64B L2T).
-     - *Shared* (data-limited): 42B tokens used for both CLM and L2T sample generation, totaling 100B tokens.
-   - **Design Motivation**: Disjoint tests the combined effect of data diversity and structured tasks; Shared tests the effect of structured stimuli vs. repeated exposure on the same source data (analogous to "multi-task learning vs. rote memorization").
+
+    - **Function**: Validate the robustness of L2T under different resource conditions.
+    - **Mechanism**:
+      - *Disjoint* (data-abundant): 100B tokens split into two halves — one for CLM, the other for generating L2T samples (~36B raw + ~64B L2T).
+      - *Shared* (data-limited): 42B tokens used for both CLM and L2T sample generation, totaling 100B tokens.
+    - **Design Motivation**: Disjoint tests the combined effect of data diversity and structured tasks; Shared tests the effect of structured stimuli vs. repeated exposure on the same source data (analogous to "multi-task learning vs. rote memorization").
 
 3. **Structure Induction without External Supervision**
-   - **Function**: Automatically generate training signals from raw text without human annotation.
-   - **Mechanism**: Each task defines a deterministic or randomized transformation that converts a text segment into an $(x, y)$ pair, where $x$ is a perturbed or query input and $y$ is the recovered or analyzed output.
-   - **Design Motivation**: Unlike instruction fine-tuning (which requires external supervision), L2T induces structure directly from raw text at low cost and with high scalability.
+
+    - **Function**: Automatically generate training signals from raw text without human annotation.
+    - **Mechanism**: Each task defines a deterministic or randomized transformation that converts a text segment into an $(x, y)$ pair, where $x$ is a perturbed or query input and $y$ is the recovered or analyzed output.
+    - **Design Motivation**: Unlike instruction fine-tuning (which requires external supervision), L2T induces structure directly from raw text at low cost and with high scalability.
 
 ### Loss & Training
 

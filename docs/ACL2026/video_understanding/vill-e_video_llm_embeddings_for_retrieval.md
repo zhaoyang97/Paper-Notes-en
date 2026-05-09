@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ViLL-E: Video LLM Embeddings for Retrieval
 description: >-
-  [ACL 2026][Video Understanding][Video Retrieval] Proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation, achieving near-expert performance on video retrieval and temporal grounding while remaining competitive on VideoQA, via three-stage generative-contrastive joint training and an adaptive KV-Former embedding head.
+  [ACL 2026][Video Understanding][Video Retrieval] This paper proposes ViLL-E, the first unified Video LLM architecture supporting both text generation and embedding generation. Through a three-stage joint generative-contrastive training strategy and an adaptive KV-Former embedding head, ViLL-E approaches expert models on video retrieval and temporal grounding while maintaining competitive performance on VideoQA.
 tags:
   - ACL 2026
   - Video Understanding
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: 63881a3b6a8f538a
 ---
+
 # ViLL-E: Video LLM Embeddings for Retrieval
 
 **Conference**: ACL 2026
@@ -128,9 +129,9 @@ Four task-specific losses are employed: (1) CLIP-style in-batch contrastive loss
 ## Related Papers
 
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
-- [\[CVPR 2025\] Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding](../../CVPR2025/video_understanding/seq2time_sequential_knowledge_transfer_for_video_llm_temporal_grounding.md)
-- [\[CVPR 2025\] M-LLM Based Video Frame Selection for Efficient Video Understanding](../../CVPR2025/video_understanding/m-llm_based_video_frame_selection_for_efficient_video_understanding.md)
-- [\[ECCV 2024\] Rethinking Video-Text Understanding: Retrieval from Counterfactually Augmented Data](../../ECCV2024/video_understanding/rethinking_video-text_understanding_retrieval_from_counterfactually_augmented_da.md)
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](../../ICLR2026/video_understanding/log_probability_tracking_of_llm_apis.md)
+- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](../../ICCV2025/video_understanding/timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
+- [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](../../ICLR2026/video_understanding/nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
+- [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](../../AAAI2026/video_understanding/apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 
 <!-- RELATED:END -->

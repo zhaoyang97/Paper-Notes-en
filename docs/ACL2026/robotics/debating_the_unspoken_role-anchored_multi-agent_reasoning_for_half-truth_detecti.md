@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Half-Truth Detection] RADAR uses role-anchored (politician vs scientist) multi-agent debate to detect half-truths based on omitted context, with dual-threshold adaptive early stopping, consistently outperforming baselines under noisy retrieval.
+  [ACL 2026][Robotics][Half-Truth Detection] RADAR uses role-anchored (politician vs scientist) multi-agent debate to detect half-truths — statements that are factually correct but misleading due to omitted context — with dual-threshold adaptive early stopping, consistently outperforming single-agent and traditional multi-agent baselines under noisy retrieval conditions.
 tags:
   - ACL 2026
-  - Robotics & Embodied AI
+  - Robotics
   - Half-Truth Detection
   - Multi-Agent Debate
   - Omission Reasoning
   - Role Anchoring
+  - Adaptive Termination
 content_hash: f91cbebebef5caff
 ---
 
@@ -59,7 +60,7 @@ RADAR uses role-anchored (politician vs scientist) multi-agent debate to detect 
 - [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/robotics/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
 - [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/robotics/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
 - [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](../../AAAI2026/robotics/evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](../../AAAI2026/robotics/a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
+- [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](../../AAAI2026/robotics/shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
 
 <!-- RELATED:END -->

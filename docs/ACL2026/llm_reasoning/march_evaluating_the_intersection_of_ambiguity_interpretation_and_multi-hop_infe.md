@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-Hop Reasoning] Introduces the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework, providing the first systematic study of QA challenges at the intersection of ambiguity resolution and multi-step reasoning, revealing critical shortcomings of existing SOTA models on such problems.
+  [ACL 2026][LLM Reasoning][multi-hop reasoning] This paper introduces the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework, presenting the first systematic study of QA challenges at the intersection of ambiguity interpretation and multi-step reasoning, and revealing severe deficiencies in existing SOTA models on such problems.
 tags:
   - ACL 2026
   - LLM Reasoning
-  - Multi-Hop Reasoning
-  - Ambiguity Resolution
-  - Benchmark Construction
-  - Hierarchical Uncertainty
-  - Agentic Framework
+  - multi-hop reasoning
+  - ambiguity resolution
+  - benchmark construction
+  - layered uncertainty
+  - agent framework
 date: 2026-05-08
 content_hash: 6d3a07e3ce322f29
 ---
+
 # MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 
 **Conference**: ACL 2026
@@ -124,8 +125,8 @@ Both MARCH and CLARION are training-free. MARCH is a construction-based benchmar
 
 - [\[ACL 2026\] Explicit Trait Inference for Multi-Agent Coordination](explicit_trait_inference_for_multi-agent_coordination.md)
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
-- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 - [\[NeurIPS 2025\] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks](../../NeurIPS2025/llm_reasoning/value-guided_search_for_efficient_chain-of-thought_reasoning.md)
+- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
+- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 
 <!-- RELATED:END -->

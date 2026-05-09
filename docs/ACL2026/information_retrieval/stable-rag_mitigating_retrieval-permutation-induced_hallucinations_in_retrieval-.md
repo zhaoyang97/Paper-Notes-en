@@ -50,23 +50,23 @@ Stable-RAG proceeds in three stages: (1) **Hidden-state clustering**—run the m
 
 1. **Permutation Sensitivity Estimation via Spectral Clustering**
 
-   - **Function**: Identify the latent reasoning patterns of the model under different document permutations.
-   - **Mechanism**: For $N = n!$ permutations, extract the final-layer last-token hidden states $H \in \mathbb{R}^{N \times d}$, construct a cosine-distance similarity matrix $A_{ij} = \exp\!\left(-\frac{1 - \text{cos}(h^{(i)}, h^{(j)})}{\sigma}\right)$, compute the normalized graph Laplacian $L = I - D^{-1/2}AD^{-1/2}$, and adaptively determine the number of clusters $K$ via the eigengap heuristic. The representative hidden state closest to each cluster centroid is decoded, reducing $N = 120$ full decoding passes to only $K$.
-   - **Design Motivation**: Exhaustively decoding all permutations incurs prohibitive computational and annotation costs; spectral clustering captures all reasoning patterns with only a small number of representative decodings. Quantitative validation yields F1 scores of 83.9% (LLaMA3) and 87.6% (Qwen3).
+    - **Function**: Identify the latent reasoning patterns of the model under different document permutations.
+    - **Mechanism**: For $N = n!$ permutations, extract the final-layer last-token hidden states $H \in \mathbb{R}^{N \times d}$, construct a cosine-distance similarity matrix $A_{ij} = \exp\!\left(-\frac{1 - \text{cos}(h^{(i)}, h^{(j)})}{\sigma}\right)$, compute the normalized graph Laplacian $L = I - D^{-1/2}AD^{-1/2}$, and adaptively determine the number of clusters $K$ via the eigengap heuristic. The representative hidden state closest to each cluster centroid is decoded, reducing $N = 120$ full decoding passes to only $K$.
+    - **Design Motivation**: Exhaustively decoding all permutations incurs prohibitive computational and annotation costs; spectral clustering captures all reasoning patterns with only a small number of representative decodings. Quantitative validation yields F1 scores of 83.9% (LLaMA3) and 87.6% (Qwen3).
 
 2. **Four-Category Preference Data Construction**
 
-   - **Function**: Construct training signals tailored to different permutation sensitivity patterns.
-   - **Mechanism**: Samples are divided into four categories: **FC** (all permutations correct—excluded from training); **PC** (partially correct—$y_w$ = most frequent correct answer, $y_l$ = most frequent incorrect answer); **FU** (all incorrect and unanswerable—$y_w$ = "I don't know" to encourage abstention); **FA** (all incorrect but answerable—$y_w$ = gold answer to encourage correct prediction).
-   - **Design Motivation**: Different types of permutation inconsistency require different alignment strategies—PC samples require stabilizing existing capabilities, FU samples require learning to abstain, and FA samples require extracting correct answers from evidence.
+    - **Function**: Construct training signals tailored to different permutation sensitivity patterns.
+    - **Mechanism**: Samples are divided into four categories: **FC** (all permutations correct—excluded from training); **PC** (partially correct—$y_w$ = most frequent correct answer, $y_l$ = most frequent incorrect answer); **FU** (all incorrect and unanswerable—$y_w$ = "I don't know" to encourage abstention); **FA** (all incorrect but answerable—$y_w$ = gold answer to encourage correct prediction).
+    - **Design Motivation**: Different types of permutation inconsistency require different alignment strategies—PC samples require stabilizing existing capabilities, FU samples require learning to abstain, and FA samples require extracting correct answers from evidence.
 
 3. **DPO Preference Alignment Training**
 
-   - **Function**: Train the model to produce consistent outputs across different permutations.
-   - **Mechanism**: Standard DPO loss is applied:
-     $$\mathcal{L}_{\text{DPO}} = -\mathbb{E}\!\left[\log\sigma\!\left(\beta \log\frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log\frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right]$$
-     where the input $x$ is the concatenation of the query and a document permutation.
-   - **Design Motivation**: DPO learns directly from preference pairs without training a separate reward model, and can efficiently leverage clustering results to construct high-quality preference data.
+    - **Function**: Train the model to produce consistent outputs across different permutations.
+    - **Mechanism**: Standard DPO loss is applied:
+    $\mathcal{L}_{\text{DPO}} = -\mathbb{E}\!\left[\log\sigma\!\left(\beta \log\frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log\frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right]$
+      where the input $x$ is the concatenation of the query and a document permutation.
+    - **Design Motivation**: DPO learns directly from preference pairs without training a separate reward model, and can efficiently leverage clustering results to construct high-quality preference data.
 
 ### Loss & Training
 

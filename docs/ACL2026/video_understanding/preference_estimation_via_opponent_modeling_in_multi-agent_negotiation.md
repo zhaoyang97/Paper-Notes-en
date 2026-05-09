@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preference Estimation via Opponent Modeling in Multi-Agent Negotiation
 description: >-
-  [ACL 2026][Video Understanding][Opponent Modeling] Proposes a preference estimation method combining LLM-extracted natural language preference signals with a Bayesian opponent modeling framework, integrating qualitative cues and quantitative bid information via a linguistic likelihood function in multi-party multi-issue negotiations, improving full agreement rate from 37% to 62%.
+  [ACL 2026][Video Understanding][Opponent Modeling] This paper proposes a preference estimation method that integrates LLM-extracted natural language preference signals into a Bayesian opponent modeling framework. In multi-party, multi-issue negotiations, it fuses qualitative cues and quantitative bid information via a linguistic likelihood function, improving the full agreement rate (FAR) from 37% to 62%.
 tags:
   - ACL 2026
   - Video Understanding
@@ -10,10 +10,11 @@ tags:
   - Bayesian Inference
   - Preference Estimation
   - Multi-Party Negotiation
-  - LLM Linguistic Signals
+  - LLM Language Signals
 date: 2026-05-08
 content_hash: d60a6e374b8615db
 ---
+
 # Preference Estimation via Opponent Modeling in Multi-Agent Negotiation
 
 **Conference**: ACL 2026

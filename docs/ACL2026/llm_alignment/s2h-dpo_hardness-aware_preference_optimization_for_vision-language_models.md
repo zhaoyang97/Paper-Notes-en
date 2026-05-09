@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 description: >-
-  [ACL 2026][LLMAlignment][To be added] To be supplemented after in-depth reading
+  [ACL 2026][LLM Alignment][To be supplemented] To be supplemented after a thorough reading of the paper.
 tags:
   - ACL 2026
   - LLM Alignment
-  - To be added
+  - To be supplemented
 date: 2026-05-08
 content_hash: dcd408cf9a166cfa
 ---
+
 # S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 
 **Conference**: ACL 2026
@@ -146,3 +147,15 @@ To be supplemented after a thorough reading of the paper.
 - Experimental Thoroughness: Pending
 - Writing Quality: Pending
 - Value: Pending
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
+- [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/llm_alignment/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
+- [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
+- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/llm_alignment/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
+
+<!-- RELATED:END -->

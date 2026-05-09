@@ -50,19 +50,22 @@ The construction pipeline of ReTraceQA consists of: (1) selecting questions from
 ### Key Designs
 
 1. **Three-Level Hierarchical Error Taxonomy**
-   - **Function**: Provides mutually exclusive classification of reasoning errors according to cognitive level.
-   - **Mechanism**: Three error types are defined from lower to higher levels—*Misinterpretation* (grounding layer: misunderstanding the question, options, or task requirements, including referencing non-existent options or providing multiple answers); *Hallucination* (content layer: introducing empirically incorrect or unverifiable world knowledge, applied only when the logical structure may be intact but the factual "building blocks" are wrong, e.g., "wolves do not inhabit Arctic regions"); and *Reasoning* (inference layer: making invalid logical leaps between correct premises, e.g., correctly stating "salt lowers the freezing point" but incorrectly inferring "this makes ice easier to form"). Classification follows a grounding-to-reasoning priority order.
-   - **Design Motivation**: To distinguish three fundamentally different failure modes—failing to understand the question, lacking factual knowledge, and failing to reason logically—thereby providing targeted diagnostic information for improving SLMs.
+
+    - **Function**: Provides mutually exclusive classification of reasoning errors according to cognitive level.
+    - **Mechanism**: Three error types are defined from lower to higher levels—*Misinterpretation* (grounding layer: misunderstanding the question, options, or task requirements, including referencing non-existent options or providing multiple answers); *Hallucination* (content layer: introducing empirically incorrect or unverifiable world knowledge, applied only when the logical structure may be intact but the factual "building blocks" are wrong, e.g., "wolves do not inhabit Arctic regions"); and *Reasoning* (inference layer: making invalid logical leaps between correct premises, e.g., correctly stating "salt lowers the freezing point" but incorrectly inferring "this makes ice easier to form"). Classification follows a grounding-to-reasoning priority order.
+    - **Design Motivation**: To distinguish three fundamentally different failure modes—failing to understand the question, lacking factual knowledge, and failing to reason logically—thereby providing targeted diagnostic information for improving SLMs.
 
 2. **First-Error Localization Task Formulation**
-   - **Function**: Formalizes reasoning process evaluation as a quantifiable task.
-   - **Mechanism**: Given a question $q$ and a reasoning trace $S = [s_0, s_1, \ldots, s_n]$, the model predicts an index $i \in \{-1, 0, \ldots, n\}$, where $i = -1$ indicates all steps are correct and $i \geq 0$ indicates the first error occurs at step $s_i$. Only the first error is targeted, as subsequent steps build on erroneous premises, making their correctness ambiguous.
-   - **Design Motivation**: Maintaining a task definition consistent with ProcessBench facilitates cross-domain comparison, and first-error localization avoids the ambiguity of cascading error attribution.
+
+    - **Function**: Formalizes reasoning process evaluation as a quantifiable task.
+    - **Mechanism**: Given a question $q$ and a reasoning trace $S = [s_0, s_1, \ldots, s_n]$, the model predicts an index $i \in \{-1, 0, \ldots, n\}$, where $i = -1$ indicates all steps are correct and $i \geq 0$ indicates the first error occurs at step $s_i$. Only the first error is targeted, as subsequent steps build on erroneous premises, making their correctness ambiguous.
+    - **Design Motivation**: Maintaining a task definition consistent with ProcessBench facilitates cross-domain comparison, and first-error localization avoids the ambiguity of cascading error attribution.
 
 3. **Dual-Axis Evaluation Framework (Reference-Free + Reference-Based × Judge + PRM)**
-   - **Function**: Comprehensively assesses automated reasoning evaluation methods in the commonsense domain.
-   - **Mechanism**: The reference-free setting (providing only the reasoning trace, without the gold answer) tests the reliability of LLM judges and PRMs as training feedback or Best-of-N selection signals. The reference-based setting (providing both the gold answer and the reasoning trace) tests their utility as evaluation tools. Both settings are evaluated using *correct* (accuracy in identifying fully correct traces), *error* (accuracy in localizing the first erroneous step), and *F1* (harmonic mean of the two).
-   - **Design Motivation**: The reference-free setting reflects real deployment scenarios (gold answers are unavailable during training), while the reference-based setting reflects evaluation scenarios. Their combination reveals the strengths and weaknesses of different models under different conditions.
+
+    - **Function**: Comprehensively assesses automated reasoning evaluation methods in the commonsense domain.
+    - **Mechanism**: The reference-free setting (providing only the reasoning trace, without the gold answer) tests the reliability of LLM judges and PRMs as training feedback or Best-of-N selection signals. The reference-based setting (providing both the gold answer and the reasoning trace) tests their utility as evaluation tools. Both settings are evaluated using *correct* (accuracy in identifying fully correct traces), *error* (accuracy in localizing the first erroneous step), and *F1* (harmonic mean of the two).
+    - **Design Motivation**: The reference-free setting reflects real deployment scenarios (gold answers are unavailable during training), while the reference-based setting reflects evaluation scenarios. Their combination reveals the strengths and weaknesses of different models under different conditions.
 
 ### Loss & Training
 

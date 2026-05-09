@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 description: >-
-  [ACL 2026][LLMAlignment][InstructionFine-tuning] This paper proposes SFTMix, a Mixup-based instruction fine-tuning method that dynamically partitions the SFT dataset into high-confidence and low-confidence subsets during training, applies linear interpolation and Mixup regularization in the latent representation space, and consistently improves instruction-following ability across LLM families and dataset scales without relying on high-quality datasets.
+  [ACL 2026][LLM Alignment][Instruction Tuning] This paper proposes SFTMix, a Mixup-based instruction tuning method that partitions SFT data into high-confidence and low-confidence subsets via training dynamics, applies linear interpolation between the two subsets in the hidden representation space with Mixup regularization, and consistently improves instruction-following ability across LLM families and dataset scales without relying on high-quality curated datasets.
 tags:
   - ACL 2026
   - LLM Alignment
-  - Instruction Fine-tuning
+  - Instruction Tuning
   - Mixup Regularization
   - Training Dynamics
   - Confidence Partitioning
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: 5b791890a77d6788
 ---
+
 # SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 
 **Conference**: ACL 2026
@@ -143,10 +144,10 @@ Standard NTP cross-entropy loss + Mixup cross-entropy regularization term, $\mu=
 
 ## Related Papers
 
-- [\[ACL 2025\] Federated Data-Efficient Instruction Tuning for Large Language Models](../../ACL2025/llm_alignment/federated_data-efficient_instruction_tuning_for_large_language_models.md)
-- [\[ACL 2025\] Rethinking Table Instruction Tuning](../../ACL2025/llm_alignment/rethinking_table_instruction_tuning.md)
-- [\[ICML 2025\] Instruction Tuning of Large Language Models for Tabular Data Generation—in One Day](../../ICML2025/llm_alignment/instruction_tuning_of_large_language_models_for_tabular_data_generation-in_one_d.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
-- [\[ACL 2025\] Call for Rigor in Reporting Quality of Instruction Tuning Data](../../ACL2025/llm_alignment/call_for_rigor_in_reporting_quality_of_instruction_tuning_data.md)
+- [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
+- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
+- [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
+- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 
 <!-- RELATED:END -->

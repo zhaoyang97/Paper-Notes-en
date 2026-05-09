@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Task Vector] DeCoVec constructs task vectors in the decoding space (output logits) by contrasting few-shot and zero-shot logit distributions, achieving up to +5.50 accuracy improvement over standard few-shot baselines without training.
+  [ACL 2026][Robotics][Task Vector] DeCoVec constructs task vectors in the decoding space (output logits) by contrasting few-shot and zero-shot logit distributions: $\mathbf{v}_\mathcal{T}^t = \mathbf{z}_{\text{icl}}^t - \mathbf{z}_{\text{zs}}^t$, injecting them into decoding via $\tilde{\mathbf{z}}^t = \mathbf{z}_{\text{de}}^t + \lambda \cdot \mathbf{v}_\mathcal{T}^t$, achieving up to +5.50 average accuracy improvement over standard few-shot baselines across 7 LLMs without any training.
 tags:
   - ACL 2026
-  - Robotics & Embodied AI
+  - Robotics
   - Task Vector
   - Decoding Space
   - In-Context Learning
   - Training-Free LLM Guidance
+  - Logit Manipulation
 content_hash: 1ba728a79fd1c88c
 ---
 

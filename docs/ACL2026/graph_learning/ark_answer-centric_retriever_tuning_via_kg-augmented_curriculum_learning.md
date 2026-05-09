@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning
 description: >-
-  [ACL 2026][Graph Learning][Answer-Centric Retrieval] ARK uses three-dimensional answer sufficiency scoring and KG-driven hard negative mining with curriculum contrastive learning, averaging +14.5% F1 across 10 datasets.
+  [ACL 2026][Graph Learning][Answer-Centric Retrieval] ARK filters positive samples through three-dimensional answer sufficiency scoring (Forward + Backward + Retriever alignment) and generates progressively difficult hard negatives via LLM-constructed knowledge graphs for curriculum contrastive learning, averaging +14.5% F1 across 10 datasets.
 tags:
   - ACL 2026
   - Graph Learning
@@ -10,6 +10,7 @@ tags:
   - Knowledge Graph Augmentation
   - Curriculum Learning
   - Contrastive Learning
+  - Long-Context RAG
 content_hash: e66cb1747ae8b6e2
 ---
 

@@ -48,21 +48,21 @@ CURaTE operates in two phases: (1) **Pre-deployment training**: paraphrase posit
 
 1. **Task-Agnostic Unlearning Embedder Training**
 
-   - **Function**: Learns a general-purpose semantic similarity judgment capability; no retraining is required after deployment.
-   - **Mechanism**: Three types of training data are generated from a seed QA dataset (e.g., Natural Questions): Type-1 (original question + paraphrase, positive pair), Type-2 (original question + contrastive question, hard negative—lexically similar but semantically different), and Type-3 (paraphrase + its contrastive question, hard negative). The embedder is trained with contrastive loss $\mathcal{L} = y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2$.
-   - **Design Motivation**: Hard negative pairs ensure the embedder can distinguish between "asking the same thing in different words" and "appearing similar but asking about something different"—a core requirement in unlearning scenarios, where paraphrase variants must be intercepted without incorrectly blocking unrelated queries.
+    - **Function**: Learns a general-purpose semantic similarity judgment capability; no retraining is required after deployment.
+    - **Mechanism**: Three types of training data are generated from a seed QA dataset (e.g., Natural Questions): Type-1 (original question + paraphrase, positive pair), Type-2 (original question + contrastive question, hard negative—lexically similar but semantically different), and Type-3 (paraphrase + its contrastive question, hard negative). The embedder is trained with contrastive loss $\mathcal{L} = y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2$.
+    - **Design Motivation**: Hard negative pairs ensure the embedder can distinguish between "asking the same thing in different words" and "appearing similar but asking about something different"—a core requirement in unlearning scenarios, where paraphrase variants must be intercepted without incorrectly blocking unrelated queries.
 
 2. **Embedding Database for Real-Time Unlearning**
 
-   - **Function**: Enables immediate effect of unlearning requests without any optimization process.
-   - **Mechanism**: Upon receiving unlearning request $f_m$, only its embedding $f_m^{emb} = U(f_m)$ needs to be computed and appended to set $F$—an $O(1)$ operation. At query time, $s_{max} = \max_{i} \text{cos}(p^{emb}, f_i^{emb})$ is computed; if $s_{max} \geq \delta$, a response is sampled from a predefined set of refusal expressions $R$.
-   - **Design Motivation**: Parametric unlearning requires gradient computation, taking minutes to hours, during which sensitive information remains accessible. Embedding storage achieves genuinely instantaneous unlearning.
+    - **Function**: Enables immediate effect of unlearning requests without any optimization process.
+    - **Mechanism**: Upon receiving unlearning request $f_m$, only its embedding $f_m^{emb} = U(f_m)$ needs to be computed and appended to set $F$—an $O(1)$ operation. At query time, $s_{max} = \max_{i} \text{cos}(p^{emb}, f_i^{emb})$ is computed; if $s_{max} \geq \delta$, a response is sampled from a predefined set of refusal expressions $R$.
+    - **Design Motivation**: Parametric unlearning requires gradient computation, taking minutes to hours, during which sensitive information remains accessible. Embedding storage achieves genuinely instantaneous unlearning.
 
 3. **Knowledge Preservation via Frozen LLM Weights**
 
-   - **Function**: Maintains perfect knowledge preservation regardless of the number of unlearning requests.
-   - **Mechanism**: Since LLM parameters are never modified, all knowledge unrelated to unlearning requests is fully preserved—catastrophic forgetting is structurally impossible. The only risk is false rejection (misclassifying unrelated queries as unlearning targets), which is minimized through hard-negative training.
-   - **Design Motivation**: Catastrophic forgetting is the fundamental bottleneck of parametric unlearning; completely bypassing weight modification is the most principled solution.
+    - **Function**: Maintains perfect knowledge preservation regardless of the number of unlearning requests.
+    - **Mechanism**: Since LLM parameters are never modified, all knowledge unrelated to unlearning requests is fully preserved—catastrophic forgetting is structurally impossible. The only risk is false rejection (misclassifying unrelated queries as unlearning targets), which is minimized through hard-negative training.
+    - **Design Motivation**: Catastrophic forgetting is the fundamental bottleneck of parametric unlearning; completely bypassing weight modification is the most principled solution.
 
 ### Loss & Training
 Contrastive loss: $\mathcal{L} = \frac{1}{2|T|}\sum [y \cdot d_U^2 + (1-y) \cdot \max(0, m-d_U)^2]$, using cosine distance as the metric. Training is performed once on the seed dataset; no additional training is required after deployment.

@@ -1,0 +1,156 @@
+---
+title: >-
+  [Paper Note] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset
+description: >-
+  [ACL 2026][Medical Imaging][Safety Compliance] This paper introduces OmniCompliance-100K, the first large-scale, multi-domain, regulation-grounded safety compliance dataset built upon real-world cases. It comprises 12,985 manually curated regulatory rules and 106,009 real-world compliance cases collected via a Web search agent, spanning 9 domains including AI safety, data privacy, finance, and healthcare. Extensive benchmarking reveals systematic deficiencies in current LLMs' safety compliance capabilities.
+tags:
+  - ACL 2026
+  - Medical Imaging
+  - Safety Compliance
+  - Real-World Case Dataset
+  - Multi-Domain Regulations
+  - Web Search Agent
+  - LLM Benchmarking
+date: 2026-05-08
+content_hash: 154ddc82cfbb5df9
+---
+
+# OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset
+
+**Conference**: ACL 2026
+**arXiv**: [2603.13933](https://arxiv.org/abs/2603.13933)
+**Code**: [GitHub](https://github.com/HKUST-KnowComp/OmniCompliance-100K)
+**Area**: Medical Imaging
+**Keywords**: Safety Compliance, Real-World Case Dataset, Multi-Domain Regulations, Web Search Agent, LLM Benchmarking
+
+## TL;DR
+
+This paper introduces OmniCompliance-100K, the first large-scale, multi-domain, regulation-grounded safety compliance dataset built upon real-world cases. It comprises 12,985 manually curated regulatory rules and 106,009 real-world compliance cases collected via a Web search agent, spanning 9 domains including AI safety, data privacy, finance, and healthcare. Extensive benchmarking reveals systematic deficiencies in current LLMs' safety compliance capabilities.
+
+## Background & Motivation
+
+**Background**: As LLMs are widely deployed across industries, their safety risks have become increasingly prominent—ranging from generating harmful content and leaking private information to violating financial compliance requirements. Existing LLM safety datasets (e.g., ToxicChat, WildGuard, HarmBench) are primarily built upon researcher-defined taxonomies and LLM-synthesized content.
+
+**Limitations of Prior Work**: (1) Existing safety datasets lack systematic regulatory grounding and rely on ad-hoc taxonomies, failing to provide rigorous compliance guarantees. (2) Even works that incorporate regulatory/policy frameworks (e.g., Air-Bench, GuardSet-X) still rely on LLM-synthesized cases, lacking real-world diversity. (3) Real-world compliance cases are scattered across diverse websites in heterogeneous formats (PDF, HTML, JSON), making large-scale collection and alignment extremely difficult.
+
+**Key Challenge**: Legal regulations provide comprehensive safety standards and are accompanied by abundant real enforcement cases, yet existing datasets have failed to leverage these resources—confining LLM safety alignment to synthetic scenarios with poor generalization to real-world applications.
+
+**Goal**: (1) Construct the first large-scale, regulation-grounded safety compliance dataset built upon real-world cases. (2) Develop an automated Web search agent pipeline for large-scale collection of rule-aligned real-world cases. (3) Comprehensively benchmark current LLMs on safety compliance capabilities.
+
+**Key Insight**: Modern Web search agents (based on Grok-4.1) can autonomously plan queries, retrieve results, filter noise, and summarize cases, addressing the three core challenges of real-world case collection: dispersed sources, heterogeneous formats, and information noise.
+
+**Core Idea**: Safety issues should be approached from a compliance perspective—grounding evaluation in authoritative regulations and real-world cases rather than relying on researcher-defined taxonomies and LLM-synthesized scenarios.
+
+## Method
+
+### Overall Architecture
+
+Dataset construction proceeds in two stages: (1) **Rule Collection**—three computational linguistics PhD students spent one month manually curating a hierarchical rule taxonomy from 74 regulations and policies, yielding 12,985 rules by traversing the resulting tree structure. (2) **Case Collection**—a Grok-4.1-based Web search agent pipeline was developed to automatically retrieve, filter, and summarize 8–10 real-world cases per rule. A rule–case knowledge graph is subsequently constructed to analyze inter-rule associations.
+
+### Key Designs
+
+1. **Multi-Domain Regulatory Rule Taxonomy**:
+
+    - **Function**: Provide authoritative and systematic compliance standards for LLM safety evaluation.
+    - **Mechanism**: Covers 9 major domains: AI safety legislation (EU AI Act, SB 53), data privacy laws (GDPR, CCPA, HIPAA), Chinese regulations (PIPL, DSL, etc.), platform policies (X, Reddit, GitHub, Google, OpenAI, WeChat), educational integrity, financial regulations (AML, cross-border payments, cryptocurrency), medical device regulations, cybersecurity (MITRE ATT&CK), and fundamental rights. All regulations are organized into tree structures, with rule instances generated by traversing from root to leaf nodes.
+    - **Design Motivation**: Regulations are inconsistently formatted with varying hierarchical structures, requiring substantial manual effort to unify them into an actionable tree representation. Multi-domain coverage ensures comprehensive evaluation.
+
+2. **Web Search Agent Case Collection Pipeline**:
+
+    - **Function**: Automate large-scale collection of real-world compliance cases aligned with regulatory rules.
+    - **Mechanism**: The agent, built on Grok-4.1, follows a three-step process: (a) analyze rule content and plan multiple search queries; (b) invoke search engine tools to retrieve results, prioritizing official and authoritative sources; (c) summarize collected information, filter irrelevant cases, and output structured JSON containing case background, compliance outcome, involved parties, applicable regulations, and reference links.
+    - **Design Motivation**: Manually collecting 106K cases is infeasible, and conventional crawlers cannot adapt to the diverse structures and formats of different websites. The flexibility of Web search agents naturally addresses dispersed sources and heterogeneous formats.
+
+3. **Rule–Case Knowledge Graph**:
+
+    - **Function**: Reveal inter-regulation associations to support multi-hop compliance reasoning.
+    - **Mechanism**: Each retrieved case cites its source rule, forming ⟨Rule A, retrieved case, Rule B⟩ triples. Aggregating all triples constructs the knowledge graph. For instance, GDPR analysis shows that Articles 5–11 (principles), Article 32 (security of processing), Article 33 (breach notification), and Article 44 (cross-border transfer principles) are highly correlated with nearly all other articles.
+    - **Design Motivation**: Regulatory provisions do not exist in isolation; real-world compliance judgments typically require integrating multiple articles. The knowledge graph reveals these associations and provides a foundation for future compliance reasoning.
+
+### Loss & Training
+
+This work focuses on dataset construction and benchmarking. The evaluation task is a 2-way classification (permitted/prohibited), with macro-F1 as the primary metric. The dataset contains 40,385 "permitted" and 65,624 "prohibited" samples.
+
+## Key Experimental Results
+
+### Main Results
+
+**Closed-Source Model Benchmark (Average Macro-F1 %)**
+
+| Model | Average | Platform Policies | Major Regulations | Educational Bias |
+|-------|---------|------------------|------------------|-----------------|
+| GLM-4.5 | Highest | 89.61 | 93.65 | 83.91 |
+| DeepSeek-V3.2 | 2nd | — | — | 85.75 |
+| Grok-4.1 | 85.60 | — | — | — |
+
+**Open-Source Model Comparison**
+
+| Model | Average Macro-F1 |
+|-------|-----------------|
+| Qwen2.5-14B-Instruct | High |
+| Qwen2.5-7B-Instruct | 84.94 |
+| Qwen2.5-3B-Instruct | **88.62** |
+| Llama3.1-8B-Instruct | 76.02 |
+| Llama3.2-3B-Instruct | 67.86 |
+| Qwen2.5-1.5B-Instruct | 57.06 |
+| WildGuard-7B | 38.41 |
+| Llama-Guard-3-8B | 28.16 |
+
+### Ablation Study
+
+**Rule–Case Alignment Validation**
+
+| Evaluator | Average Alignment Score (Normalized %) |
+|-----------|---------------------------------------|
+| DeepSeek-V3.2 | 91.32 |
+| GPT-4o-Mini | 92.51 |
+| Gemini-2.5-Flash | 95.90 |
+| Human Evaluation | 91.77 |
+
+### Key Findings
+
+- **Platform Policies vs. Regulations**: All models consistently perform worse on platform policies than on formal regulations (approximately 4% gap), as policies are more dynamic and context-dependent.
+- **Bias and Discrimination**: The "bias and discrimination" category in the education domain is the weakest across all models; even the strongest model achieves only ~84%, indicating that detecting subtle social biases remains a core challenge for LLMs.
+- **Financial Regulations**: Models consistently perform well on financial regulations (95–97%), demonstrating the potential of LLMs for automating financial compliance.
+- **Small Models Can Compete**: Qwen2.5-3B-Instruct (88.62%) outperforms Grok-4.1 (85.60%), though performance drops sharply below 1.5B parameters—3B appears to be an empirical lower bound for meaningful compliance capability.
+- **Safety Guardrail Models Severely Underperform**: WildGuard-7B (38.41%) and Llama-Guard-3-8B (28.16%) perform extremely poorly in real-world compliance scenarios, revealing that existing safety alignment is overly narrow.
+- **Qwen Series >> Llama Series**: At equivalent parameter counts, Qwen consistently outperforms Llama on compliance tasks (e.g., 7B: 84.94% vs. 76.02%).
+- **EU AI Act Chapter 2 (Prohibited AI Practices)**: All models perform worst on this category (<80%), covering high-risk areas such as biometric identification and deceptive AI.
+
+## Highlights & Insights
+
+- The framing of safety as a compliance problem is highly valuable—using authoritative regulations as the evaluation standard is more reliable and practically meaningful than researcher-defined taxonomies.
+- The Web search agent paradigm for data collection is noteworthy, as it naturally addresses the challenges of dispersed sources, heterogeneous formats, and information noise that conventional crawlers cannot handle.
+- The finding that safety guardrail models (WildGuard, Llama-Guard) nearly fail in real-world compliance scenarios is significant, indicating that existing safety alignment methods overfit to narrow safety taxonomies and highlighting the urgent need for compliance-data-driven safety training.
+
+## Limitations & Future Work
+
+- Human evaluation covers only 2,220 samples (30 per regulation/policy), leaving the majority of the dataset unvalidated by human annotators.
+- Cases may contain sensitive information (PII) that requires filtering and anonymization prior to public release.
+- Web search may introduce temporal bias—cases collected under outdated regulations may no longer be applicable following regulatory updates.
+- Evaluation is limited to classification tasks; model performance on compliance reasoning requiring multi-hop inference has not been assessed.
+
+## Related Work & Insights
+
+- **vs. Air-Bench (Zeng et al., 2024)**: The latter constructs a taxonomy from regulations and synthesizes cases via LLMs (5,694 instances), whereas this work directly collects real-world cases from the Web (106,009 instances), representing a qualitative leap in both scale and authenticity.
+- **vs. GuardSet-X (Kang et al., 2025)**: The latter is larger in scale (129,241 synthetic cases) but entirely LLM-generated, lacking real-world diversity. This work addresses that gap with genuine cases.
+- **vs. PrivaCI-Bench (Li et al., 2025)**: The latter contains ~3,000 real court cases but is limited to the privacy domain; this work spans 9 domains with stricter rule alignment.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ First large-scale real-world-case safety compliance dataset; the Web search agent collection pipeline is innovative.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive benchmarking of 18 models, multi-dimensional analysis, and dual LLM+human validation of rule–case alignment.
+- **Writing Quality**: ⭐⭐⭐⭐ Dataset construction process is clearly described; experimental findings are well-organized.
+- **Value**: ⭐⭐⭐⭐⭐ Fills a critical gap in real-world safety compliance data, with direct implications for safety alignment research and practice.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[AAAI 2026\] Experience with Single Domain Generalization in Real World Medical Imaging Deployments](../../AAAI2026/medical_imaging/experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)
+- [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
+- [\[ACL 2026\] Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework](region-grounded_report_generation_for_3d_medical_imaging_a_fine-grained_dataset_.md)
+- [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](../../ICLR2026/medical_imaging/moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
+- [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
+
+<!-- RELATED:END -->

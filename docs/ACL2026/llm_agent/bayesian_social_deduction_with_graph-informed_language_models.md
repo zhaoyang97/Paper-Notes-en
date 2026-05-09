@@ -51,21 +51,21 @@ GRAIL comprises three components: (1) a **factor graph** for probabilistic reaso
 
 1. **Factor Graph Role Reasoning**
 
-   - **Function**: Maintain and update role beliefs for each player under hard constraints (exactly two evil players).
-   - **Mechanism**: Variable nodes $\mathcal{R} = \{r_1,\dots,r_6\}$ represent player roles (0 = good / 1 = evil); game-state variables $\mathcal{S}$ encode team compositions, votes, and mission outcomes. Factor functions are approximated by neural networks $F = p(r_j|\{p_i,v_i,o_i\})$ trained on 100,000 historical game records.
-   - **Design Motivation**: Factor graphs naturally support hard-constraint reasoning and incremental belief updates, offering greater precision and reliability than token-level LLM inference.
+    - **Function**: Maintain and update role beliefs for each player under hard constraints (exactly two evil players).
+    - **Mechanism**: Variable nodes $\mathcal{R} = \{r_1,\dots,r_6\}$ represent player roles (0 = good / 1 = evil); game-state variables $\mathcal{S}$ encode team compositions, votes, and mission outcomes. Factor functions are approximated by neural networks $F = p(r_j|\{p_i,v_i,o_i\})$ trained on 100,000 historical game records.
+    - **Design Motivation**: Factor graphs naturally support hard-constraint reasoning and incremental belief updates, offering greater precision and reliability than token-level LLM inference.
 
 2. **LLM Language Prior Integration**
 
-   - **Function**: Incorporate unstructured social signals from dialogue into probabilistic inference.
-   - **Mechanism**: The LLM judges whether each player's suspicion level should "increase / decrease / remain unchanged" ($\delta_j^t$), which is converted into a prior $p(r_j^t) = 0.5 \pm \beta^t$, where $\beta^t$ increases over the course of the game (conservative early, confident late).
-   - **Design Motivation**: Structured game-state data does not capture dialogue, yet dialogue contains critical social reasoning cues such as contradictions and coalition signals.
+    - **Function**: Incorporate unstructured social signals from dialogue into probabilistic inference.
+    - **Mechanism**: The LLM judges whether each player's suspicion level should "increase / decrease / remain unchanged" ($\delta_j^t$), which is converted into a prior $p(r_j^t) = 0.5 \pm \beta^t$, where $\beta^t$ increases over the course of the game (conservative early, confident late).
+    - **Design Motivation**: Structured game-state data does not capture dialogue, yet dialogue contains critical social reasoning cues such as contradictions and coalition signals.
 
 3. **Neural Network Approximation of Factor Functions**
 
-   - **Function**: Circumvent the intractability of high-dimensional conditional probability tables.
-   - **Mechanism**: A simple feedforward network estimates $p(r_j|\text{game state})$ using ego-centric input transformations to eliminate positional bias and shared network weights to eliminate inter-factor bias. Only 2,500–5,000 game records are required for training.
-   - **Design Motivation**: Traditional probability tables are infeasible in high-dimensional settings; neural approximations provide flexibility while remaining data-efficient.
+    - **Function**: Circumvent the intractability of high-dimensional conditional probability tables.
+    - **Mechanism**: A simple feedforward network estimates $p(r_j|\text{game state})$ using ego-centric input transformations to eliminate positional bias and shared network weights to eliminate inter-factor bias. Only 2,500–5,000 game records are required for training.
+    - **Design Motivation**: Traditional probability tables are infeasible in high-dimensional settings; neural approximations provide flexibility while remaining data-efficient.
 
 ### Loss & Training
 

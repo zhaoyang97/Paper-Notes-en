@@ -51,21 +51,21 @@ This paper demonstrates that the apparent "English preference" in multilingual R
 
 1. **DeLP: Debiased Language Preference Metric**
 
-   - **Function**: Disentangle the model's intrinsic language preference from structural confounds.
-   - **Mechanism**: Decompose raw preference into a prior-explained component (exposure, gold availability, and cultural priors) and a residual (true preference). Ridge regression fits the priors as $s_e(L_q, L_d) \approx w^\top \phi(L_q, L_d) + \epsilon$; the residual $\epsilon$ constitutes the DeLP score.
-   - **Design Motivation**: Existing metrics conflate data distribution effects with model preference. DeLP isolates the model's true preference by explicitly regressing out known structural factors.
+    - **Function**: Disentangle the model's intrinsic language preference from structural confounds.
+    - **Mechanism**: Decompose raw preference into a prior-explained component (exposure, gold availability, and cultural priors) and a residual (true preference). Ridge regression fits the priors as $s_e(L_q, L_d) \approx w^\top \phi(L_q, L_d) + \epsilon$; the residual $\epsilon$ constitutes the DeLP score.
+    - **Design Motivation**: Existing metrics conflate data distribution effects with model preference. DeLP isolates the model's true preference by explicitly regressing out known structural factors.
 
 2. **Monolingual Alignment Discovery**
 
-   - **Function**: Reveal the retriever's intrinsic language preference pattern.
-   - **Mechanism**: Applying DeLP shows that apparent English preference diminishes substantially (from seemingly dominant to moderate), while the monolingual alignment signal strengthens—retrieval performs best when query and document languages match (e.g., a Japanese query retrieving from Japanese Wikipedia).
-   - **Design Motivation**: If the model's true preference is monolingual alignment rather than English, the English-pivot strategy merely exploits the abundance of English resources indirectly, rather than being the optimal approach.
+    - **Function**: Reveal the retriever's intrinsic language preference pattern.
+    - **Mechanism**: Applying DeLP shows that apparent English preference diminishes substantially (from seemingly dominant to moderate), while the monolingual alignment signal strengthens—retrieval performs best when query and document languages match (e.g., a Japanese query retrieving from Japanese Wikipedia).
+    - **Design Motivation**: If the model's true preference is monolingual alignment rather than English, the English-pivot strategy merely exploits the abundance of English resources indirectly, rather than being the optimal approach.
 
 3. **DELTA Query Augmentation Framework**
 
-   - **Function**: Guide query augmentation using debiased language preference signals.
-   - **Mechanism**: DeLP signals are used to dynamically identify the language set most preferred by the model for a given query. The query is then translated into these preferred languages, and the original and translated queries are fused for retrieval. This preserves the contextual information of the original script while maximizing the benefits of monolingual alignment.
-   - **Design Motivation**: Rather than blindly translating into English, DELTA selects the most advantageous languages based on the model's true preference. The framework is lightweight—operating solely at the query level without requiring modification of the retriever or corpus—and adapts dynamically.
+    - **Function**: Guide query augmentation using debiased language preference signals.
+    - **Mechanism**: DeLP signals are used to dynamically identify the language set most preferred by the model for a given query. The query is then translated into these preferred languages, and the original and translated queries are fused for retrieval. This preserves the contextual information of the original script while maximizing the benefits of monolingual alignment.
+    - **Design Motivation**: Rather than blindly translating into English, DELTA selects the most advantageous languages based on the model's true preference. The framework is lightweight—operating solely at the query level without requiring modification of the retriever or corpus—and adapts dynamically.
 
 ### Loss & Training
 

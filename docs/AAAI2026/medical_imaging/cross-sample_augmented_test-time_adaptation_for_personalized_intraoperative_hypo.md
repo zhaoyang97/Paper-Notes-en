@@ -206,6 +206,6 @@ Recall +9.56%, F1 +7.70%.
 - [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](../../ICCV2025/medical_imaging/progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
 - [\[AAAI 2026\] GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance](gp-molformer-sim_test_time_molecular_optimization_through_contextual_similarity_.md)
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
-- [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
+- [\[AAAI 2026\] Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification](provably_minimum-length_conformal_prediction_sets_for_ordinal_classification.md)
 
 <!-- RELATED:END -->

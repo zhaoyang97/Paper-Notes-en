@@ -2,10 +2,11 @@
 title: >-
   [Paper Note] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation
 description: >-
-  [ACL 2026][Causal Inference][Multilingual Counterfactuals] Systematically studies LLM multilingual counterfactual generation across six languages, finding translation paths yield higher label flip rates but require more edits, and multilingual CDA outperforms cross-lingual CDA.
+  [ACL 2026][Causal Inference][Multilingual Counterfactual Generation] This paper systematically studies LLM multilingual counterfactual generation across six languages (English, Arabic, German, Spanish, Hindi, Swahili), comparing direct generation and translation paths. Translation paths yield higher label flip rates but require more edits, four common error patterns are identified, and multilingual counterfactual data augmentation outperforms cross-lingual augmentation, especially for low-resource languages.
 tags:
   - ACL 2026
   - Causal Inference
+  - Multilingual Counterfactual Generation
   - Counterfactual Explanation
   - Data Augmentation
   - Cross-Lingual Consistency
@@ -59,7 +60,7 @@ This paper systematically studies LLM multilingual counterfactual generation acr
 - [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
 - [\[ACL 2026\] iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations](itag_inverse_design_for_natural_text_generation_with_accurate_causal_graph_annot.md)
 - [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
-- [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
 - [\[NeurIPS 2025\] LLM Interpretability with Identifiable Temporal-Instantaneous Representation](../../NeurIPS2025/causal_inference/llm_interpretability_with_identifiable_temporal-instantaneous_representation.md)
+- [\[ACL 2026\] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate](dialectic-med_mitigating_diagnostic_hallucinations_via_counterfactual_adversaria.md)
 
 <!-- RELATED:END -->

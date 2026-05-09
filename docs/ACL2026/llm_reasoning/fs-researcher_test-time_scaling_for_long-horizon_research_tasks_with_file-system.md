@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Deep Research] This paper presents FS-Researcher, a filesystem-based dual-agent deep research framework that uses a Context Builder to construct hierarchical knowledge bases and a Report Writer to draft reports section by section. By leveraging a persistent workspace to overcome context window limitations, it achieves 53.94 RACE (SOTA) on DeepResearch Bench and demonstrates a test-time scaling effect where context construction compute positively correlates with report quality.
+  [ACL 2026][LLM Reasoning][Deep Research] This paper proposes FS-Researcher, a file-system-based dual-agent framework for deep research. A Context Builder constructs a hierarchical knowledge base while a Report Writer composes reports section by section. By leveraging a persistent workspace to overcome context window limitations, the framework achieves 53.94 RACE (SOTA) on DeepResearch Bench and demonstrates a positive test-time scaling effect between context-building compute and report quality.
 tags:
   - ACL 2026
   - LLM Reasoning
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: cb97585618bde299
 ---
+
 # FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 
 **Conference**: ACL 2026
@@ -151,10 +152,10 @@ This paper presents a framework contribution and does not involve model training
 
 ## Related Papers
 
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
-- [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](../../ICLR2026/llm_reasoning/the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
 - [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](../../ICLR2026/llm_reasoning/atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[ICLR 2026\] Scaling Generalist Data-Analytic Agents](../../ICLR2026/llm_reasoning/scaling_generalist_data-analytic_agents.md)
+- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
 
 <!-- RELATED:END -->

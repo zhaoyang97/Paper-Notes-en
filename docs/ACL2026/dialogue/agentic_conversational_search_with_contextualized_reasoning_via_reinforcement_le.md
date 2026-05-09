@@ -51,21 +51,21 @@ At each conversational turn, ConvAgent receives the dialogue history $\mathcal{H
 
 1. **Information Gain Reward**:
 
-   - Function: Optimizes search query quality and the utilization of retrieved results.
-   - Mechanism: Measures the information overlap between retrieved passages and the ground-truth answer. F1-score is used for long answers; substring-match accuracy is used for short answers: $\mathcal{R}_{IG} = \mathcal{S}_{Info}(\{P_n\}_1^k, a_n^*)$
-   - Design Motivation: Final-answer-only rewards are too sparse; intermediate retrieval quality signals help the model learn better query rewriting strategies.
+    - Function: Optimizes search query quality and the utilization of retrieved results.
+    - Mechanism: Measures the information overlap between retrieved passages and the ground-truth answer. F1-score is used for long answers; substring-match accuracy is used for short answers: $\mathcal{R}_{IG} = \mathcal{S}_{Info}(\{P_n\}_1^k, a_n^*)$
+    - Design Motivation: Final-answer-only rewards are too sparse; intermediate retrieval quality signals help the model learn better query rewriting strategies.
 
 2. **Mixed-Initiative Action Reward**:
 
-   - Function: Trains the model to adopt the appropriate action (answer / clarify / abstain) at the right moment.
-   - Mechanism: Action decision-making is framed as a classification task. Rewards or penalties are assigned by detecting whether the generated sequence contains the correct action label (e.g., `<clarify>`, `<noanswer>`): +1 for correct, −0.5 for incorrect.
-   - Design Motivation: In conversational settings, not every turn requires a direct answer—sometimes user queries are ambiguous and warrant clarification; other times, insufficient evidence justifies abstention.
+    - Function: Trains the model to adopt the appropriate action (answer / clarify / abstain) at the right moment.
+    - Mechanism: Action decision-making is framed as a classification task. Rewards or penalties are assigned by detecting whether the generated sequence contains the correct action label (e.g., `<clarify>`, `<noanswer>`): +1 for correct, −0.5 for incorrect.
+    - Design Motivation: In conversational settings, not every turn requires a direct answer—sometimes user queries are ambiguous and warrant clarification; other times, insufficient evidence justifies abstention.
 
 3. **Utilization Mechanism for Clarification Outcomes**:
 
-   - Function: Leverages model-generated clarification questions to improve downstream task performance.
-   - Mechanism: The clarification question $q_n^c$ is concatenated with the rewritten query $q_n'$ for retrieval and also substitutes the original query for final answer generation.
-   - Design Motivation: Clarification should not merely be evaluated on whether a question was asked, but also on whether asking it yields downstream benefit.
+    - Function: Leverages model-generated clarification questions to improve downstream task performance.
+    - Mechanism: The clarification question $q_n^c$ is concatenated with the rewritten query $q_n'$ for retrieval and also substitutes the original query for final answer generation.
+    - Design Motivation: Clarification should not merely be evaluated on whether a question was asked, but also on whether asking it yields downstream benefit.
 
 ### Loss & Training
 

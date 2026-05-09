@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification
 description: >-
-  [ACL 2026][Causal Inference][Detoxification] CausalDetox uses Probability of Necessity and Sufficiency (PNS) as causal criterion to precisely locate toxicity-generating attention heads, achieving up to 5.34% toxicity reduction while preserving fluency.
+  [ACL 2026][Causal Inference][Detoxification] CausalDetox uses Probability of Necessity and Sufficiency (PNS) as causal criterion to precisely locate attention heads causally responsible for toxic content, applying local inference-time intervention and PNS-guided fine-tuning for detoxification, achieving up to 5.34% toxicity reduction while preserving language fluency.
 tags:
   - ACL 2026
   - Causal Inference
   - Detoxification
-  - Causal Inference
   - Attention Head Selection
+  - Inference-Time Intervention
   - PNS
 content_hash: b278ea3aac44667d
 ---
@@ -57,8 +57,8 @@ CausalDetox uses Probability of Necessity and Sufficiency (PNS) as causal criter
 
 - [\[ICLR 2026\] Copy-Paste to Mitigate Large Language Model Hallucinations](../../ICLR2026/causal_inference/copy-paste_to_mitigate_large_language_model_hallucinations.md)
 - [\[ACL 2026\] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size](better_and_worse_with_scale_how_contextual_entrainment_diverges_with_model_size.md)
-- [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
 - [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
+- [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
 
 <!-- RELATED:END -->

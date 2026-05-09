@@ -126,9 +126,9 @@ Linear probes are trained with an 80/20 train–validation split; layer and toke
 ## Related Papers
 
 - [\[ICLR 2026\] QKV Projections Require a Fraction of Their Memory](qkv_projections_require_a_fraction_of_their_memory.md)
+- [\[ACL 2026\] From Weights to Activations: Is Steering the Next Frontier of Adaptation?](../../ACL2026/model_compression/from_weights_to_activations_is_steering_the_next_frontier_of_adaptation.md)
 - [\[ICLR 2026\] LightMem: Lightweight and Efficient Memory-Augmented Generation](lightmem_lightweight_and_efficient_memory-augmented_generation.md)
-- [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
 - [\[ICLR 2026\] Draft-based Approximate Inference for LLMs](draft-based_approximate_inference_for_llms.md)
-- [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](../../AAAI2026/model_compression/failures_to_surface_harmful_contents_in_video_large_language_models.md)
+- [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
 
 <!-- RELATED:END -->

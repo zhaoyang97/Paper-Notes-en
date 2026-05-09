@@ -51,21 +51,21 @@ AutoReproduce operates in three phases: (1) **Literature Review** — a research
 
 1. **Paper Lineage Algorithm**
 
-   - **Function**: Mine implicit domain knowledge and implementation conventions from cited references.
-   - **Mechanism**: The research agent identifies the top-$k$ (default 3) most relevant papers from the citations of the source paper, prioritizing comparison baselines in the main experimental sections. Papers are retrieved and summarized via the ArXiv API; codebases are cloned via the GitHub API. The code agent selectively extracts key source files from each codebase based on paper summaries and task descriptions, constructing $\langle\text{summary, code}\rangle$ tuples as reference exemplars. For papers without publicly available code, only their summaries serve as the knowledge source.
-   - **Design Motivation**: Research is cumulative; new methods build on prior work, and the codebases in citation chains contain implementation standards not explicitly stated in papers.
+    - **Function**: Mine implicit domain knowledge and implementation conventions from cited references.
+    - **Mechanism**: The research agent identifies the top-$k$ (default 3) most relevant papers from the citations of the source paper, prioritizing comparison baselines in the main experimental sections. Papers are retrieved and summarized via the ArXiv API; codebases are cloned via the GitHub API. The code agent selectively extracts key source files from each codebase based on paper summaries and task descriptions, constructing $\langle\text{summary, code}\rangle$ tuples as reference exemplars. For papers without publicly available code, only their summaries serve as the knowledge source.
+    - **Design Motivation**: Research is cumulative; new methods build on prior work, and the codebases in citation chains contain implementation standards not explicitly stated in papers.
 
 2. **Three-Stage Code Development**
 
-   - **Function**: Complete reproduction from data processing through method implementation to experiment execution.
-   - **Mechanism**: (a) *Data Acquisition* — distinguishes standard benchmarks from custom datasets; infers key data attributes (tensor shape, dtype) via mini-batch sampling. (b) *Method Reproduction* — the code agent generates implementation code; the research agent cross-checks against paper summaries and provides corrective feedback. (c) *Experiment Execution* — validates the full experimental pipeline using an early-exit mechanism for rapid verification. Error diagnosis and code editing are decoupled into two separate steps.
-   - **Design Motivation**: Decoupling error analysis from code modification significantly improves debugging success rates.
+    - **Function**: Complete reproduction from data processing through method implementation to experiment execution.
+    - **Mechanism**: (a) *Data Acquisition* — distinguishes standard benchmarks from custom datasets; infers key data attributes (tensor shape, dtype) via mini-batch sampling. (b) *Method Reproduction* — the code agent generates implementation code; the research agent cross-checks against paper summaries and provides corrective feedback. (c) *Experiment Execution* — validates the full experimental pipeline using an early-exit mechanism for rapid verification. Error diagnosis and code editing are decoupled into two separate steps.
+    - **Design Motivation**: Decoupling error analysis from code modification significantly improves debugging success rates.
 
 3. **Sampling-Based Unit Testing**
 
-   - **Function**: Rapidly verify the executability of generated code.
-   - **Mechanism**: During the method reproduction phase, the code agent infers data-flow properties via mini-batch sampling and applies precise line-level modifications using an EDIT command rather than regenerating entire files.
-   - **Design Motivation**: Reduces token generation overhead and avoids the instability of full-file regeneration.
+    - **Function**: Rapidly verify the executability of generated code.
+    - **Mechanism**: During the method reproduction phase, the code agent infers data-flow properties via mini-batch sampling and applies precise line-level modifications using an EDIT command rather than regenerating entire files.
+    - **Design Motivation**: Reduces token generation overhead and avoids the instability of full-file regeneration.
 
 ### Loss & Training
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Reliable Evaluation Protocol for Low-Precision Retrieval
 description: >-
-  [ACL 2026][Other] Revealing spurious tie issues in low-precision retrieval evaluation, proposing two strategies—HPS high-precision scoring and TRM tie-aware metric—for reliable assessment
+  [ACL 2026][low-precision retrieval] This paper identifies that low-precision retrieval systems (e.g., binarized or quantized embeddings) suffer from a large number of spurious ties due to reduced score granularity, leading to highly unstable evaluation results. Two complementary strategies are proposed—High-Precision Scoring (HPS) and Tie-aware Retrieval Metrics (TRM)—to enable more reliable and consistent evaluation of low-precision retrieval systems.
 tags:
-  - ACL2026
-  - Others
+  - ACL 2026
+  - low-precision retrieval
+  - spurious ties
+  - evaluation protocol
+  - high-precision scoring
+  - tie-aware metrics
 date: 2026-05-08
 content_hash: f7d8364e9542aef5
 ---
+
 # Reliable Evaluation Protocol for Low-Precision Retrieval
 
 **Conference**: ACL 2026
@@ -118,10 +123,10 @@ The evaluation protocol consists of two independent but complementary components
 
 ## Related Papers
 
-- [\[ACL 2025\] Identifying Reliable Evaluation Metrics for Scientific Text Revision](../../ACL2025/others/reliable_eval_metrics_scientific.md)
-- [\[ACL 2025\] SEOE: A Scalable and Reliable Semantic Evaluation Framework for Open Domain Event Detection](../../ACL2025/others/seoe_semantic_eval.md)
-- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/others/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
-- [\[CVPR 2026\] What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁](../../CVPR2026/others/what_is_the_optimal_ranking_score_between_precision_and_recall_we_can_always_fin.md)
+- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/others/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](../../ICLR2026/others/exchangeability_gnn_representations.md)
+- [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](../../AAAI2026/others/toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
+- [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](../../AAAI2026/others/forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
 
 <!-- RELATED:END -->

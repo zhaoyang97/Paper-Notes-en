@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters
 description: >-
-  [ACL 2026][Recommender Systems] This paper proposes IceBreaker, a two-step "handshake" approach—resonance-aware interest distillation to capture trigger interests + interaction-oriented opening message generation with personalized preference alignment—to address the "first-message barrier" in conversational agents, achieving +1.84‰ active user days and +94.25‰ CTR in A/B tests on one of the world's largest conversational products.
+  [ACL 2026][Recommender Systems][proactive conversation initiation] This paper proposes IceBreaker, a two-step "handshake" framework—resonance-aware interest distillation to capture trigger interests, followed by interaction-oriented starter generation with personalized preference alignment—to address the "first-message barrier" in conversational agents. A/B testing on one of the world's largest conversational products yields +1.84‰ active days and +94.25‰ CTR.
 tags:
   - ACL 2026
   - Recommender Systems
-  - Personalized Conversation Initiation
-  - Interest Distillation
-  - Preference Alignment
-  - Cold Start
+  - proactive conversation initiation
+  - personalized session starter
+  - interest distillation
+  - preference alignment
+  - cold start
 date: 2026-05-08
 content_hash: b64d3f04a4261c0d
 ---
+
 # IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters
 
 **Conference**: ACL 2026
@@ -120,9 +122,9 @@ RID trains the resonance scorer via contrastive learning. ISG first warms up wit
 ## Related Papers
 
 - [\[ACL 2026\] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents](from_recall_to_forgetting_benchmarking_long-term_memory_for_personalized_agents.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
 - [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
+- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
 
 <!-- RELATED:END -->

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration
 description: >-
-  [ACL 2026][LLM Efficiency][Speculative Decoding] SpecBound suppresses shallow-layer false high-confidence predictions via layer-wise temperature annealing and adaptively controls draft depth/width with bounded speculation, achieving up to 2.33x lossless inference acceleration.
+  [ACL 2026][LLM Efficiency][Speculative Decoding] SpecBound suppresses shallow-layer false high-confidence predictions via layer-wise temperature annealing and designs a bounded speculation algorithm to adaptively control draft depth and width, achieving up to 2.33x inference acceleration while maintaining lossless output.
 tags:
   - ACL 2026
   - LLM Efficiency
@@ -10,6 +10,7 @@ tags:
   - Self-Draft
   - Early Exit
   - Confidence Calibration
+  - Inference Acceleration
 content_hash: 31313e65301c7e73
 ---
 

@@ -51,21 +51,21 @@ The SILO-BENCH evaluation pipeline consists of four stages: (1) **Data Partition
 
 1. **Three-Level Communication Complexity Task Suite**
 
-   - **Function**: Theoretically anchors task difficulty to ensure that performance differences are attributable to coordination demands.
-   - **Mechanism**: Level I (Aggregation)—each agent independently processes local data before aggregation; optimal topology is star-shaped (e.g., global maximum, voting). Level II (Mesh)—agent $i$'s computation depends on neighboring agents $i{-}1$ and $i{+}1$; optimal topology is a linear chain (e.g., prefix sum, sliding average). Level III (Global Shuffle)—any agent's output may depend on any other agent's information (e.g., distributed sorting, graph connectivity).
-   - **Design Motivation**: Task difficulty in existing benchmarks is ad hoc, making it impossible to distinguish whether failures stem from task complexity or coordination overhead.
+    - **Function**: Theoretically anchors task difficulty to ensure that performance differences are attributable to coordination demands.
+    - **Mechanism**: Level I (Aggregation)—each agent independently processes local data before aggregation; optimal topology is star-shaped (e.g., global maximum, voting). Level II (Mesh)—agent $i$'s computation depends on neighboring agents $i{-}1$ and $i{+}1$; optimal topology is a linear chain (e.g., prefix sum, sliding average). Level III (Global Shuffle)—any agent's output may depend on any other agent's information (e.g., distributed sorting, graph connectivity).
+    - **Design Motivation**: Task difficulty in existing benchmarks is ad hoc, making it impossible to distinguish whether failures stem from task complexity or coordination overhead.
 
 2. **Four-Dimensional Evaluation Metrics**
 
-   - **Function**: Simultaneously captures *what was done* and *how coordination proceeded*.
-   - **Mechanism**: Success Rate $S$ measures the proportion of cases where all agents converge to the correct answer; Partial Correctness Score $P$ provides a continuous measure of answer quality (the gap $P - S$ isolates failures in the reasoning integration stage); Token Consumption $C$ quantifies computational cost; Communication Density $D$ captures the intensity of inter-agent interaction.
-   - **Design Motivation**: Binary success rate underestimates partial progress; introducing PCS enables precise localization of the stage at which coordination breaks down.
+    - **Function**: Simultaneously captures *what was done* and *how coordination proceeded*.
+    - **Mechanism**: Success Rate $S$ measures the proportion of cases where all agents converge to the correct answer; Partial Correctness Score $P$ provides a continuous measure of answer quality (the gap $P - S$ isolates failures in the reasoning integration stage); Token Consumption $C$ quantifies computational cost; Communication Density $D$ captures the intensity of inter-agent interaction.
+    - **Design Motivation**: Binary success rate underestimates partial progress; introducing PCS enables precise localization of the stage at which coordination breaks down.
 
 3. **Role-Agnostic Design with Orthogonal Communication Protocols**
 
-   - **Function**: Isolates the contribution of communication architecture, avoiding interference from semantic role priors.
-   - **Mechanism**: All agents use the same model with no role assignment, receiving only task-structural prompts. Three communication protocols are varied orthogonally—P2P (directed messaging), BP (broadcast), and SFS (shared file system)—with agents autonomously deciding when, with whom, and what to share.
-   - **Design Motivation**: Role-specialized multi-agent systems cannot disentangle whether performance derives from role heuristics or coordination capability; a role-agnostic design measures genuine distributed computation ability.
+    - **Function**: Isolates the contribution of communication architecture, avoiding interference from semantic role priors.
+    - **Mechanism**: All agents use the same model with no role assignment, receiving only task-structural prompts. Three communication protocols are varied orthogonally—P2P (directed messaging), BP (broadcast), and SFS (shared file system)—with agents autonomously deciding when, with whom, and what to share.
+    - **Design Motivation**: Role-specialized multi-agent systems cannot disentangle whether performance derives from role heuristics or coordination capability; a role-agnostic design measures genuine distributed computation ability.
 
 ### Loss & Training
 

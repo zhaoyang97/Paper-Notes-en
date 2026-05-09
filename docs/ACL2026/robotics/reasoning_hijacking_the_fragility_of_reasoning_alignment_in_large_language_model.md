@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models
 description: >-
-  [ACL 2026][Robotics & Embodied AI][LLM Security] Introduces Reasoning Hijacking, a new attack paradigm that manipulates LLM reasoning logic via injected false decision criteria in the data channel, achieving high ASR while bypassing intent-detection-based defenses.
+  [ACL 2026][Robotics][Reasoning Hijacking] This paper introduces "Reasoning Hijacking," a new attack paradigm that manipulates LLM reasoning logic by injecting false decision criteria into the data channel rather than changing task goals, achieving high attack success rates while bypassing intent-detection-based defenses.
 tags:
   - ACL 2026
-  - Robotics & Embodied AI
+  - Robotics
   - Reasoning Hijacking
   - Indirect Prompt Injection
   - Criteria Attack

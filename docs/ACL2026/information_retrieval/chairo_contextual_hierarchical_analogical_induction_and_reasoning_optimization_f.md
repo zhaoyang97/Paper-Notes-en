@@ -50,21 +50,21 @@ This paper proposes ChAIRO, a Contextual Hierarchical Analogical Induction and R
 
 1. **Self-Augmented Analogical Reasoning Chain Generation (Stage 1)**
 
-   - **Function**: Internalizes analogical reasoning capability, enabling the model to autonomously generate relevant analogies for new samples.
-   - **Mechanism**: BGE-M3 encodes all training samples; semantically similar cases are retrieved for each sample. The sample, retrieved cases, and labels are fed to an LLM to generate analogical reasoning chains, followed by SFT training. After training, the model can autonomously generate analogical cases without external retrieval.
-   - **Design Motivation**: Cases retrieved by static RAG may not be optimal for a given sample; by internalizing this capability through SFT, the model can dynamically generate more relevant analogies.
+    - **Function**: Internalizes analogical reasoning capability, enabling the model to autonomously generate relevant analogies for new samples.
+    - **Mechanism**: BGE-M3 encodes all training samples; semantically similar cases are retrieved for each sample. The sample, retrieved cases, and labels are fed to an LLM to generate analogical reasoning chains, followed by SFT training. After training, the model can autonomously generate analogical cases without external retrieval.
+    - **Design Motivation**: Cases retrieved by static RAG may not be optimal for a given sample; by internalizing this capability through SFT, the model can dynamically generate more relevant analogies.
 
 2. **Auxiliary Model Rule Induction (Stage 2)**
 
-   - **Function**: Distills explicit, interpretable moderation rules from analogical cases.
-   - **Mechanism**: The Stage 1 model generates virtual analogical cases for each training sample; QwQ-32B then serves as the auxiliary reasoning model to induce textual moderation rules from the original sample and its analogical cases. Category descriptions within the induced rules are automatically validated against ground-truth labels, and inconsistent samples are discarded.
-   - **Design Motivation**: Analogical cases provide contextual grounding, yielding more precise and targeted rules than those generated from single instances alone (+4.5% F1).
+    - **Function**: Distills explicit, interpretable moderation rules from analogical cases.
+    - **Mechanism**: The Stage 1 model generates virtual analogical cases for each training sample; QwQ-32B then serves as the auxiliary reasoning model to induce textual moderation rules from the original sample and its analogical cases. Category descriptions within the induced rules are automatically validated against ground-truth labels, and inconsistent samples are discarded.
+    - **Design Motivation**: Analogical cases provide contextual grounding, yielding more precise and targeted rules than those generated from single instances alone (+4.5% F1).
 
 3. **Hierarchical Rule Injection and Final Fine-Tuning (Stage 3)**
 
-   - **Function**: Integrates analogies, rules, and reasoning into a unified structured reasoning capability.
-   - **Mechanism**: Special tokens structure the reasoning chain into three layers: `<RULE>` (induced rules), `<ANALOGY>` (analogical cases), and `<REASONING>` (holistic reasoning). A second-round SFT is performed on top of the Stage 1 parameters.
-   - **Design Motivation**: The hierarchical structure explicitly guides the model on when to apply rules, when to reference analogies, and when to perform reasoning, thereby improving interpretability and consistency.
+    - **Function**: Integrates analogies, rules, and reasoning into a unified structured reasoning capability.
+    - **Mechanism**: Special tokens structure the reasoning chain into three layers: `<RULE>` (induced rules), `<ANALOGY>` (analogical cases), and `<REASONING>` (holistic reasoning). A second-round SFT is performed on top of the Stage 1 parameters.
+    - **Design Motivation**: The hierarchical structure explicitly guides the model on when to apply rules, when to reference analogies, and when to perform reasoning, thereby improving interpretability and consistency.
 
 ## Key Experimental Results
 

@@ -51,21 +51,21 @@ Jargon operates in three phases: (1) **Establish a security research context** �
 
 1. **Hierarchical Vulnerability Structure: Vertical vs. General Unlocking**
 
-   - **Function**: Reveals two mechanisms by which domain contexts influence LLM safety boundaries.
-   - **Mechanism**: *Vertical unlocking* — domain-specific papers (e.g., chemistry) yield significantly higher attack scores on domain-relevant harmful queries (e.g., chemical weapons) than on unrelated categories, producing a pronounced diagonal pattern in the heat map. *General unlocking* — a single jailbreak research paper applied across all 8 threat categories achieves attack scores that universally meet or exceed the diagonal level, because security research inherently involves discussing cross-category threats.
-   - **Design Motivation**: This hierarchical structure explains why security research contexts are more dangerous than ordinary domain contexts — the "legitimacy" of the former extends across all harmful categories.
+    - **Function**: Reveals two mechanisms by which domain contexts influence LLM safety boundaries.
+    - **Mechanism**: *Vertical unlocking* — domain-specific papers (e.g., chemistry) yield significantly higher attack scores on domain-relevant harmful queries (e.g., chemical weapons) than on unrelated categories, producing a pronounced diagonal pattern in the heat map. *General unlocking* — a single jailbreak research paper applied across all 8 threat categories achieves attack scores that universally meet or exceed the diagonal level, because security research inherently involves discussing cross-category threats.
+    - **Design Motivation**: This hierarchical structure explains why security research contexts are more dangerous than ordinary domain contexts — the "legitimacy" of the former extends across all harmful categories.
 
 2. **Multi-turn Trust Building + Query Variant Generation**
 
-   - **Function**: Systematically exploit general unlocking to conduct attacks.
-   - **Mechanism**: The first $k$ turns (typically $k=2$) consist of benign academic questions about the paper, establishing a cooperative pattern. From turn $k+1$ onward, the harmful target $g$ is reframed as an academic case study. Because the model's refusal decision is unreliable in the gray zone, $V$ query variants are generated for each attack (half paraphrased, half reframed), evaluated in parallel, and the response with the highest harm score is selected.
-   - **Design Motivation**: Query variant generation is critical — ablation experiments show it raises ASR on GPT-5.2 from 54% to 93%.
+    - **Function**: Systematically exploit general unlocking to conduct attacks.
+    - **Mechanism**: The first $k$ turns (typically $k=2$) consist of benign academic questions about the paper, establishing a cooperative pattern. From turn $k+1$ onward, the harmful target $g$ is reframed as an academic case study. Because the model's refusal decision is unreliable in the gray zone, $V$ query variants are generated for each attack (half paraphrased, half reframed), evaluated in parallel, and the response with the highest harm score is selected.
+    - **Design Motivation**: Query variant generation is critical — ablation experiments show it raises ASR on GPT-5.2 from 54% to 93%.
 
 3. **Trajectory Memory**
 
-   - **Function**: Accumulate and reuse successful attack experiences across targets.
-   - **Mechanism**: A buffer of successful attack trajectories is maintained. When attacking a new target, semantically similar successful trajectories are retrieved via embedding cosine similarity and used as few-shot demonstrations. The buffer is initialized with seed trajectories and grows as attacks succeed.
-   - **Design Motivation**: Successful attack strategies tend to transfer to semantically related targets; trajectory memory enables cumulative improvement in attack efficiency.
+    - **Function**: Accumulate and reuse successful attack experiences across targets.
+    - **Mechanism**: A buffer of successful attack trajectories is maintained. When attacking a new target, semantically similar successful trajectories are retrieved via embedding cosine similarity and used as few-shot demonstrations. The buffer is initialized with seed trajectories and grows as attacks succeed.
+    - **Design Motivation**: Successful attack strategies tend to transfer to semantically related targets; trajectory memory enables cumulative improvement in attack efficiency.
 
 ### Loss & Training
 
@@ -145,7 +145,7 @@ On the defense side: (1) **Policy-guided safeguarding** — a custom safety poli
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](../../NeurIPS2025/llm_alignment/llm_safety_alignment_is_divergence_estimation_in_disguise.md)
 - [\[ICLR 2026\] Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment](../../ICLR2026/llm_alignment/align_once_benefit_multilingually_enforcing_multilingual_consistency_for_llm_saf.md)
+- [\[ACL 2026\] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](star-teaming_a_strategy-response_multiplex_network_approach_to_automated_llm_red.md)
 - [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](../../AAAI2026/llm_alignment/safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
-- [\[NeurIPS 2025\] Preference Learning with Lie Detectors can Induce Honesty or Evasion](../../NeurIPS2025/llm_alignment/preference_learning_with_lie_detectors_can_induce_honesty_or_evasion.md)
 
 <!-- RELATED:END -->

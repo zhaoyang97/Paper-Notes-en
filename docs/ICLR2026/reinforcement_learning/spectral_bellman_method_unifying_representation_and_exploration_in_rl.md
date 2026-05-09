@@ -166,6 +166,6 @@ Covariance matrices are updated via exponential moving averages to ensure stabil
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
-- [\[ICLR 2026\] Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator](emergence_of_spatial_representation_in_an_actor-critic_agent_with_hippocampus-in.md)
+- [\[ICLR 2026\] unsupervised learning of efficient exploration pre-training adaptive policies vi](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
 
 <!-- RELATED:END -->

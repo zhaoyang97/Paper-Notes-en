@@ -178,7 +178,7 @@ The depth of biological knowledge integration is outstanding, the design philoso
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/medical_imaging/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](../../NeurIPS2025/medical_imaging/janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
 - [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
+- [\[ACL 2026\] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](../../ACL2026/medical_imaging/hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)
 - [\[AAAI 2026\] From Policy to Logic for Efficient and Interpretable Coverage Assessment](from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment.md)
-- [\[AAAI 2026\] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows](efficient_chromosome_parallelization_for_precision_medicine_genomic_workflows.md)
 
 <!-- RELATED:END -->

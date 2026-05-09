@@ -50,21 +50,21 @@ Three-stage data synthesis (ReMixer) → reasoning-intensity adaptive training (
 
 1. **ReMixer Data Synthesis (De-trivialization)**
 
-   - **Function**: Generate 82K high-quality, non-trivial training samples for reasoning-intensive retrieval.
-   - **Mechanism**: Three stages—(1) *Conditioned query generation*: Qwen2.5-72B generates long, reasoning-demanding queries from source documents, with diversity introduced via query-length sampling and user-education-level sampling; (2) *Source-document-excluded candidate mining*: the source document $d_q^*$ is explicitly excluded, and an off-the-shelf retriever retrieves candidates $\mathcal{C}_q \leftarrow \text{Top-k}\{\phi(q,d) \mid D/d_q^*\}$; (3) *Reasoning-augmented relevance annotation*: a distilled reasoning LLM performs three-step annotation (query analysis → document analysis → relevance judgment) on a 1–5 scale.
-   - **Design Motivation**: Excluding the source document breaks the trivial query–document link, forcing positive samples to be documents that are *substantively relevant but lexically dissimilar*, so that the model must reason to discover relevance.
+    - **Function**: Generate 82K high-quality, non-trivial training samples for reasoning-intensive retrieval.
+    - **Mechanism**: Three stages—(1) *Conditioned query generation*: Qwen2.5-72B generates long, reasoning-demanding queries from source documents, with diversity introduced via query-length sampling and user-education-level sampling; (2) *Source-document-excluded candidate mining*: the source document $d_q^*$ is explicitly excluded, and an off-the-shelf retriever retrieves candidates $\mathcal{C}_q \leftarrow \text{Top-k}\{\phi(q,d) \mid D/d_q^*\}$; (3) *Reasoning-augmented relevance annotation*: a distilled reasoning LLM performs three-step annotation (query analysis → document analysis → relevance judgment) on a 1–5 scale.
+    - **Design Motivation**: Excluding the source document breaks the trivial query–document link, forcing positive samples to be documents that are *substantively relevant but lexically dissimilar*, so that the model must reason to discover relevance.
 
 2. **Redapter Adaptive Training**
 
-   - **Function**: Dynamically reweight training samples according to their reasoning intensity, directing the model's attention toward difficult examples.
-   - **Mechanism**: Reasoning intensity is defined as $\text{RI}_\theta(s) = \min(\mathcal{L}_{q,D} / \mathcal{L}_{q',D}, \kappa)$, where $q'$ is the reasoning-augmented query. A large ratio indicates that the reasoning rewrite substantially aids retrieval, implying the sample requires deeper reasoning to retrieve correctly. Reasoning intensity is normalized within a batch and used as a per-sample weight in the InfoNCE loss.
-   - **Design Motivation**: Continuing to train on easy samples after they have saturated is wasteful; difficult samples warrant more learning opportunities. Adaptive weighting allocates computational resources toward the most informative samples.
+    - **Function**: Dynamically reweight training samples according to their reasoning intensity, directing the model's attention toward difficult examples.
+    - **Mechanism**: Reasoning intensity is defined as $\text{RI}_\theta(s) = \min(\mathcal{L}_{q,D} / \mathcal{L}_{q',D}, \kappa)$, where $q'$ is the reasoning-augmented query. A large ratio indicates that the reasoning rewrite substantially aids retrieval, implying the sample requires deeper reasoning to retrieve correctly. Reasoning intensity is normalized within a batch and used as a per-sample weight in the InfoNCE loss.
+    - **Design Motivation**: Continuing to train on easy samples after they have saturated is wasteful; difficult samples warrant more learning opportunities. Adaptive weighting allocates computational resources toward the most informative samples.
 
 3. **Multi-Backbone Implementation**
 
-   - **Function**: Validate the generality of the proposed method across different LLM backbones and scales.
-   - **Mechanism**: ReasonEmbed is implemented on three backbones—Qwen3-4B, Qwen3-8B, and Llama-3.1-8B—all initialized from MSMARCO pre-trained checkpoints.
-   - **Design Motivation**: Demonstrates that performance gains stem from the data pipeline and training strategy rather than any specific model architecture.
+    - **Function**: Validate the generality of the proposed method across different LLM backbones and scales.
+    - **Mechanism**: ReasonEmbed is implemented on three backbones—Qwen3-4B, Qwen3-8B, and Llama-3.1-8B—all initialized from MSMARCO pre-trained checkpoints.
+    - **Design Motivation**: Demonstrates that performance gains stem from the data pipeline and training strategy rather than any specific model architecture.
 
 ### Loss & Training
 

@@ -130,7 +130,7 @@ Building on the Moral Machine experimental framework (an autonomous driving vari
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](../../ACL2026/llm_reasoning/chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 - [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
 - [\[ICLR 2026\] Annotation-Efficient Universal Honesty Alignment](../../ICLR2026/llm_reasoning/annotation-efficient_universal_honesty_alignment.md)
+- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](../../ACL2026/llm_reasoning/taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
 - [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
-- [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
 
 <!-- RELATED:END -->

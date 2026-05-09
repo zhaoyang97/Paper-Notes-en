@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 description: >-
-  [ACL 2026][Sequential Recommendation] This paper introduces HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Built by merging Amazon Reviews datasets, it constructs a unified interaction history spanning 54M users and 35M items. The benchmark features a four-quadrant evaluation protocol decoupled along temporal and user dimensions, revealing that models like BERT4Rec perform strongly in-distribution but degrade significantly under temporal extrapolation and unseen-user scenarios. Additionally, LLMs do not consistently outperform specialized architectures in user behavior modeling.
+  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper presents HORIZON, the first fully open-source large-scale cross-domain long-term recommendation benchmark. Built by merging all categories of Amazon Reviews into a unified interaction history covering 54M users and 35M items, HORIZON introduces a four-quadrant evaluation protocol that orthogonally decouples the temporal and user axes. The benchmark reveals that models such as BERT4Rec perform strongly in-distribution but degrade significantly under temporal extrapolation and unseen-user settings, and that LLMs do not consistently outperform dedicated architectures for user behaviour modeling.
 tags:
   - ACL 2026
+  - Recommender Systems
   - Sequential Recommendation
   - Cross-Domain User Modeling
-  - Long-Term Behavior Prediction
+  - Long-Term Behaviour Prediction
   - Temporal Generalization
-  - Recommender Systems
+  - LLM-based Recommendation
 date: 2026-05-08
 content_hash: d54d3d2f383c2e43
 ---
+
 # HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 
 **Conference**: ACL 2026
@@ -140,7 +142,7 @@ In Task 1, conventional models are trained using the standard RecBole framework.
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
-- [\[NeurIPS 2025\] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints](../../NeurIPS2025/recommender/wide-horizon_thinking_and_simulation-based_evaluation_for_real-world_llm_plannin.md)
+- [\[ACL 2026\] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents](decisive_guiding_user_decisions_with_optimal_preference_elicitation_from_unstruc.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](../../AAAI2026/recommender/length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
 
 <!-- RELATED:END -->

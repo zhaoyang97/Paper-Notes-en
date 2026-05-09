@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization
 description: >-
-  [ACL 2026][Object Detection][LLM Generated Text Detection] Proposes GigaCheck, a dual-strategy framework: document-level classification using a fine-tuned LLM, and segment-level detection that innovatively treats AI-generated text spans as "objects," achieving end-to-end character-level localization via a DETR-like architecture.
+  [ACL 2026][Object Detection][LLM-generated text detection] GigaCheck is proposed as a dual-strategy framework: document-level classification via fine-tuned LLM, and span-level detection that innovatively treats AI-generated text spans as "objects," employing a DETR-like architecture for end-to-end character-level localization.
 tags:
   - ACL 2026
   - Object Detection
-  - LLM Generated Text Detection
-  - Object Detection Paradigm
+  - LLM-generated text detection
+  - object detection paradigm
   - DETR
-  - Text Span Localization
-  - Human-AI Collaborative Text
+  - text span localization
+  - human-machine collaborative text
 date: 2026-05-08
 content_hash: 83ff1a4f6d71201f
 ---
+
 # GigaCheck: Detecting LLM-generated Content via Object-Centric Span Localization
 
 **Conference**: ACL 2026
@@ -123,8 +124,8 @@ The training loss is a weighted sum of L1, gIoU, and Focal Loss, computed separa
 
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](../../CVPR2026/object_detection/span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](../../CVPR2026/object_detection/mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/object_detection/zero-shot_detection_of_ai-generated_images.md)
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-based Separation for Open World Object Detection](../../CVPR2026/object_detection/detecting_unknown_objects_via_energy-based_separation_for_open_world_object_dete.md)
-- [\[ECCV 2024\] Online Temporal Action Localization with Memory-Augmented Transformer](../../ECCV2024/object_detection/online_temporal_action_localization_with_memory-augmented_transformer.md)
+- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2026/object_detection/show_dont_tell_detecting_novel_objects_by_watching_human_videos.md)
+- [\[NeurIPS 2025\] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](../../NeurIPS2025/object_detection/detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r.md)
 
 <!-- RELATED:END -->

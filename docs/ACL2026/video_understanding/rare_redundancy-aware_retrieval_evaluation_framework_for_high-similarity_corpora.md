@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora
 description: >-
-  [ACL 2026][Video Understanding][Redundancy-Aware Retrieval] This paper proposes the RARE framework, which tracks cross-document redundancy by decomposing documents into atomic facts and designs CRRF (Criteria-Ranked Reciprocal Fusion) to stabilize LLM multi-criteria judgments. It constructs the RedQA benchmark on high-redundancy enterprise corpora (finance/legal/patent), revealing that mainstream retrievers suffer a sharp drop in PerfRecall@10 from 66.4% to 5.0–27.9% under 4-hop high-overlap settings.
+  [ACL 2026][Video Understanding][Redundancy-aware retrieval] This paper proposes the RARE framework, which tracks cross-document redundancy by decomposing documents into atomic facts and introduces CRRF (Criterion-separated Reciprocal Rank Fusion) to stabilize multi-criteria LLM judgments. The framework constructs the RedQA benchmark over high-redundancy enterprise corpora in finance, legal, and patent domains, revealing that mainstream retrievers suffer a dramatic collapse in PerfRecall@10 from 66.4% to 5.0–27.9% under 4-hop high-overlap settings.
 tags:
   - ACL 2026
   - Video Understanding
-  - Redundancy-Aware Retrieval
-  - High-Similarity Corpus
-  - Multi-Hop Retrieval Evaluation
-  - Enterprise RAG
-  - Atomic Fact Decomposition
+  - Redundancy-aware retrieval
+  - high-similarity corpora
+  - multi-hop retrieval evaluation
+  - enterprise RAG
+  - atomic fact decomposition
 date: 2026-05-08
 content_hash: f48fdb9e0711cb52
 ---
+
 # RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora
 
 **Conference**: ACL 2026
@@ -131,10 +132,10 @@ RARE is a data construction framework and does not involve end-to-end training. 
 
 ## Related Papers
 
+- [\[ICLR 2026\] FuncBenchGen: A Contamination-Free Controllable Evaluation Framework for Reliable Benchmarking](../../ICLR2026/video_understanding/towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
 - [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](../../CVPR2026/video_understanding/ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
-- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
 - [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](vill-e_video_llm_embeddings_for_retrieval.md)
+- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
 - [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
-- [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
 
 <!-- RELATED:END -->

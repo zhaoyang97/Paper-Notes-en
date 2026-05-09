@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Generating Effective CoT Traces for Mitigating Causal Hallucination
 description: >-
-  [ACL 2026][LLM Reasoning][Causal Hallucination] This paper first proposes the Causal Hallucination Rate (CHR) metric to quantify small LLMs' tendency to over-predict causal relations in event causality identification, then identifies two key criteria for effective CoT data through systematic experiments (sufficiently long semantic explanations + distribution alignment with the target model), and designs a low-cost CoT data generation pipeline that reduces Qwen2.5-1.5B's CHR from 83.54% to 6.26% while improving average accuracy to 66.00%.
+  [ACL 2026][LLM Reasoning][causal hallucination] This paper first proposes the Causal Hallucination Rate (CHR) metric to quantify the tendency of small LLMs to over-predict causal relations in event causal identification (ECI). Through systematic experiments, two key criteria for effective CoT data are identified—sufficiently long semantic explanations paired with a distribution aligned to the target model—and a low-cost CoT data generation pipeline is designed accordingly. The pipeline reduces CHR of Qwen2.5-1.5B from 83.54% to 6.26% while improving mean accuracy to 66.00%.
 tags:
   - ACL 2026
   - LLM Reasoning
-  - Causal Hallucination
-  - Chain-of-Thought
-  - Event Causality Identification
-  - Small Model Fine-tuning
-  - Data Generation
+  - causal hallucination
+  - chain-of-thought
+  - event causal identification
+  - small model fine-tuning
+  - data generation
 date: 2026-05-08
 content_hash: f659f25fbcfe37bd
 ---
+
 # Generating Effective CoT Traces for Mitigating Causal Hallucination
 
 **Conference**: ACL 2026
@@ -122,10 +123,10 @@ LoRA fine-tuning is performed using the SFTTrainer from the TRL framework: batch
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](../../NeurIPS2025/llm_reasoning/is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
 - [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
+- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
 - [\[ACL 2026\] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval](towards_effective_in-context_cross-domain_knowledge_transfer_via_domain-invarian.md)
-- [\[ICLR 2026\] Segment-Level Attribution for Selective Learning of Long Reasoning Traces](../../ICLR2026/llm_reasoning/segment-level_attribution_for_selective_learning_of_long_reasoning_traces.md)
-- [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](../../CVPR2026/llm_reasoning/understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
-- [\[ICLR 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](../../ICLR2026/llm_reasoning/dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
+- [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
 
 <!-- RELATED:END -->

@@ -51,21 +51,21 @@ The construction pipeline of SecureVibeBench proceeds as follows: (1) collect 4,
 
 1. **Vulnerability Introduction Identification**
 
-   - *Function*: Precisely locate the commit at which a human developer first introduced a vulnerability.
-   - *Mechanism*: A cascaded two-stage approach is applied—SAST tools (CodeQL/Semgrep) first perform static analysis to rapidly narrow down candidate commits, followed by dynamic validation using PoV programs for confirmation. Binary search combined with dynamic validation is used for cases beyond static analysis coverage.
-   - *Design Motivation*: The commit immediately preceding a fix is not necessarily the vulnerability-introducing commit, as vulnerabilities are typically introduced much earlier. Using the true introduction point is essential to reconstruct the same coding scenario faced by the human developer.
+    - *Function*: Precisely locate the commit at which a human developer first introduced a vulnerability.
+    - *Mechanism*: A cascaded two-stage approach is applied—SAST tools (CodeQL/Semgrep) first perform static analysis to rapidly narrow down candidate commits, followed by dynamic validation using PoV programs for confirmation. Binary search combined with dynamic validation is used for cases beyond static analysis coverage.
+    - *Design Motivation*: The commit immediately preceding a fix is not necessarily the vulnerability-introducing commit, as vulnerabilities are typically introduced much earlier. Using the true introduction point is essential to reconstruct the same coding scenario faced by the human developer.
 
 2. **Four-Category Evaluation Schema**
 
-   - *Function*: Comprehensively classify the quality of agent-generated code.
-   - *Mechanism*: Agent outputs are classified into four categories—IC (functionally incorrect), C-VUL (correct but containing the known vulnerability), C-SUS (correct but introducing new security risks), and C-SEC (correct and secure). Functional correctness is assessed via differential testing; security is evaluated by PoV validation for known vulnerabilities and SAST for newly introduced risks.
-   - *Design Motivation*: Detecting only known vulnerabilities is insufficient—an agent may avoid the original vulnerability while simultaneously introducing entirely new security issues.
+    - *Function*: Comprehensively classify the quality of agent-generated code.
+    - *Mechanism*: Agent outputs are classified into four categories—IC (functionally incorrect), C-VUL (correct but containing the known vulnerability), C-SUS (correct but introducing new security risks), and C-SEC (correct and secure). Functional correctness is assessed via differential testing; security is evaluated by PoV validation for known vulnerabilities and SAST for newly introduced risks.
+    - *Design Motivation*: Detecting only known vulnerabilities is insufficient—an agent may avoid the original vulnerability while simultaneously introducing entirely new security issues.
 
 3. **Repository-Level Multi-File Editing Task Format**
 
-   - *Function*: Reflect realistic software maintenance scenarios.
-   - *Mechanism*: Given a repository and a natural language requirement description, the agent must perform edits across multiple files to implement the desired functionality. The 105 tasks span 41 projects, with repositories of substantial average scale.
-   - *Design Motivation*: Function-level completion diverges greatly from real programming practice; repository-level multi-file editing better captures the security challenges of actual AI-assisted software development.
+    - *Function*: Reflect realistic software maintenance scenarios.
+    - *Mechanism*: Given a repository and a natural language requirement description, the agent must perform edits across multiple files to implement the desired functionality. The 105 tasks span 41 projects, with repositories of substantial average scale.
+    - *Design Motivation*: Function-level completion diverges greatly from real programming practice; repository-level multi-file editing better captures the security challenges of actual AI-assisted software development.
 
 ## Key Experimental Results
 

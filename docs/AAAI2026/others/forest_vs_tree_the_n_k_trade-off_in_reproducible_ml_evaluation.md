@@ -131,6 +131,6 @@ Not applicable (this paper is a study in evaluation methodology and does not inv
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](extreme_value_monte_carlo_tree_search_for_classical_planning.md)
 - [\[AAAI 2026\] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices](dfdt_dynamic_fast_decision_tree_for_iot_data_stream_mining_on_edge_devices.md)
 - [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](automated_reproducibility_has_a_problem_statement_problem.md)
-- [\[ICCV 2025\] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](../../ICCV2025/others/failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)
+- [\[ACL 2026\] Reliable Evaluation Protocol for Low-Precision Retrieval](../../ACL2026/others/reliable_evaluation_protocol_for_low-precision_retrieval.md)
 
 <!-- RELATED:END -->

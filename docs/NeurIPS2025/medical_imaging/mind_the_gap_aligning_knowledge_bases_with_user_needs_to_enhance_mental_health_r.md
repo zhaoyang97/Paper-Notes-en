@@ -133,9 +133,9 @@ where $\alpha = 1.5$ amplifies the influence of weakly covered topics.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
-- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](../../AAAI2026/medical_imaging/voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
 - [\[ICLR 2026\] BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases](../../ICLR2026/medical_imaging/biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases.md)
+- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](../../AAAI2026/medical_imaging/voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
 - [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
-- [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
+- [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](../../ACL2026/medical_imaging/measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
 
 <!-- RELATED:END -->

@@ -138,6 +138,6 @@ TPRU-7B demonstrates substantial improvements on LEGO-Puzzles, reflecting enhanc
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
 - [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
-- [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
+- [\[ICLR 2026\] When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift](when_sensors_fail_temporal_sequence_models_for_robust_ppo_under_sensor_drift.md)
 
 <!-- RELATED:END -->

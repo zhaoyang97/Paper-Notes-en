@@ -50,21 +50,21 @@ The German definite article system (3 genders × 4 cases = 12 slots, 6 article f
 
 1. **Gradiend Gradient Feature Learning**
 
-   - *Function*: Learns a compressed one-dimensional feature direction for a specific article transformation.
-   - *Mechanism*: Given a transformation between two gender–case slots $z_1, z_2$ (e.g., masculine nominative *der* ↔ feminine nominative *die*), gradients are collected in both directions — factual-target gradient $\nabla^F$ and alternative-target gradient $\nabla^A$. An encoder is trained to compress the gradient difference $\nabla^\Delta = \nabla^F - \nabla^A$ into a scalar $h \in [-1, 1]$ (+1 for one direction, −1 for the other), and a decoder reconstructs the gradient from the scalar. Training data from all non-target slots are treated as identity pairs (factual = alternative), enforcing $h \approx 0$.
-   - *Design Motivation*: The one-dimensional bottleneck ensures that the most dominant update direction is captured, while the identity-pair constraint ensures that the learned direction is specific to the target transformation rather than a global perturbation.
+    - *Function*: Learns a compressed one-dimensional feature direction for a specific article transformation.
+    - *Mechanism*: Given a transformation between two gender–case slots $z_1, z_2$ (e.g., masculine nominative *der* ↔ feminine nominative *die*), gradients are collected in both directions — factual-target gradient $\nabla^F$ and alternative-target gradient $\nabla^A$. An encoder is trained to compress the gradient difference $\nabla^\Delta = \nabla^F - \nabla^A$ into a scalar $h \in [-1, 1]$ (+1 for one direction, −1 for the other), and a decoder reconstructs the gradient from the scalar. Training data from all non-target slots are treated as identity pairs (factual = alternative), enforcing $h \approx 0$.
+    - *Design Motivation*: The one-dimensional bottleneck ensures that the most dominant update direction is captured, while the identity-pair constraint ensures that the learned direction is specific to the target transformation rather than a global perturbation.
 
 2. **Three Complementary Analytical Perspectives**
 
-   - *Function*: Assess rule-based encoding vs. memorization from mutually complementary angles.
-   - *Mechanism*: (a) *Encoder analysis* — examines whether gradients from non-target slots are also encoded to non-zero values (under rule-based encoding, these should be zero); (b) *Probability intervention* — applies the learned direction to model parameters and checks whether article probability changes are confined to the target slot (LR), systematically extend to slots sharing the same gender or case dimension (GR), or spill over to unrelated slots sharing the same surface article form (SO); (c) *Top-$k$ parameter overlap* — compares the most important parameters across different transformations to assess whether they overlap substantially.
-   - *Design Motivation*: The three perspectives provide complementary evidence from representation space, functional behavior, and parameter space, respectively; any single perspective may be subject to confounding factors.
+    - *Function*: Assess rule-based encoding vs. memorization from mutually complementary angles.
+    - *Mechanism*: (a) *Encoder analysis* — examines whether gradients from non-target slots are also encoded to non-zero values (under rule-based encoding, these should be zero); (b) *Probability intervention* — applies the learned direction to model parameters and checks whether article probability changes are confined to the target slot (LR), systematically extend to slots sharing the same gender or case dimension (GR), or spill over to unrelated slots sharing the same surface article form (SO); (c) *Top-$k$ parameter overlap* — compares the most important parameters across different transformations to assess whether they overlap substantially.
+    - *Design Motivation*: The three perspectives provide complementary evidence from representation space, functional behavior, and parameter space, respectively; any single perspective may be subject to confounding factors.
 
 3. **Learning Rate Selection and Language Modeling Preservation**
 
-   - *Function*: Ensures that intervention effects do not constitute spurious signals caused by model degradation.
-   - *Mechanism*: Multiple learning rates $\alpha$ are swept during intervention; only candidates that maintain at least 99% of the language modeling score on a neutral dataset are retained, and the $\alpha^*$ that maximizes the target article probability on the target dataset is selected. SuperGLEBer benchmark scores are additionally reported to confirm that the model's overall capabilities are unaffected.
-   - *Design Motivation*: Large parameter updates may alter predictions by disrupting language modeling ability rather than reflecting genuine grammatical mechanisms.
+    - *Function*: Ensures that intervention effects do not constitute spurious signals caused by model degradation.
+    - *Mechanism*: Multiple learning rates $\alpha$ are swept during intervention; only candidates that maintain at least 99% of the language modeling score on a neutral dataset are retained, and the $\alpha^*$ that maximizes the target article probability on the target dataset is selected. SuperGLEBer benchmark scores are additionally reported to confirm that the model's overall capabilities are unaffected.
+    - *Design Motivation*: Large parameter updates may alter predictions by disrupting language modeling ability rather than reflecting genuine grammatical mechanisms.
 
 ### Loss & Training
 

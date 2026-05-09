@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning Model Safety] This paper systematically studies how to enhance the safety of Large Reasoning Models (LRMs) via SFT, identifies five risky reasoning patterns (especially "weak hesitation") as the root cause of limited effectiveness in direct safety response distillation, proposes targeted distillation strategies that reduce the PAIR attack success rate from 63% to 13%, and finds that short reasoning chains and templated reasoning achieve comparable safety to long reasoning chains.
+  [ACL 2026][LLM Reasoning][reasoning model safety] This paper systematically investigates how to enhance the safety of large reasoning models (LRMs) via SFT. It identifies five risky reasoning patterns—most notably *weak vacillation*—as the root cause of limited effectiveness in direct safety response distillation, proposes targeted distillation strategies that reduce the PAIR attack success rate from 63% to 13%, and demonstrates that short chain-of-thought and template-based reasoning achieve safety performance comparable to full-length reasoning chains.
 tags:
   - ACL 2026
   - LLM Reasoning
-  - Reasoning Model Safety
-  - Risky Reasoning Patterns
-  - Weak Hesitation
-  - Safety Distillation
-  - Short Reasoning Chains
+  - reasoning model safety
+  - risky reasoning patterns
+  - weak vacillation
+  - safety distillation
+  - short chain-of-thought
 date: 2026-05-08
 content_hash: c11bd6a5e04691c4
 ---
+
 # How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study
 
 **Conference**: ACL 2026
@@ -50,21 +51,21 @@ The study proceeds in three stages: (1) **Analysis**—identifying five risky re
 
 1. **Identification of Five Risky Reasoning Patterns**
 
-   - Function: Explains the root cause of safety distillation failure.
-   - Mechanism: (1) *Lack of safety awareness*—the reasoning fails to recognize the harmful nature of the query; (2) *Strong vacillation* during over-thinking—hedging over the core harmful intent; (3) *Weak vacillation* during over-thinking—hedging over superficially benign elements of a jailbreak prompt (e.g., "Is it okay to play this role?"); (4) *Harmful supplementation*—unintentionally providing harmful details within the reasoning; (5) *Reasoning–response inconsistency*—the reasoning decides to refuse, yet the final response still outputs harmful content.
-   - Design Motivation: After ReasoningShield filtering, the proportion of weak vacillation actually doubles (0.33→0.66), because filtering removes more conspicuous risky patterns and leaves weak vacillation as the dominant residue. Removing weak vacillation samples reduces ASR from 45% to 21%.
+    - Function: Explains the root cause of safety distillation failure.
+    - Mechanism: (1) *Lack of safety awareness*—the reasoning fails to recognize the harmful nature of the query; (2) *Strong vacillation* during over-thinking—hedging over the core harmful intent; (3) *Weak vacillation* during over-thinking—hedging over superficially benign elements of a jailbreak prompt (e.g., "Is it okay to play this role?"); (4) *Harmful supplementation*—unintentionally providing harmful details within the reasoning; (5) *Reasoning–response inconsistency*—the reasoning decides to refuse, yet the final response still outputs harmful content.
+    - Design Motivation: After ReasoningShield filtering, the proportion of weak vacillation actually doubles (0.33→0.66), because filtering removes more conspicuous risky patterns and leaves weak vacillation as the dominant residue. Removing weak vacillation samples reduces ASR from 45% to 21%.
 
 2. **Improved Distillation Prompting Strategy**
 
-   - Function: Actively eliminates risky reasoning patterns at the distillation stage.
-   - Mechanism: (a) *RealSafe CoT*—modifies the distillation prompt to instruct the model to "directly identify and refuse harmful queries without being distracted by role-playing or contextual framing"; (b) *Improved CoT*—further instructs the model to "not exhibit vacillation toward any part of a jailbreak prompt." Across four models (7B–32B), the average PAIR ASR drops from 63.0% to 13.0%.
-   - Design Motivation: Post-hoc filtering can only remove known risky patterns and has very low data retention (only 6.6% kept); active elimination at the distillation stage is substantially more efficient.
+    - Function: Actively eliminates risky reasoning patterns at the distillation stage.
+    - Mechanism: (a) *RealSafe CoT*—modifies the distillation prompt to instruct the model to "directly identify and refuse harmful queries without being distracted by role-playing or contextual framing"; (b) *Improved CoT*—further instructs the model to "not exhibit vacillation toward any part of a jailbreak prompt." Across four models (7B–32B), the average PAIR ASR drops from 63.0% to 13.0%.
+    - Design Motivation: Post-hoc filtering can only remove known risky patterns and has very low data retention (only 6.6% kept); active elimination at the distillation stage is substantially more efficient.
 
 3. **Reasoning Simplification Experiments**
 
-   - Function: Verifies whether long reasoning chains are necessary in safety scenarios.
-   - Mechanism: Three simplified settings—(a) *Short CoT*: distills brief reasoning processes from GPT-4o; (b) *Template CoT*: uses a fixed template ("this is a harmful request → refuse"); (c) *No CoT*: refuses directly without any reasoning. Short CoT and Template CoT achieve safety performance comparable to full reasoning chains, whereas No CoT is entirely ineffective.
-   - Design Motivation: The weak vacillation phenomenon suggests that long reasoning chains may introduce unnecessary deliberation—"thinking one step more" during reasoning may undermine safety decisions.
+    - Function: Verifies whether long reasoning chains are necessary in safety scenarios.
+    - Mechanism: Three simplified settings—(a) *Short CoT*: distills brief reasoning processes from GPT-4o; (b) *Template CoT*: uses a fixed template ("this is a harmful request → refuse"); (c) *No CoT*: refuses directly without any reasoning. Short CoT and Template CoT achieve safety performance comparable to full reasoning chains, whereas No CoT is entirely ineffective.
+    - Design Motivation: The weak vacillation phenomenon suggests that long reasoning chains may introduce unnecessary deliberation—"thinking one step more" during reasoning may undermine safety decisions.
 
 ### Loss & Training
 
@@ -134,7 +135,7 @@ Standard SFT cross-entropy loss. Training set: 200 harmful queries × 20 jailbre
 - [\[ICLR 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](../../ICLR2026/llm_reasoning/dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](../../ICLR2026/llm_reasoning/reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[AAAI 2026\] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities](../../AAAI2026/llm_reasoning/trade-offs_in_large_reasoning_models_an_empirical_analysis_of_deliberative_and_a.md)
+- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 
 <!-- RELATED:END -->

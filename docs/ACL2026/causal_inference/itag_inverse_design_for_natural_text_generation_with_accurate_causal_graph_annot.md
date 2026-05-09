@@ -2,12 +2,13 @@
 title: >-
   [Paper Note] iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations
 description: >-
-  [ACL 2026][Causal Inference][Causal Graph Annotation] iTAG generates text with simultaneously high causal graph annotation accuracy and text naturalness through a three-phase inverse design pipeline, serving as a practical substitute for real annotated data.
+  [ACL 2026][Causal Inference][Causal Graph Annotation] iTAG generates text with simultaneously high causal graph annotation accuracy (F1≥0.95) and naturalness (near-random detection rate) through a three-phase inverse design pipeline (parameterized causal graph construction → CoT-based concept assignment → structure-preserving text generation), serving as a practical substitute for real annotated data for benchmarking text causal discovery algorithms.
 tags:
   - ACL 2026
   - Causal Inference
   - Causal Graph Annotation
   - Inverse Design
+  - Text Generation
   - Benchmark Data
   - CoT Reasoning
 content_hash: def5080f744d420c

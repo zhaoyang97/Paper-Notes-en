@@ -133,8 +133,8 @@ Seam achieves the lowest harmfulness across all attack intensities; high-intensi
 
 - [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](../../NeurIPS2025/llm_safety/self-refining_language_model_anonymizers_via_adversarial_distillation.md)
 - [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
+- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_safety/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
 - [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_models.md)
 
 <!-- RELATED:END -->

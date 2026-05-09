@@ -48,21 +48,21 @@ For data construction, reasoning data is generated through reverse engineering s
 
 1. **Cross-Modal Reverse Engineering for Data Generation**
 
-   - **Function**: Generate large-scale visual reasoning data from scarce reasoning annotations.
-   - **Mechanism**: Given textual SMILES queries and answers, three types of auxiliary semantic anchors are integrated—IUPAC names retrieved from PubChem, functional groups computed by RDKit, and manually curated expert demonstrations—to prompt Gemini-2.5-Flash to reverse-engineer the reasoning process. A three-stage filtering pipeline is applied: structural filtering (retaining visual reasoning patterns) → answer consistency checking (verifying that derived results match ground-truth SMILES) → external LLM validation (independent verification by GPT-4.1-mini). The final output comprises 360K reasoning samples, 400K description samples, and 1.4M instruction samples.
-   - **Design Motivation**: Providing SMILES sequences alone is insufficient for LLMs to generate accurate reasoning. Semantic anchors raise data retention rates from 55%–78% to 73%–95%.
+    - **Function**: Generate large-scale visual reasoning data from scarce reasoning annotations.
+    - **Mechanism**: Given textual SMILES queries and answers, three types of auxiliary semantic anchors are integrated—IUPAC names retrieved from PubChem, functional groups computed by RDKit, and manually curated expert demonstrations—to prompt Gemini-2.5-Flash to reverse-engineer the reasoning process. A three-stage filtering pipeline is applied: structural filtering (retaining visual reasoning patterns) → answer consistency checking (verifying that derived results match ground-truth SMILES) → external LLM validation (independent verification by GPT-4.1-mini). The final output comprises 360K reasoning samples, 400K description samples, and 1.4M instruction samples.
+    - **Design Motivation**: Providing SMILES sequences alone is insufficient for LLMs to generate accurate reasoning. Semantic anchors raise data retention rates from 55%–78% to 73%–95%.
 
 2. **Three-Stage Progressive Training**
 
-   - **Function**: Systematically build chemical perception and reasoning capabilities.
-   - **Mechanism**: The CPT stage trains the ViT and projector (with the LLM backbone frozen) using 500K chemical image-text pairs for visual-chemical domain alignment. The SFT stage performs full-parameter fine-tuning with mixed data comprising 360K reasoning and 1.4M instruction samples, using `<think>/<answer>` tag formatting. The RL stage applies DAPO optimization with SMILES accuracy rewards (Tanimoto similarity of 1.0 required for reward) and format rewards.
-   - **Design Motivation**: General-purpose VLMs lack chemical visual perception capabilities (experimentally confirmed that direct SFT yields poor results); CPT is necessary to bridge the domain gap first.
+    - **Function**: Systematically build chemical perception and reasoning capabilities.
+    - **Mechanism**: The CPT stage trains the ViT and projector (with the LLM backbone frozen) using 500K chemical image-text pairs for visual-chemical domain alignment. The SFT stage performs full-parameter fine-tuning with mixed data comprising 360K reasoning and 1.4M instruction samples, using `<think>/<answer>` tag formatting. The RL stage applies DAPO optimization with SMILES accuracy rewards (Tanimoto similarity of 1.0 required for reward) and format rewards.
+    - **Design Motivation**: General-purpose VLMs lack chemical visual perception capabilities (experimentally confirmed that direct SFT yields poor results); CPT is necessary to bridge the domain gap first.
 
 3. **IUPAC Knowledge Activation**
 
-   - **Function**: Enhance chemical understanding by leveraging pre-trained knowledge.
-   - **Mechanism**: 300K image-to-IUPAC conversion samples are constructed as part of the instruction data. Since IUPAC nomenclature appears far more frequently than SMILES in general pre-training corpora, this effectively activates the model's existing chemical knowledge.
-   - **Design Motivation**: Direct training with SMILES yields limited gains, whereas incorporating IUPAC data raises the data generation retention rate from 78% to 92%.
+    - **Function**: Enhance chemical understanding by leveraging pre-trained knowledge.
+    - **Mechanism**: 300K image-to-IUPAC conversion samples are constructed as part of the instruction data. Since IUPAC nomenclature appears far more frequently than SMILES in general pre-training corpora, this effectively activates the model's existing chemical knowledge.
+    - **Design Motivation**: Direct training with SMILES yields limited gains, whereas incorporating IUPAC data raises the data generation retention rate from 78% to 92%.
 
 ### Loss & Training
 The RL stage employs DAPO (Decoupled Clip and Dynamic Sampling Policy Optimization) with binary rewards (accuracy + format). The SFT model is used to filter a medium-difficulty subset of 100K samples for training.

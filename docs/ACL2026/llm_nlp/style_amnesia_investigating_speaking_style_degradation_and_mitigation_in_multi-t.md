@@ -51,21 +51,21 @@ The evaluation framework consists of three core components: (1) **style instruct
 
 1. **Turn-Level Instruction-Following Rate (Turn-Level IF Rate)**
 
-   - **Function**: Quantifies the trend of style compliance degradation across conversation turns.
-   - **Mechanism**: Defines the first-turn compliance rate $IF_1$ and a degradation rate $D = \sum_{j=2}^{K} \frac{\max(IF_1(s) - IF_j(s), 0)}{K-1}$ to separately capture baseline capability and degree of degradation. Four dedicated automatic judges evaluate emotion (Emotion2vec-Large), accent (Voxlect), volume (LUFS), and speech rate (WPM), respectively.
-   - **Design Motivation**: Unlike approaches that aggregate a single global score, turn-level analysis precisely reveals when and how degradation begins.
+    - **Function**: Quantifies the trend of style compliance degradation across conversation turns.
+    - **Mechanism**: Defines the first-turn compliance rate $IF_1$ and a degradation rate $D = \sum_{j=2}^{K} \frac{\max(IF_1(s) - IF_j(s), 0)}{K-1}$ to separately capture baseline capability and degree of degradation. Four dedicated automatic judges evaluate emotion (Emotion2vec-Large), accent (Voxlect), volume (LUFS), and speech rate (WPM), respectively.
+    - **Design Motivation**: Unlike approaches that aggregate a single global score, turn-level analysis precisely reveals when and how degradation begins.
 
 2. **Attention Dynamics Analysis**
 
-   - **Function**: Reveals the internal mechanism underlying style amnesia.
-   - **Mechanism**: The average attention weights that an open-source model (Step-Audio 2 mini) assigns to style-instruction tokens during response generation are extracted. Results show: Turn 1 ~8.3%, Turn 2 ~1.6%, Turn 3 ~0.87%, Turn 4 ~0.58%—severe attention dilution that closely correlates with IF rate degradation.
-   - **Design Motivation**: Distinguishes "forgetting the instruction" from "failing to execute it." If the issue were memory, prompt engineering would suffice; attention dilution points instead to the need for architectural improvements.
+    - **Function**: Reveals the internal mechanism underlying style amnesia.
+    - **Mechanism**: The average attention weights that an open-source model (Step-Audio 2 mini) assigns to style-instruction tokens during response generation are extracted. Results show: Turn 1 ~8.3%, Turn 2 ~1.6%, Turn 3 ~0.87%, Turn 4 ~0.58%—severe attention dilution that closely correlates with IF rate degradation.
+    - **Design Motivation**: Distinguishes "forgetting the instruction" from "failing to execute it." If the issue were memory, prompt engineering would suffice; attention dilution points instead to the need for architectural improvements.
 
 3. **Recall Process**
 
-   - **Function**: Explores a mitigation strategy for style amnesia.
-   - **Mechanism**: Before each turn from Turn 2 onward, the SLM is prompted to recall the initial style instruction before processing the user input. Experiments show that most models recall accurately (near 100% for closed-source models), and the recall process significantly reduces the degradation rate (e.g., GPT-4o mini on the sad style drops from 65.3% to 30.3%).
-   - **Design Motivation**: Tests whether the model still remembers the instruction and whether explicit recall can improve execution.
+    - **Function**: Explores a mitigation strategy for style amnesia.
+    - **Mechanism**: Before each turn from Turn 2 onward, the SLM is prompted to recall the initial style instruction before processing the user input. Experiments show that most models recall accurately (near 100% for closed-source models), and the recall process significantly reduces the degradation rate (e.g., GPT-4o mini on the sad style drops from 65.3% to 30.3%).
+    - **Design Motivation**: Tests whether the model still remembers the instruction and whether explicit recall can improve execution.
 
 ### Text–Acoustic Co-Analysis
 

@@ -50,21 +50,21 @@ KoCo-Bench = Knowledge Corpus + Evaluation Tasks. The knowledge corpus is derive
 
 1. **Multi-source Knowledge Corpus Construction**:
 
-   - Function: Simulates the knowledge sources available to developers when learning a new framework.
-   - Mechanism: Selects Python frameworks created after March 2024 (ensuring they fall outside LLM training data) with well-maintained documentation. Covers 6 domains: RL, Agent, RAG, model optimization, embodied AI, and Ascend ecosystem. The corpus includes framework documentation (averaging 77K lines), source code, and usage examples.
-   - Design Motivation: Selecting emerging frameworks avoids data leakage; multi-source coverage ensures completeness of knowledge.
+    - Function: Simulates the knowledge sources available to developers when learning a new framework.
+    - Mechanism: Selects Python frameworks created after March 2024 (ensuring they fall outside LLM training data) with well-maintained documentation. Covers 6 domains: RL, Agent, RAG, model optimization, embodied AI, and Ascend ecosystem. The corpus includes framework documentation (averaging 77K lines), source code, and usage examples.
+    - Design Motivation: Selecting emerging frameworks avoids data leakage; multi-source coverage ensures completeness of knowledge.
 
 2. **Multi-granularity Code Generation Evaluation**:
 
-   - Function: Evaluates domain code generation capability from function-level to project-level.
-   - Mechanism: Provides three-level requirement descriptions (project overview → module decomposition → core functions). A total of 131 core functions are paired with 978 tests (averaging 8.6 unit tests per function plus integration tests). Requirements undergo multiple rounds of multi-agent ambiguity resolution and human review. Docker environments ensure test reproducibility.
-   - Design Motivation: Multi-granularity supports evaluation of diverse code generation techniques; rigorous test suites prevent false positives.
+    - Function: Evaluates domain code generation capability from function-level to project-level.
+    - Mechanism: Provides three-level requirement descriptions (project overview → module decomposition → core functions). A total of 131 core functions are paired with 978 tests (averaging 8.6 unit tests per function plus integration tests). Requirements undergo multiple rounds of multi-agent ambiguity resolution and human review. Docker environments ensure test reproducibility.
+    - Design Motivation: Multi-granularity supports evaluation of diverse code generation techniques; rigorous test suites prevent false positives.
 
 3. **Domain Knowledge Comprehension QA**:
 
-   - Function: Precisely evaluates LLMs' mastery of specific knowledge points.
-   - Mechanism: Atomic multiple-choice questions (one knowledge point per question, supporting multiple correct answers), pre-filtered by 3 LLMs (to exclude trivial questions) and manually reviewed. A total of 107 questions.
-   - Design Motivation: Code generation tasks cannot precisely pinpoint knowledge gaps; QA directly assesses knowledge comprehension.
+    - Function: Precisely evaluates LLMs' mastery of specific knowledge points.
+    - Mechanism: Atomic multiple-choice questions (one knowledge point per question, supporting multiple correct answers), pre-filtered by 3 LLMs (to exclude trivial questions) and manually reviewed. A total of 107 questions.
+    - Design Motivation: Code generation tasks cannot precisely pinpoint knowledge gaps; QA directly assesses knowledge comprehension.
 
 ### Loss & Training
 

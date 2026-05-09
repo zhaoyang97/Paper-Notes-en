@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies
 description: >-
-  [ACL 2026][Causal Inference][Human-AI Interaction] Through 2000 LLM simulations and a 290-person user study, discovers that personality traits dominate in simulations while AI transparency is the key driver in real user experiments for imperfectly cooperative scenarios.
+  [ACL 2026][Causal Inference][Human-AI Interaction] Through 2000 LLM simulations and a 290-person user study in a dual-framework experiment, this paper compares the impacts of human personality traits and AI design attributes in imperfectly cooperative scenarios (hiring negotiation, partially honest trading), finding that personality traits dominate in simulations while AI transparency is the key driver in real user experiments.
 tags:
   - ACL 2026
   - Causal Inference
@@ -10,6 +10,7 @@ tags:
   - Imperfect Cooperation
   - Personality Traits
   - AI Transparency
+  - Simulation vs User Study
 content_hash: e39f5d132dfdbd05
 ---
 

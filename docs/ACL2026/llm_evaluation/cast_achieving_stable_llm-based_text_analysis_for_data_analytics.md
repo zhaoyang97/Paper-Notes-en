@@ -51,21 +51,21 @@ CAST is realized via a single structured LLM call. The input consists of tabular
 
 1. **Algorithmic Prompting (AP)**:
 
-   - **Function**: Provides procedural scaffolding for the task, constraining valid reasoning state transitions.
-   - **Mechanism**: Classic deterministic workflows and expert heuristics are encoded as structured prompt sequences. For summarization tasks, the LLM is guided to first interpret the query and decompose constraints before executing the task according to an algorithmic workflow. Formally, AP introduces a gating function $g_t(z_t, z_{<t}, x)$ at each step, which concentrates probability mass onto fewer plausible next states via hard masking or soft weighting, reducing local uncertainty $H(Z_t|Z_{<t}, x, \mathcal{C}_{AP})$.
-   - **Design Motivation**: Unconstrained reasoning transitions are the root cause of instability. AP "prunes" invalid reasoning paths by supplying a deterministic analytical workflow as a strong prior.
+    - **Function**: Provides procedural scaffolding for the task, constraining valid reasoning state transitions.
+    - **Mechanism**: Classic deterministic workflows and expert heuristics are encoded as structured prompt sequences. For summarization tasks, the LLM is guided to first interpret the query and decompose constraints before executing the task according to an algorithmic workflow. Formally, AP introduces a gating function $g_t(z_t, z_{<t}, x)$ at each step, which concentrates probability mass onto fewer plausible next states via hard masking or soft weighting, reducing local uncertainty $H(Z_t|Z_{<t}, x, \mathcal{C}_{AP})$.
+    - **Design Motivation**: Unconstrained reasoning transitions are the root cause of instability. AP "prunes" invalid reasoning paths by supplying a deterministic analytical workflow as a strong prior.
 
 2. **Thinking-before-Speaking (TbS)**:
 
-   - **Function**: Reduces path divergence by forcing the model to explicitly commit to critical intermediate states.
-   - **Mechanism**: Rather than allowing the model to traverse reasoning trajectories implicitly and expose only the final output, TbS requires the model to generate intermediate states sequentially (e.g., domain judgment, topic schema, clustering results), with each subsequent generation conditioned on prior commitments. This is grounded in the information-theoretic principle that conditioning reduces entropy: $H(Z_{>t}|X=x, Z_{\leq t}) \leq H(Z_{>t}|X=x)$.
-   - **Design Motivation**: Once the schema, topic set, or domain decision is fixed, subsequent generation is forced to remain consistent with it, rendering the reasoning path insensitive to minor stochastic perturbations.
+    - **Function**: Reduces path divergence by forcing the model to explicitly commit to critical intermediate states.
+    - **Mechanism**: Rather than allowing the model to traverse reasoning trajectories implicitly and expose only the final output, TbS requires the model to generate intermediate states sequentially (e.g., domain judgment, topic schema, clustering results), with each subsequent generation conditioned on prior commitments. This is grounded in the information-theoretic principle that conditioning reduces entropy: $H(Z_{>t}|X=x, Z_{\leq t}) \leq H(Z_{>t}|X=x)$.
+    - **Design Motivation**: Once the schema, topic set, or domain decision is fixed, subsequent generation is forced to remain consistent with it, rendering the reasoning path insensitive to minor stochastic perturbations.
 
 3. **Stability Evaluation Metrics (CAST-S / CAST-T)**:
 
-   - **Function**: Metrics specifically designed to quantify run-to-run stability.
-   - **Mechanism**: CAST-S targets summarization and combines a semantic score $S_{sem}$ (content overlap) and a positional score $S_{pos}$ (ranking consistency based on Kendall's Tau): $S_{CAST-S}(\alpha) = \alpha \cdot S_{sem} + (1-\alpha) \cdot S_{pos}$, with $\alpha=0.9$ yielding the highest correlation with human judgment ($r=0.813$). CAST-T targets annotation: an LLM first clusters labels from multiple runs by semantic equivalence, then computes the proportion of dominant clusters.
-   - **Design Motivation**: Existing metrics such as ROUGE-L and cosine similarity are insensitive to the semantic drift and ordering changes that matter most in analytical scenarios.
+    - **Function**: Metrics specifically designed to quantify run-to-run stability.
+    - **Mechanism**: CAST-S targets summarization and combines a semantic score $S_{sem}$ (content overlap) and a positional score $S_{pos}$ (ranking consistency based on Kendall's Tau): $S_{CAST-S}(\alpha) = \alpha \cdot S_{sem} + (1-\alpha) \cdot S_{pos}$, with $\alpha=0.9$ yielding the highest correlation with human judgment ($r=0.813$). CAST-T targets annotation: an LLM first clusters labels from multiple runs by semantic equivalence, then computes the proportion of dominant clusters.
+    - **Design Motivation**: Existing metrics such as ROUGE-L and cosine similarity are insensitive to the semantic drift and ordering changes that matter most in analytical scenarios.
 
 ### Loss & Training
 

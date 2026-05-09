@@ -51,21 +51,21 @@ Given a commonsense triple $\langle A, R, B \rangle$, three new triples $\langle
 
 1. **Automatic Negation Generation**:
 
-   - **Function**: Automatically introduces negation into commonsense triples without human annotation.
-   - **Mechanism**: Llama 3.1 70B is employed to insert "not" before the main verb or modifier of an event; manual evaluation of 200 instances confirms a grammatical correctness rate of 99%.
-   - **Design Motivation**: To avoid the high annotation cost of the Anion-style approach, while also covering negation of *then*-events, which Anion does not address.
+    - **Function**: Automatically introduces negation into commonsense triples without human annotation.
+    - **Mechanism**: Llama 3.1 70B is employed to insert "not" before the main verb or modifier of an event; manual evaluation of 200 instances confirms a grammatical correctness rate of 99%.
+    - **Design Motivation**: To avoid the high annotation cost of the Anion-style approach, while also covering negation of *then*-events, which Anion does not address.
 
 2. **LLM Judge (Automatic Validation)**:
 
-   - **Function**: Automatically determines whether generated negated triples constitute valid commonsense knowledge.
-   - **Mechanism**: Since state-of-the-art models such as GPT-4o and Claude Sonnet 4 perform poorly on this task (F1 of only 0.52–0.56), a dedicated judge is trained via supervised fine-tuning of Llama 3.1 70B using QLoRA 4-bit quantization, achieving an F1 of 0.63.
-   - **Design Motivation**: To address the gap in LLMs' ability to evaluate negated commonsense triples; Valid precision reaches 0.70 and Invalid precision reaches 0.79.
+    - **Function**: Automatically determines whether generated negated triples constitute valid commonsense knowledge.
+    - **Mechanism**: Since state-of-the-art models such as GPT-4o and Claude Sonnet 4 perform poorly on this task (F1 of only 0.52–0.56), a dedicated judge is trained via supervised fine-tuning of Llama 3.1 70B using QLoRA 4-bit quantization, achieving an F1 of 0.63.
+    - **Design Motivation**: To address the gap in LLMs' ability to evaluate negated commonsense triples; Valid precision reaches 0.70 and Invalid precision reaches 0.79.
 
 3. **Pretraining Augmentation Strategy**:
 
-   - **Function**: Leverages the negated commonsense corpus to improve LLMs' negation understanding.
-   - **Mechanism**: Evaluation is conducted on five downstream benchmarks spanning three tasks—question answering, NLI, and information retrieval—using both Valid and Invalid triples as pretraining data.
-   - **Design Motivation**: Both Valid and Invalid triples contribute to the model's learning of negation semantics, rather than relying solely on Valid triples.
+    - **Function**: Leverages the negated commonsense corpus to improve LLMs' negation understanding.
+    - **Mechanism**: Evaluation is conducted on five downstream benchmarks spanning three tasks—question answering, NLI, and information retrieval—using both Valid and Invalid triples as pretraining data.
+    - **Design Motivation**: Both Valid and Invalid triples contribute to the model's learning of negation semantics, rather than relying solely on Valid triples.
 
 ### Loss & Training
 

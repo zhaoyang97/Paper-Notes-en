@@ -180,6 +180,6 @@ At each time step, $n$ candidate tokens (including the original token) are sampl
 - [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[AAAI 2026\] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation](g-ubs_towards_robust_understanding_of_implicit_feedback_via_group-aware_user_beh.md)
-- [\[AAAI 2026\] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback](bi-level_contextual_bandits_for_individualized_resource_allocation_under_delayed.md)
+- [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](../../ICLR2026/reinforcement_learning/spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
 
 <!-- RELATED:END -->

@@ -177,8 +177,8 @@ The experiments confirm the feasibility of the formal approach on real-world kno
 
 - [\[AAAI 2026\] Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated](your_ai-generated_image_detector_can_secretly_achieve_sota_accuracy_if_calibrate.md)
 - [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](../../ICLR2026/model_compression/titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
+- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
 - [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](../../NeurIPS2025/model_compression/uni-lora_one_vector_is_all_you_need.md)
 - [\[CVPR 2026\] FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning](../../CVPR2026/model_compression/fair-pruner_leveraging_tolerance_of_difference_for_flexible_automatic_layer-wise.md)
-- [\[NeurIPS 2025\] All You Need is One: Capsule Prompt Tuning with a Single Vector](../../NeurIPS2025/model_compression/all_you_need_is_one_capsule_prompt_tuning_with_a_single_vector.md)
 
 <!-- RELATED:END -->

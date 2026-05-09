@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evaluating Memory Capability in Continuous Lifelog Scenario
 description: >-
-  [ACL 2026][Object Detection][Lifelog Memory] This paper proposes LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios (featuring EgoMem with 7 days of real data and LifeMem simulating 1 year), introduces an online evaluation protocol to ensure temporal causality, and counterintuitively finds that simple RAG baselines consistently outperform complex memory systems.
+  [ACL 2026][Object Detection][lifelog memory] This paper proposes LifeDialBench, a benchmark for evaluating memory capabilities in continuous lifelog scenarios, comprising EgoMem (7 days of real-world data) and LifeMem (1 year of simulated data). An online evaluation protocol is introduced to enforce temporal causality. Counterintuitively, a simple RAG baseline consistently outperforms all complex memory systems.
 tags:
   - ACL 2026
   - Object Detection
-  - Lifelog Memory
-  - Online Evaluation
-  - Wearable Devices
-  - RAG Baseline
-  - Long-term Dialogue
+  - lifelog memory
+  - online evaluation
+  - wearable devices
+  - RAG baseline
+  - long-term dialogue
 date: 2026-05-08
 content_hash: 150f99afdb67b80f
 ---
+
 # Evaluating Memory Capability in Continuous Lifelog Scenario
 
 **Conference**: ACL 2026
@@ -123,6 +124,6 @@ As a benchmark paper, no model training is involved. Four representative memory 
 - [\[CVPR 2026\] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](../../CVPR2026/object_detection/evaluating_fewshot_pill_recognition_under_visual_d.md)
 - [\[CVPR 2026\] The COTe Score: A Decomposable Framework for Evaluating Document Layout Analysis Models](../../CVPR2026/object_detection/the_cote_score_a_decomposable_framework_for_evaluating_document_layout_analysis_.md)
 - [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[ACL 2026\] Evolutionary Negative Module Pruning for Better LoRA Merging](evolutionary_negative_module_pruning_for_better_lora_merging.md)
 
 <!-- RELATED:END -->

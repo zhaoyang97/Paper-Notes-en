@@ -51,21 +51,21 @@ Three pragmatic tasks are selected. For each task, parallel speaker prompts (req
 
 1. **False Presuppositions Task**:
 
-   - **Function**: Tests whether models can detect and reject false presuppositions embedded in questions.
-   - **Mechanism**: Two German datasets are used (False Scenarios and False Claims), containing politically sensitive questions with false presuppositions. Speaker condition: the model directly answers a question containing a false presupposition; the correct behavior is to reject the presupposition. Listener condition: the model is provided with the question, the false presupposition, and an existing response, and must judge whether the response accepts the false presupposition (three-way classification: A/N/U), compared against human annotations.
-   - **Design Motivation**: Rejecting a false presupposition requires detecting an implicit assumption and actively correcting it—generation is substantially harder than judgment, making this an ideal scenario for probing listener–speaker asymmetry.
+    - **Function**: Tests whether models can detect and reject false presuppositions embedded in questions.
+    - **Mechanism**: Two German datasets are used (False Scenarios and False Claims), containing politically sensitive questions with false presuppositions. Speaker condition: the model directly answers a question containing a false presupposition; the correct behavior is to reject the presupposition. Listener condition: the model is provided with the question, the false presupposition, and an existing response, and must judge whether the response accepts the false presupposition (three-way classification: A/N/U), compared against human annotations.
+    - **Design Motivation**: Rejecting a false presupposition requires detecting an implicit assumption and actively correcting it—generation is substantially harder than judgment, making this an ideal scenario for probing listener–speaker asymmetry.
 
 2. **Antipresuppositions Task**:
 
-   - **Function**: Tests whether models adhere to the Maximize Presupposition! principle.
-   - **Mechanism**: A German "fruit story" paradigm is used—following a context-setting passage, the model must select a definite or indefinite article. Speaker condition: fill in the correct article/quantifier at the marked position. Listener condition: judge whether a given continuation is pragmatically appropriate. Even under this highly constrained generation setting (a single-word choice), many models still exhibit a significant listener advantage.
-   - **Design Motivation**: This is the "simplest" possible generation task (single-word selection); if asymmetry persists here, the problem is fundamental.
+    - **Function**: Tests whether models adhere to the Maximize Presupposition! principle.
+    - **Mechanism**: A German "fruit story" paradigm is used—following a context-setting passage, the model must select a definite or indefinite article. Speaker condition: fill in the correct article/quantifier at the marked position. Listener condition: judge whether a given continuation is pragmatically appropriate. Even under this highly constrained generation setting (a single-word choice), many models still exhibit a significant listener advantage.
+    - **Design Motivation**: This is the "simplest" possible generation task (single-word selection); if asymmetry persists here, the problem is fundamental.
 
 3. **Deductive Reasoning Task**:
 
-   - **Function**: Tests the consistency of logical reasoning between evaluation and generation.
-   - **Mechanism**: Based on classic logical reasoning tasks, premises and a conclusion are provided. Speaker condition: fill in the missing color term that makes the conclusion valid. Listener condition: judge whether the given conclusion follows logically from the premises (True/False). Item-level analysis uses the conditional probability $\Delta_{cond} = P(\text{task}|l=1) - P(\text{task}|l=0)$ to measure whether correct judgment predicts successful generation.
-   - **Design Motivation**: Deductive reasoning involves both pragmatic and logical competence, allowing the authors to examine whether asymmetry generalizes across different cognitive dimensions.
+    - **Function**: Tests the consistency of logical reasoning between evaluation and generation.
+    - **Mechanism**: Based on classic logical reasoning tasks, premises and a conclusion are provided. Speaker condition: fill in the missing color term that makes the conclusion valid. Listener condition: judge whether the given conclusion follows logically from the premises (True/False). Item-level analysis uses the conditional probability $\Delta_{cond} = P(\text{task}|l=1) - P(\text{task}|l=0)$ to measure whether correct judgment predicts successful generation.
+    - **Design Motivation**: Deductive reasoning involves both pragmatic and logical competence, allowing the authors to examine whether asymmetry generalizes across different cognitive dimensions.
 
 ### Loss & Training
 

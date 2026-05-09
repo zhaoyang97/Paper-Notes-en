@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 description: >-
-  [ACL 2026][Video Understanding][Video QA] Introduces GameplayQA, an end-to-end benchmark framework based on multiplayer 3D game videos, featuring dense temporal annotations (1.22 labels/sec) and a structured distractor taxonomy to systematically evaluate multimodal large models on perception and reasoning in decision-intensive, multi-view synchronized scenarios, revealing a significant gap between frontier models and human performance.
+  [ACL 2026][Video Understanding][Video QA] This paper presents GameplayQA, an end-to-end benchmarking framework built on multi-player 3D game videos. Through dense timeline annotation (1.22 labels/second) and a structured distractor taxonomy, it systematically evaluates multimodal large language models (MLLMs) on perception and reasoning in decision-dense, multi-view synchronized scenarios, revealing a substantial gap between frontier models and human performance.
 tags:
   - ACL 2026
   - Video Understanding
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: c365fb04558d2d31
 ---
+
 # GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 
 **Conference**: ACL 2026
@@ -128,8 +129,8 @@ A two-stage process is employed: first, questions answerable without visual unde
 
 - [\[ICLR 2026\] FuncBenchGen: A Contamination-Free Controllable Evaluation Framework for Reliable Benchmarking](../../ICLR2026/video_understanding/towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
 - [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](../../AAAI2026/video_understanding/uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
+- [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[CVPR 2026\] Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding](../../CVPR2026/video_understanding/beyond_singlesample_reliable_multisample_distillat.md)
-- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](../../CVPR2026/video_understanding/uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 
 <!-- RELATED:END -->

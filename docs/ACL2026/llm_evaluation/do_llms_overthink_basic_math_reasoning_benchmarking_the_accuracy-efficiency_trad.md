@@ -51,21 +51,21 @@ The LLMThinkBench framework comprises four core components: (1) a task space of 
 
 1. **Overthinking Score**:
 
-   - **Function**: Unifies accuracy and token efficiency into a single metric.
-   - **Mechanism**: Token efficiency is defined as $E_{t,i} = 1 - \frac{\bar{T}_i - T_{min}}{T_{max} - T_{min}}$, then combined with accuracy via harmonic mean: $\mathcal{O}_i = \frac{2 \cdot A_i \cdot E_{t,i}}{A_i + E_{t,i}}$. The harmonic mean heavily penalizes imbalance — 90% accuracy + 10% efficiency yields only 0.18, whereas 60% + 60% yields 0.60.
-   - **Design Motivation**: The arithmetic mean insufficiently penalizes extreme imbalance (90% accuracy + 10% efficiency still yields 0.55). Among all symmetric homogeneous means, the harmonic mean maximally penalizes imbalance.
+    - **Function**: Unifies accuracy and token efficiency into a single metric.
+    - **Mechanism**: Token efficiency is defined as $E_{t,i} = 1 - \frac{\bar{T}_i - T_{min}}{T_{max} - T_{min}}$, then combined with accuracy via harmonic mean: $\mathcal{O}_i = \frac{2 \cdot A_i \cdot E_{t,i}}{A_i + E_{t,i}}$. The harmonic mean heavily penalizes imbalance — 90% accuracy + 10% efficiency yields only 0.18, whereas 60% + 60% yields 0.60.
+    - **Design Motivation**: The arithmetic mean insufficiently penalizes extreme imbalance (90% accuracy + 10% efficiency still yields 0.55). Among all symmetric homogeneous means, the harmonic mean maximally penalizes imbalance.
 
 2. **Dynamic Test Generation Protocol**:
 
-   - **Function**: Eliminates data contamination risk and ensures evaluation fairness.
-   - **Mechanism**: Test instances are dynamically generated from reproducible seeds. List lengths are sampled from {8, 16, 32, 64}, values from Uniform[−1000, 1000], with 1,000 samples per fold and 3-fold cross-validation (open-source models) or 100 samples (closed-source models, cost-constrained). Each model is evaluated on 42,000 unique problems.
-   - **Design Motivation**: Static benchmarks are prone to training data contamination; dynamic generation ensures fresh data for each evaluation.
+    - **Function**: Eliminates data contamination risk and ensures evaluation fairness.
+    - **Mechanism**: Test instances are dynamically generated from reproducible seeds. List lengths are sampled from {8, 16, 32, 64}, values from Uniform[−1000, 1000], with 1,000 samples per fold and 3-fold cross-validation (open-source models) or 100 samples (closed-source models, cost-constrained). Each model is evaluated on 42,000 unique problems.
+    - **Design Motivation**: Static benchmarks are prone to training data contamination; dynamic generation ensures fresh data for each evaluation.
 
 3. **Hierarchical Answer Extraction System**:
 
-   - **Function**: Reliably extracts answers from diverse model outputs.
-   - **Mechanism**: A four-level extraction strategy — (1) prioritize content within \boxed{}; (2) parse explicit answer markers ("The answer is..."); (3) extract from code blocks or Markdown formatting; (4) task-specific heuristics as fallback. Validated on 5,000+ responses with a 98.7% success rate.
-   - **Design Motivation**: Model output formats vary substantially; reliable answer extraction is a prerequisite for fair evaluation.
+    - **Function**: Reliably extracts answers from diverse model outputs.
+    - **Mechanism**: A four-level extraction strategy — (1) prioritize content within \boxed{}; (2) parse explicit answer markers ("The answer is..."); (3) extract from code blocks or Markdown formatting; (4) task-specific heuristics as fallback. Validated on 5,000+ responses with a 98.7% success rate.
+    - **Design Motivation**: Model output formats vary substantially; reliable answer extraction is a prerequisite for fair evaluation.
 
 ### Loss & Training
 

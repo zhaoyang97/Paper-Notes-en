@@ -158,6 +158,6 @@ The problem is important and practically relevant; the method offers mathematica
 - [\[AAAI 2026\] Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models](hallucination_stations_on_some_basic_limitations_of_transformer-based_language_m.md)
 - [\[ICLR 2026\] Self-Destructive Language Model](../../ICLR2026/llm_safety/self-destructive_language_model.md)
 - [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](../../NeurIPS2025/llm_safety/trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
-- [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](../../ICLR2026/llm_safety/faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
+- [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/llm_safety/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
 
 <!-- RELATED:END -->

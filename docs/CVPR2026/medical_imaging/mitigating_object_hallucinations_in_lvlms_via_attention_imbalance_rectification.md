@@ -135,10 +135,10 @@ MM-Vet general capability:
 
 ## Related Papers
 
+- [\[ACL 2026\] Model-Agnostic Meta Learning for Class Imbalance Adaptation](../../ACL2026/medical_imaging/model-agnostic_meta_learning_for_class_imbalance_adaptation.md)
 - [\[AAAI 2026\] CountVid: Open-World Object Counting in Videos](../../AAAI2026/medical_imaging/open-world_object_counting_in_videos.md)
+- [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](../../ACL2026/medical_imaging/dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
 - [\[CVPR 2026\] Fair Lung Disease Diagnosis from Chest CT via Gender-Adversarial Attention Multiple Instance Learning](fair_lung_disease_diagnosis_from_chest_ct_via_gender-adversarial_attention_multi.md)
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](../../AAAI2026/medical_imaging/small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
-- [\[NeurIPS 2025\] Sequential Attention-based Sampling for Histopathological Analysis](../../NeurIPS2025/medical_imaging/sequential_attention-based_sampling_for_histopathological_analysis.md)
-- [\[ICCV 2025\] InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation](../../ICCV2025/medical_imaging/insideout_integrated_rgb-radiative_gaussian_splatting_for_comprehensive_3d_objec.md)
 
 <!-- RELATED:END -->

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting
 description: >-
-  [ACL 2026][Time Series][Credit Risk Prediction] Proposes FinLangNet, a dual-module framework combining DeepFM for static feature processing and a dual-granularity prompt-enhanced Transformer for sequential behavior modeling, enabling multi-scale credit risk prediction. Deployed on DiDi Finance platform, achieving +6.3pp KS improvement and 9.9% reduction in bad debt rate.
+  [ACL 2026][Time Series][credit risk prediction] This paper proposes FinLangNet, a dual-module framework comprising DeepFM for static feature processing and a Transformer with a dual-granularity prompting mechanism for sequential behavior modeling, enabling multi-scale credit risk prediction. Upon deployment on the Didi Finance platform, the system achieves a 6.3 pp improvement in KS and a 9.9% reduction in bad debt rate.
 tags:
   - ACL 2026
   - Time Series
-  - Credit Risk Prediction
-  - Heterogeneous Financial Data
-  - Dual-Granularity Prompting
-  - Multi-Scale Prediction
-  - Industrial Deployment
+  - credit risk prediction
+  - heterogeneous financial data
+  - dual-granularity prompting
+  - multi-scale forecasting
+  - industrial deployment
 date: 2026-05-08
 content_hash: be15a8143cc9a69c
 ---
+
 # A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting
 
 **Conference**: ACL 2026

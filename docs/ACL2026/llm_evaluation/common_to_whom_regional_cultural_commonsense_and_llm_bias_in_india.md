@@ -51,21 +51,21 @@ The Indica construction pipeline proceeds as follows: (1) Eight cultural domains
 
 1. **OCM-Based Question Design**:
 
-   - Function: Ensures questions cover key dimensions of everyday cultural practice.
-   - Mechanism: Eight domains relevant to everyday cultural knowledge are selected from OCM's 90+ top-level categories (interpersonal relations, education, clothing, food, communication, finance, festivals and rituals, transportation behavior). For each domain, 2–4 non-overlapping sub-topics are chosen; GPT-4 assists in question generation, followed by human review.
-   - Design Motivation: Ensures questions target everyday practices rather than institutional knowledge, with sufficient diversity to surface regional differences.
+    - Function: Ensures questions cover key dimensions of everyday cultural practice.
+    - Mechanism: Eight domains relevant to everyday cultural knowledge are selected from OCM's 90+ top-level categories (interpersonal relations, education, clothing, food, communication, finance, festivals and rituals, transportation behavior). For each domain, 2–4 non-overlapping sub-topics are chosen; GPT-4 assists in question generation, followed by human review.
+    - Design Motivation: Ensures questions target everyday practices rather than institutional knowledge, with sufficient diversity to surface regional differences.
 
 2. **Dual-Task Evaluation Design (RASA + RA-MCQ)**:
 
-   - Function: Separately evaluates regional knowledge accuracy and implicit geographic bias.
-   - Mechanism: RASA (Region-Anchored Short Answer)—given regional context (e.g., "In South India…"), tests the model's ability to generate accurate region-specific cultural knowledge. RA-MCQ (Region-Agnostic Multiple Choice)—removes geographic context and observes which region's cultural practices the model defaults to, revealing implicit bias.
-   - Design Motivation: RASA tests knowledge; RA-MCQ tests bias—two complementary perspectives for a comprehensive evaluation of LLM cultural representation.
+    - Function: Separately evaluates regional knowledge accuracy and implicit geographic bias.
+    - Mechanism: RASA (Region-Anchored Short Answer)—given regional context (e.g., "In South India…"), tests the model's ability to generate accurate region-specific cultural knowledge. RA-MCQ (Region-Agnostic Multiple Choice)—removes geographic context and observes which region's cultural practices the model defaults to, revealing implicit bias.
+    - Design Motivation: RASA tests knowledge; RA-MCQ tests bias—two complementary perspectives for a comprehensive evaluation of LLM cultural representation.
 
 3. **Three-Level Consensus Gold Standard**:
 
-   - Function: Establishes reliable region-specific cultural commonsense annotations.
-   - Mechanism: Intra-regional consensus (≥4/5 participants' answers are semantically equivalent); inter-regional consensus (two regions' answers are fully consistent); pan-regional consensus (all five regions' answers agree). GPT-4o performs initial classification, followed by complete review by two human annotators.
-   - Design Motivation: Rigorous consensus criteria ensure the gold standard reflects genuine regional cultural practices rather than individual preferences.
+    - Function: Establishes reliable region-specific cultural commonsense annotations.
+    - Mechanism: Intra-regional consensus (≥4/5 participants' answers are semantically equivalent); inter-regional consensus (two regions' answers are fully consistent); pan-regional consensus (all five regions' answers agree). GPT-4o performs initial classification, followed by complete review by two human annotators.
+    - Design Motivation: Rigorous consensus criteria ensure the gold standard reflects genuine regional cultural practices rather than individual preferences.
 
 ### Loss & Training
 

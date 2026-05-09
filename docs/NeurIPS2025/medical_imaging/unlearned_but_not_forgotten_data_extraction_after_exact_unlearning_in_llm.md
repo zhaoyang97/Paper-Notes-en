@@ -143,9 +143,9 @@ Extraction attack results on three standard benchmarks (10% forget set):
 ## Related Papers
 
 - [\[NeurIPS 2025\] ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression](imagenet-trained_cnns_are_not_biased_towards_texture_revisiting_feature_reliance.md)
-- [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
+- [\[ACL 2026\] Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA](../../ACL2026/medical_imaging/calibrated_not_for_everyone_how_sexual_orientation_and_religious_markers_distort.md)
 - [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
+- [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
 - [\[NeurIPS 2025\] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions](robust_or_suggestible_exploring_non-clinical_induction_in_llm_drug-safety_decisi.md)
-- [\[ICLR 2026\] EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases](../../ICLR2026/medical_imaging/emr-agent_automating_cohort_and_feature_extraction_from_emr_databases.md)
 
 <!-- RELATED:END -->

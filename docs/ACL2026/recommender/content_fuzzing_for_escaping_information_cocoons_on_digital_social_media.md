@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Content Fuzzing for Escaping Information Cocoons on Social Media
 description: >-
-  [ACL 2026][Filter Bubble] Proposes ContentFuzz, a confidence-guided fuzzing framework from the content creator's perspective, which leverages LLMs to rewrite posts such that their machine-inferred stance labels change while human-interpreted meaning remains intact, thereby breaking filter bubbles on social media platforms.
+  [ACL 2026][Recommender Systems][information cocoon] This paper proposes ContentFuzz, a confidence-guided fuzzing framework from the content creator's perspective. It leverages LLMs to rewrite posts such that the machine-inferred stance label changes while the human-interpreted meaning remains unchanged, thereby breaking information cocoons on social media.
 tags:
   - ACL 2026
-  - Filter Bubble
-  - Recommendation System
-  - Fuzz Testing
-  - Content Rewriting
-  - Recommendation System
+  - Recommender Systems
+  - information cocoon
+  - stance detection
+  - fuzzing
+  - content rewriting
 date: 2026-05-08
 content_hash: a8aec84feb5d836f
 ---
+
 # Content Fuzzing for Escaping Information Cocoons on Social Media
 
 **Conference**: ACL 2026

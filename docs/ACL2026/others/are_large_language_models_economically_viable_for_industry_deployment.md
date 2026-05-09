@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Are Large Language Models Economically Viable for Industry Deployment?
 description: >-
-  [ACL 2026][Deployment Economics] Proposes the Edge-Eval framework, evaluating LLMs across their full lifecycle on commodity T4 GPUs via 5 deployment metrics (economic break-even, intelligence-per-watt, system density, cold-start tax, quantization fidelity), revealing that sub-2B models comprehensively outperform 7B models on economic and ecological dimensions, and uncovering the counterintuitive finding that QLoRA reduces memory but increases energy consumption by up to 7×.
+  [ACL 2026][deployment economics] This paper proposes Edge-Eval, a framework that evaluates LLMs across their full deployment lifecycle on legacy T4 GPUs using five deployment metrics—economic break-even, intelligence-per-watt, system density, cold-start tax, and quantization fidelity. The framework reveals that sub-2B models comprehensively outperform 7B models on both economic and ecological dimensions, and uncovers the counterintuitive finding that QLoRA, while reducing memory by ~60%, can increase energy consumption by up to 7×.
 tags:
   - ACL 2026
-  - Deployment Economics
-  - Lifecycle Benchmarking
-  - Other
-  - Quantization Fidelity
-  - Edge Inference
+  - deployment economics
+  - lifecycle benchmarking
+  - energy efficiency evaluation
+  - quantization fidelity
+  - edge inference
 date: 2026-05-08
 content_hash: d0acd4cc4c251864
 ---
+
 # Are Large Language Models Economically Viable for Industry Deployment?
 
 **Conference**: ACL 2026

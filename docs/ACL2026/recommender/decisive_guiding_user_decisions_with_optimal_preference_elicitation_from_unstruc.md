@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents
 description: >-
-  [ACL 2026][Recommender Systems] Proposes DECISIVE, an interactive decision-making framework combining document-anchored option scoring matrices with Bayesian preference inference, efficiently learning user preferences via adaptive pairwise comparison questions, achieving a 20% improvement in decision accuracy
+  [ACL 2026][Recommender Systems][Decision Support] This paper proposes DECISIVE, an interactive decision-making framework that extracts an objective option scoring matrix from unstructured documents and combines it with Bayesian preference inference to adaptively select pairwise comparison questions, efficiently learning users' latent preference vectors. The system minimizes user interaction burden while delivering transparent, personalized recommendations, achieving up to 20% higher decision accuracy over strong baselines.
 tags:
-  - ACL2026
+  - ACL 2026
   - Recommender Systems
+  - Decision Support
+  - Preference Elicitation
+  - Bayesian Inference
+  - Document Grounding
+  - Interactive Systems
 date: 2026-05-08
 content_hash: 9a8e9f2af6429653
 ---
+
 # Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents
 
 **Conference**: ACL 2026
@@ -119,9 +125,9 @@ DECISIVE takes as input a set of unstructured documents relevant to a decision (
 ## Related Papers
 
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
-- [\[ICML 2025\] Adaptive Elicitation of Latent Information Using Natural Language](../../ICML2025/recommender/adaptive_elicitation_of_latent_information_using_natural_language.md)
 - [\[ACL 2026\] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling](horizon_a_benchmark_for_in-the-wild_user_behaviour_modeling.md)
 - [\[ACL 2026\] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context](what_makes_llms_effective_sequential_recommenders_a_study_on_preference_intensit.md)
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
+- [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](../../AAAI2026/recommender/preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 
 <!-- RELATED:END -->

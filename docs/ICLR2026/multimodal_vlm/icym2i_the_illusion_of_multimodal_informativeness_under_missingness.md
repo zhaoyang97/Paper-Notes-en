@@ -143,9 +143,9 @@ Analysis of training–evaluation correction combinations (AUC RMSE vs. Oracle):
 ## Related Papers
 
 - [\[CVPR 2026\] BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates](../../CVPR2026/multimodal_vlm/balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance.md)
+- [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](../../ACL2026/multimodal_vlm/when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
 - [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[CVPR 2026\] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher](../../CVPR2026/multimodal_vlm/purify-then-align_towards_robust_human_sensing_under_modality_missing_with_knowl.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](../../CVPR2026/multimodal_vlm/finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
-- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
+- [\[CVPR 2026\] Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher](../../CVPR2026/multimodal_vlm/purify-then-align_towards_robust_human_sensing_under_modality_missing_with_knowl.md)
 
 <!-- RELATED:END -->

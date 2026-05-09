@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 description: >-
-  [ACL 2026][LLMAlignment][工具调用] 提出 Fission-GRPO，在 RL 训练循环中将工具执行错误动态转化为在线策略修正训练实例：通过学习的错误模拟器生成诊断反馈并重采样恢复轨迹，将 Qwen3-8B 的错误恢复率提升 5.7%，整体准确率从 42.75% 提升至 46.75%。
+  [ACL 2026][LLM Alignment][Tool Calling] This paper proposes Fission-GRPO, which dynamically converts tool execution errors into on-policy corrective training instances within the RL training loop. A learned error simulator generates diagnostic feedback, and recovery trajectories are resampled from the augmented context. The approach improves the error recovery rate of Qwen3-8B by 5.7% and raises overall accuracy from 42.75% to 46.75%.
 tags:
   - ACL 2026
   - LLM Alignment
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: 795f1a20c9270306
 ---
+
 # Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors
 
 **Conference**: ACL 2026
@@ -128,8 +129,8 @@ Generalization results on TAU-Bench show up to +17.4% improvement on the Retail 
 
 ## Related Papers
 
-- [\[ACL 2025\] RISE: Subtle Errors in Reasoning: Preference Learning via Error-injected Self-editing](../../ACL2025/llm_alignment/rise_error_inject_preference.md)
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](../../NeurIPS2025/llm_alignment/robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
+- [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
 - [\[ICLR 2026\] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends](../../ICLR2026/llm_alignment/group-relative_reinforce_is_secretly_an_off-policy_algorithm_demystifying_some_m.md)
 - [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](../../NeurIPS2025/llm_alignment/deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
 - [\[ICLR 2026\] No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](../../ICLR2026/llm_alignment/no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear.md)

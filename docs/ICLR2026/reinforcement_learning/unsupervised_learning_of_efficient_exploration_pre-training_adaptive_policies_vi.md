@@ -3,9 +3,15 @@ title: >-
   [Paper Note] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals
 description: >-
   Proposes ULEE, a method that meta-learns exploration-efficient and fast-adaptation pretraining strategies in unsupervised settings via adversarial goal generation and post-adaptation difficulty-based curriculum learning.
-tags:
-  - 
 date: 2026-05-08
+tags:
+  - ICLR 2026
+  - Reinforcement Learning
+  - unsupervised RL
+  - meta-learning
+  - goal generation
+  - curriculum learning
+  - exploration
 content_hash: 5bae29ef6a850147
 ---
 ## Basic Information
@@ -291,8 +297,8 @@ This provides an approximate immediate difficulty estimate, avoiding additional 
 
 - [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
 - [\[ICLR 2026\] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty](stop_unnecessary_reflection_training_lrms_for_efficient_reasoning_with_adaptive_.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
-- [\[AAAI 2026\] InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization](../../AAAI2026/reinforcement_learning/infigui-g1_advancing_gui_grounding_with_adaptive_exploration_policy_optimization.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/reinforcement_learning/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 
 <!-- RELATED:END -->

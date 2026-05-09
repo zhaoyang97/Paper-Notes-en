@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models
 description: >-
-  [ACL 2026][Time Series][Uncertainty Estimation] Proposes the SIVR framework, which computes internal variance (generalized variance, circular variance, token entropy) of LLM hidden states across layers as token-level features, aggregates full-sequence patterns with a lightweight Transformer encoder to estimate uncertainty/detect hallucinations, significantly outperforming baselines with stronger generalization.
+  [ACL 2026][Time Series][uncertainty estimation] This paper proposes the SIVR framework, which computes internal variance statistics (generalised variance, circular variance, and token entropy) across layers of LLM hidden states as token-level features, and aggregates full-sequence patterns via a lightweight Transformer encoder to estimate uncertainty and detect hallucinations, achieving significant improvements over baselines with stronger generalization.
 tags:
   - ACL 2026
   - Time Series
-  - Uncertainty Estimation
-  - Hallucination Detection
-  - Hidden State Variance
-  - Sequence Aggregation
-  - Internal Representation Dispersion
+  - uncertainty estimation
+  - hallucination detection
+  - hidden state variance
+  - sequential aggregation
+  - internal representation dispersion
 date: 2026-05-08
 content_hash: e2b4835852309ff0
 ---
+
 # Learning Uncertainty from Sequential Internal Dispersion in Large Language Models
 
 **Conference**: ACL 2026
@@ -130,8 +131,8 @@ AUC comparison across 7 datasets on Llama-3.1-8B:
 
 - [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](../../NeurIPS2025/time_series/planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
-- [\[ACL 2025\] G2S: A General-to-Specific Learning Framework for Temporal Knowledge Graph Forecasting with Large Language Models](../../ACL2025/time_series/g2s_a_general-to-specific_learning_framework_for_temporal_knowledge_graph_foreca.md)
 - [\[NeurIPS 2025\] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models](../../NeurIPS2025/time_series/causal_masking_on_spatial_data_an_information-theoretic_case_for_learning_spatia.md)
 - [\[ICCV 2025\] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models](../../ICCV2025/time_series/vlrmbench_a_comprehensive_and_challenging_benchmark_for_vision-language_reward_m.md)
+- [\[NeurIPS 2025\] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models](../../NeurIPS2025/time_series/causaldynamics_a_large-scale_benchmark_for_structural_discovery_of_dynamical_cau.md)
 
 <!-- RELATED:END -->

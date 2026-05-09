@@ -49,21 +49,21 @@ The attack framework proceeds in two phases. In the optimization phase, a differ
 
 1. **Conjunctive Activation Condition**:
 
-   - Function: Precisely defines the conditions for attack success—three elements must be simultaneously satisfied.
-   - Mechanism: The attack activates if and only if $\exists j$ such that $(k \in s_j) \land (a_j = a^*)$, i.e., the query segment $s_j$ containing trigger key $k$ is routed to the compromised agent $a^*$. Neither the trigger key nor the template is independently malicious—the trigger key may be an ordinary request such as "please check my account balance," and the template may be an innocuous instruction such as "output results in a special format."
-   - Design Motivation: This conjunctive property is the fundamental distinction between this attack and conventional single-point prompt injection—no individual component appears suspicious, leaving security audits without a foothold.
+    - Function: Precisely defines the conditions for attack success—three elements must be simultaneously satisfied.
+    - Mechanism: The attack activates if and only if $\exists j$ such that $(k \in s_j) \land (a_j = a^*)$, i.e., the query segment $s_j$ containing trigger key $k$ is routed to the compromised agent $a^*$. Neither the trigger key nor the template is independently malicious—the trigger key may be an ordinary request such as "please check my account balance," and the template may be an innocuous instruction such as "output results in a special format."
+    - Design Motivation: This conjunctive property is the fundamental distinction between this attack and conventional single-point prompt injection—no individual component appears suspicious, leaving security audits without a foothold.
 
 2. **Topology- and Routing-Aware Optimization**:
 
-   - Function: Maximize attack success rate while minimizing false activations.
-   - Mechanism: Routing probability is modeled as $\Pr[a=a^*|s] = \text{clip}(\alpha I_{acc}(s) + \rho I_{acc}(s) I_k(s))$, where $\alpha$ is the baseline account affinity and $\rho$ is an attacker-controlled routing bias. Gumbel-Softmax relaxation is applied to discrete decision variables (trigger-key placement, template placement $\tau \in \{prefix, wrap, suffix\}$), enabling gradient-based optimization of the joint ASR objective.
-   - Design Motivation: Attack success is inherently probabilistic and topology-dependent—routing dynamics differ fundamentally across star, chain, and DAG topologies, necessitating topology-aware optimization strategies.
+    - Function: Maximize attack success rate while minimizing false activations.
+    - Mechanism: Routing probability is modeled as $\Pr[a=a^*|s] = \text{clip}(\alpha I_{acc}(s) + \rho I_{acc}(s) I_k(s))$, where $\alpha$ is the baseline account affinity and $\rho$ is an attacker-controlled routing bias. Gumbel-Softmax relaxation is applied to discrete decision variables (trigger-key placement, template placement $\tau \in \{prefix, wrap, suffix\}$), enabling gradient-based optimization of the joint ASR objective.
+    - Design Motivation: Attack success is inherently probabilistic and topology-dependent—routing dynamics differ fundamentally across star, chain, and DAG topologies, necessitating topology-aware optimization strategies.
 
 3. **Four-Quadrant Evaluation Protocol**:
 
-   - Function: Rigorously isolate the conjunctive effect and exclude single-component contributions.
-   - Mechanism: Four conditions are evaluated: *clean* (no key, no template), *key_only* (key, no template), *template_only* (no key, template), and *both* (key + template). A genuine conjunctive activation is confirmed only when ASR is high under *both* while remaining low under the other three conditions. A deterministic marker token (__ACTIVATED__) is used to judge activation.
-   - Design Motivation: If *key_only* or *template_only* alone suffices to trigger the attack, it constitutes conventional injection rather than a conjunctive attack; the four-quadrant protocol ensures causal validity of experimental conclusions.
+    - Function: Rigorously isolate the conjunctive effect and exclude single-component contributions.
+    - Mechanism: Four conditions are evaluated: *clean* (no key, no template), *key_only* (key, no template), *template_only* (no key, template), and *both* (key + template). A genuine conjunctive activation is confirmed only when ASR is high under *both* while remaining low under the other three conditions. A deterministic marker token (__ACTIVATED__) is used to judge activation.
+    - Design Motivation: If *key_only* or *template_only* alone suffices to trigger the attack, it constitutes conventional injection rather than a conjunctive attack; the four-quadrant protocol ensures causal validity of experimental conclusions.
 
 ### Loss & Training
 Attack optimization employs a differentiable surrogate objective with Gumbel-Softmax relaxation over discrete variables, using gradient descent to optimize the attack configuration $\theta = (j, \tau, \rho)$. No model weights are modified.

@@ -47,21 +47,21 @@ CRISP consists of three stages: (1) **Raw CoT Generation**—obtaining a complet
 
 1. **Discovery of `</think>` as an Information Anchor**
 
-   - **Function**: Provides step saliency signals without requiring an external model.
-   - **Mechanism**: Attention visualization reveals that, in deeper layers, the `</think>` token progressively aggregates information from the preceding reasoning chain; during final answer generation, the model attends predominantly to the `</think>` position. Step saliency $S_i$ is defined as the normalized sum of attention weights from `</think>` to tokens in step $r_i$ across all layers and heads. Steps with high attention encode critical information (perplexity spikes upon removal), while low-attention steps can be safely removed (perplexity changes minimally).
-   - **Design Motivation**: External surrogates are misaligned with the source model's reasoning dynamics, whereas the `</think>` attention pattern directly reflects what the source model itself considers important.
+    - **Function**: Provides step saliency signals without requiring an external model.
+    - **Mechanism**: Attention visualization reveals that, in deeper layers, the `</think>` token progressively aggregates information from the preceding reasoning chain; during final answer generation, the model attends predominantly to the `</think>` position. Step saliency $S_i$ is defined as the normalized sum of attention weights from `</think>` to tokens in step $r_i$ across all layers and heads. Steps with high attention encode critical information (perplexity spikes upon removal), while low-attention steps can be safely removed (perplexity changes minimally).
+    - **Design Motivation**: External surrogates are misaligned with the source model's reasoning dynamics, whereas the `</think>` attention pattern directly reflects what the source model itself considers important.
 
 2. **Greedy Search over Four Atomic Operators**
 
-   - **Function**: Enables flexible compression of the reasoning chain guided by saliency.
-   - **Mechanism**: Four operators are defined—Keep (retain high-saliency steps), Prune (remove low-saliency steps), Rewrite (condense a step via LLM), and Fuse (merge semantically redundant steps). A dynamic action space constrains allowable operations based on saliency scores and semantic similarity. The reward function $R(a) = \log P_\theta(y|x, \mathcal{C} \oplus a(r_i)) - \log P_\theta(y|x, \mathcal{C}) - \beta \cdot \text{Len}(a(r_i))$ balances the gain in answer likelihood against a length penalty.
-   - **Design Motivation**: Simple threshold-based filtering risks severing logical dependencies or retaining redundancy; the four operators provide a continuous compression granularity ranging from full retention to complete removal.
+    - **Function**: Enables flexible compression of the reasoning chain guided by saliency.
+    - **Mechanism**: Four operators are defined—Keep (retain high-saliency steps), Prune (remove low-saliency steps), Rewrite (condense a step via LLM), and Fuse (merge semantically redundant steps). A dynamic action space constrains allowable operations based on saliency scores and semantic similarity. The reward function $R(a) = \log P_\theta(y|x, \mathcal{C} \oplus a(r_i)) - \log P_\theta(y|x, \mathcal{C}) - \beta \cdot \text{Len}(a(r_i))$ balances the gain in answer likelihood against a length penalty.
+    - **Design Motivation**: Simple threshold-based filtering risks severing logical dependencies or retaining redundancy; the four operators provide a continuous compression granularity ranging from full retention to complete removal.
 
 3. **Compressed Path Refinement and Multi-task Fine-tuning**
 
-   - **Function**: Restores semantic coherence of the compressed path and trains the model.
-   - **Mechanism**: The skeleton produced by greedy search may contain grammatical discontinuities; a high-capacity LLM refiner restores fluency using the original CoT as reference. Fine-tuning employs a multi-task strategy with a control token $\kappa$: inputs with $\kappa$ generate compressed reasoning, while inputs without $\kappa$ generate full reasoning, thereby avoiding catastrophic forgetting.
-   - **Design Motivation**: Discrete search operations (especially Prune and Fuse) may introduce logical gaps that necessitate a refinement step.
+    - **Function**: Restores semantic coherence of the compressed path and trains the model.
+    - **Mechanism**: The skeleton produced by greedy search may contain grammatical discontinuities; a high-capacity LLM refiner restores fluency using the original CoT as reference. Fine-tuning employs a multi-task strategy with a control token $\kappa$: inputs with $\kappa$ generate compressed reasoning, while inputs without $\kappa$ generate full reasoning, thereby avoiding catastrophic forgetting.
+    - **Design Motivation**: Discrete search operations (especially Prune and Fuse) may introduce logical gaps that necessitate a refinement step.
 
 ### Loss & Training
 
@@ -153,10 +153,10 @@ To be supplemented after thorough reading.
 
 ## Related Papers
 
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
+- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
-- [\[ACL 2026\] Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective](decoupling_the_effect_of_chain-of-thought_reasoning_a_human_label_variation_pers.md)
-- [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
+- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
+- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
 
 <!-- RELATED:END -->

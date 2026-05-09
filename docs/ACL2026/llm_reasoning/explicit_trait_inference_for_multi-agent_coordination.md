@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Explicit Trait Inference for Multi-Agent Coordination
 description: >-
-  [ACL 2026][LLM Reasoning][Multi-Agent Coordination] Proposes Explicit Trait Inference (ETI), a method leveraging warmth and competence dimensions from psychology to enable LLM agents to reason about and track collaborators' behavioral traits, reducing payoff loss by 45–77% in economic games and improving task performance by 3–29% on MultiAgentBench.
+  [ACL 2026][LLM Reasoning][Multi-agent coordination] This paper proposes Explicit Trait Inference (ETI), a method that enables LLM agents to reason about and track partners' behavioral traits along the psychological dimensions of warmth and competence. ETI reduces payoff loss by 45–77% in economic games and improves task performance by 3–29% on MultiAgentBench.
 tags:
   - ACL 2026
   - LLM Reasoning
-  - Multi-Agent Coordination
-  - Trait Inference
-  - Warmth-Competence Dimensions
-  - Social Cognition
-  - Game Theory
+  - Multi-agent coordination
+  - trait inference
+  - warmth-competence dimensions
+  - social cognition
+  - game theory
 date: 2026-05-08
 content_hash: 0cbc653a1fbdf55a
 ---
+
 # Explicit Trait Inference for Multi-Agent Coordination
 
 **Conference**: ACL 2026
@@ -135,10 +136,10 @@ On MultiAgentBench:
 
 ## Related Papers
 
+- [\[ACL 2026\] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference](march_evaluating_the_intersection_of_ambiguity_interpretation_and_multi-hop_infe.md)
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](../../ICLR2026/llm_reasoning/agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
-- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](../../ICLR2026/llm_reasoning/fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
-- [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
-- [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](../../AAAI2026/llm_reasoning/cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
-- [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](../../AAAI2026/llm_reasoning/jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
+- [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
+- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
+- [\[ACL 2026\] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)
 
 <!-- RELATED:END -->

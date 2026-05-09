@@ -166,9 +166,9 @@ ATPO treats the multi-turn dialogue process as the expansion of a search tree, w
 ## Related Papers
 
 - [\[AAAI 2026\] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](../../AAAI2026/medical_imaging/a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)
+- [\[ACL 2026\] Stable On-Policy Distillation through Adaptive Target Reformulation](../../ACL2026/medical_imaging/stable_on-policy_distillation_through_adaptive_target_reformulation.md)
 - [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](../../AAAI2026/medical_imaging/note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
 - [\[ICLR 2026\] Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts](adaptive_test-time_training_for_predicting_need_for_invasive_mechanical_ventilat.md)
 - [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
-- [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
 
 <!-- RELATED:END -->

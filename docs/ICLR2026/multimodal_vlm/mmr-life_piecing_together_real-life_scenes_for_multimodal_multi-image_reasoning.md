@@ -185,10 +185,10 @@ MMR-Life is the first multimodal multi-image reasoning benchmark targeting real-
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
+- [\[ACL 2026\] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life](../../ACL2026/multimodal_vlm/when_helpers_become_hazards_a_benchmark_for_analyzing_multimodal_llm-powered_saf.md)
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
-- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
-- [\[ICCV 2025\] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning](../../ICCV2025/multimodal_vlm/from_easy_to_hard_the_mir_benchmark_for_progressive_interleaved_multi-image_reas.md)
+- [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
+- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
 
 <!-- RELATED:END -->

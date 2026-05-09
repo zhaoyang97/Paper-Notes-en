@@ -169,9 +169,9 @@ Conventional TTA methods are nearly ineffective or even degrade under semantic s
 ## Related Papers
 
 - [\[CVPR 2026\] Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery](learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover.md)
+- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
 - [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](iapl_aigenerated_image_detection_adaptive_prompt.md)
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](../../AAAI2026/model_compression/correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
-- [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
 
 <!-- RELATED:END -->

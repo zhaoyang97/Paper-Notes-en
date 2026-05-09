@@ -53,25 +53,28 @@ The SpeakerSleuth benchmark comprises: (1) collecting multi-turn dialogue audio 
 ### Key Designs
 
 1. **Three Controlled Scenario Designs**:
-   - **Function**: Isolate acoustic discrimination capability through controlled variables.
-   - **Mechanism**:
-     - S1 (Fully Consistent): The original dialogue serves as the positive sample.
-     - S2 (Gender-Switched): One randomly selected turn is replaced with an opposite-gender speaker via voice conversion, introducing an obvious acoustic deviation.
-     - S3 (Similar Speaker): One turn is replaced with the most acoustically similar same-gender speaker (highest cosine similarity under ECAPA-TDNN embeddings), testing fine-grained discrimination.
-   - **Design Motivation**: S1/S2/S3 share identical dialogue content, so performance differences directly reflect acoustic discrimination ability. The increasing difficulty from S2 to S3 probes the gradient of models' acoustic sensitivity.
+
+    - **Function**: Isolate acoustic discrimination capability through controlled variables.
+    - **Mechanism**:
+      - S1 (Fully Consistent): The original dialogue serves as the positive sample.
+      - S2 (Gender-Switched): One randomly selected turn is replaced with an opposite-gender speaker via voice conversion, introducing an obvious acoustic deviation.
+      - S3 (Similar Speaker): One turn is replaced with the most acoustically similar same-gender speaker (highest cosine similarity under ECAPA-TDNN embeddings), testing fine-grained discrimination.
+    - **Design Motivation**: S1/S2/S3 share identical dialogue content, so performance differences directly reflect acoustic discrimination ability. The increasing difficulty from S2 to S3 probes the gradient of models' acoustic sensitivity.
 
 2. **Three-Level Task Hierarchy**:
-   - **Function**: Evaluate acoustic discrimination capability at coarse-to-fine granularities.
-   - **Mechanism**:
-     - Detection (absolute judgment): Determine whether all turns belong to the same speaker, requiring a stable internal threshold.
-     - Localization (fine-grained analysis): Identify which specific turn is inconsistent, requiring turn-level acoustic feature discrimination.
-     - Discrimination (relative comparison): Rank three candidate audio clips by acoustic similarity; assessed in both classification and ranking forms.
-   - **Design Motivation**: Mirrors real TTS workflows—first detect inconsistency → localize the problematic turn → regenerate and select the best candidate.
+
+    - **Function**: Evaluate acoustic discrimination capability at coarse-to-fine granularities.
+    - **Mechanism**:
+      - Detection (absolute judgment): Determine whether all turns belong to the same speaker, requiring a stable internal threshold.
+      - Localization (fine-grained analysis): Identify which specific turn is inconsistent, requiring turn-level acoustic feature discrimination.
+      - Discrimination (relative comparison): Rank three candidate audio clips by acoustic similarity; assessed in both classification and ranking forms.
+    - **Design Motivation**: Mirrors real TTS workflows—first detect inconsistency → localize the problematic turn → regenerate and select the best candidate.
 
 3. **Modality Bias Experiment (Effect of Textual Context)**:
-   - **Function**: Reveal modality imbalance between textual and acoustic signals in LALMs.
-   - **Mechanism**: Building on the main experiment, textual context from other speakers' turns is additionally provided, and the resulting effect on detection performance is observed.
-   - **Design Motivation**: In real-world applications, LALMs receive both audio and text simultaneously; it is therefore necessary to verify whether models neglect acoustic inconsistencies due to textual coherence.
+
+    - **Function**: Reveal modality imbalance between textual and acoustic signals in LALMs.
+    - **Mechanism**: Building on the main experiment, textual context from other speakers' turns is additionally provided, and the resulting effect on detection performance is observed.
+    - **Design Motivation**: In real-world applications, LALMs receive both audio and text simultaneously; it is therefore necessary to verify whether models neglect acoustic inconsistencies due to textual coherence.
 
 ### Loss & Training
 

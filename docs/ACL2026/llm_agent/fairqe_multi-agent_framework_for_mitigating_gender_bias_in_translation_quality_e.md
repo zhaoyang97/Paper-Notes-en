@@ -51,21 +51,21 @@ FairQE consists of four sequential stages: (1) gender cue detection — identify
 
 1. **Gender Cue Detector ($Agent_{cue}$)**:
 
-   - Function: Identifies gender-related linguistic cues in source–target sentence pairs.
-   - Mechanism: Defines a gender bias cue taxonomy comprising 12 fine-grained categories, classifying cues into gender-ambiguous and gender-explicit types, with each cue linked to corresponding spans in both the source and target sentences.
-   - Design Motivation: Different types of gender cues require different debiasing strategies — ambiguous cues require consistency, while explicit cues require faithfulness — necessitating precise cue type identification.
+    - Function: Identifies gender-related linguistic cues in source–target sentence pairs.
+    - Mechanism: Defines a gender bias cue taxonomy comprising 12 fine-grained categories, classifying cues into gender-ambiguous and gender-explicit types, with each cue linked to corresponding spans in both the source and target sentences.
+    - Design Motivation: Different types of gender cues require different debiasing strategies — ambiguous cues require consistency, while explicit cues require faithfulness — necessitating precise cue type identification.
 
 2. **Gender-Flipped Variant Generator ($Agent_{amb}$ + $Agent_{exp}$)**:
 
-   - Function: Generates gender-flipped translation variants to quantify bias.
-   - Mechanism: For gender-ambiguous cues, all valid gender realizations (F/M/N) are generated; for gender-explicit cues, the framework verifies whether the target translation conforms to the gender constraints of the source sentence and generates flipped variants for contrastive analysis.
-   - Design Motivation: Comparing QE scores across gender variants enables quantification of the model's gender preference.
+    - Function: Generates gender-flipped translation variants to quantify bias.
+    - Mechanism: For gender-ambiguous cues, all valid gender realizations (F/M/N) are generated; for gender-explicit cues, the framework verifies whether the target translation conforms to the gender constraints of the source sentence and generates flipped variants for contrastive analysis.
+    - Design Motivation: Comparing QE scores across gender variants enables quantification of the model's gender preference.
 
 3. **Dynamic Bias-Aware Score Aggregation**:
 
-   - Function: Dynamically fuses traditional QE scores and LLM debiased scores according to bias severity.
-   - Mechanism: Ambiguous bias $b_{amb}$ (range of scores across variants) and explicit bias $b_{exp}$ (degree of preference violation) are computed; a soft gate $w = B/(1+B)$ controls the fusion weight. When bias is small, the framework relies on traditional QE; when bias is large, it defers to LLM reasoning.
-   - Design Motivation: Traditional QE models are stronger in fine-grained accuracy, while LLMs excel at reasoning-intensive tasks; dynamic aggregation leverages the complementary strengths of both.
+    - Function: Dynamically fuses traditional QE scores and LLM debiased scores according to bias severity.
+    - Mechanism: Ambiguous bias $b_{amb}$ (range of scores across variants) and explicit bias $b_{exp}$ (degree of preference violation) are computed; a soft gate $w = B/(1+B)$ controls the fusion weight. When bias is small, the framework relies on traditional QE; when bias is large, it defers to LLM reasoning.
+    - Design Motivation: Traditional QE models are stronger in fine-grained accuracy, while LLMs excel at reasoning-intensive tasks; dynamic aggregation leverages the complementary strengths of both.
 
 ### Loss & Training
 

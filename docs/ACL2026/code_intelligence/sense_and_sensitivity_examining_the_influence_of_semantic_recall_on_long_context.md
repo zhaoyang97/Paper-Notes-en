@@ -50,21 +50,21 @@ Code understanding is decomposed into lexical recall ($R^L$) and semantic recall
 
 1. **Semantic Recall Sensitivity**:
 
-   - Function: Quantifies the degree to which a code understanding task depends on semantic comprehension.
-   - Mechanism: Measured via counterfactual analysis — code lines are systematically removed one by one, and the resulting performance degradation curve is observed. If a model heavily relies on semantic recall, removing critical lines should cause sharp performance drops (analogous to a Python interpreter); if it relies on pattern matching, degradation is gradual.
-   - Design Motivation: Existing benchmarks allow models to "guess" outputs by recognizing common algorithmic patterns (e.g., sorting, string operations) rather than genuinely understanding the code. A metric is needed to distinguish these two cases.
+    - Function: Quantifies the degree to which a code understanding task depends on semantic comprehension.
+    - Mechanism: Measured via counterfactual analysis — code lines are systematically removed one by one, and the resulting performance degradation curve is observed. If a model heavily relies on semantic recall, removing critical lines should cause sharp performance drops (analogous to a Python interpreter); if it relies on pattern matching, degradation is gradual.
+    - Design Motivation: Existing benchmarks allow models to "guess" outputs by recognizing common algorithmic patterns (e.g., sorting, string operations) rather than genuinely understanding the code. A metric is needed to distinguish these two cases.
 
 2. **SemTrace Task**:
 
-   - Function: Provides an output prediction benchmark with high semantic recall sensitivity.
-   - Mechanism: Python functions are generated containing simple but unpredictable arithmetic operations, where each assignment statement independently modifies a different element of a list ($x + y$, with $y$ uniformly sampled from $[-100, 99]$), and assignment order is randomized. The probability of guessing the full output is extremely low (at most $(1/200)^4$), requiring accurate semantic recall of all assignment lines.
-   - Design Motivation: Simple two-digit arithmetic minimizes confounding factors from reasoning difficulty while preventing pattern matching. Partial-match analysis is supported to distinguish between progressive semantic recall degradation and complete collapse.
+    - Function: Provides an output prediction benchmark with high semantic recall sensitivity.
+    - Mechanism: Python functions are generated containing simple but unpredictable arithmetic operations, where each assignment statement independently modifies a different element of a list ($x + y$, with $y$ uniformly sampled from $[-100, 99]$), and assignment order is randomized. The probability of guessing the full output is extremely low (at most $(1/200)^4$), requiring accurate semantic recall of all assignment lines.
+    - Design Motivation: Simple two-digit arithmetic minimizes confounding factors from reasoning difficulty while preventing pattern matching. Partial-match analysis is supported to distinguish between progressive semantic recall degradation and complete collapse.
 
 3. **Position-Controlled Experimental Design**:
 
-   - Function: Isolates the differential effects of position on lexical versus semantic recall.
-   - Mechanism: Target code is embedded within irrelevant distractor code contexts (20–80 distractor functions, approximately 4k–16k tokens), and the position of the target code is systematically varied across 11 equidistant positions. Lexical recall (function-level retrieval) and semantic recall (input/output prediction) are evaluated separately.
-   - Design Motivation: Positional variation serves as a diagnostic lens to probe how models integrate information, rather than treating positional effects as an end goal.
+    - Function: Isolates the differential effects of position on lexical versus semantic recall.
+    - Mechanism: Target code is embedded within irrelevant distractor code contexts (20–80 distractor functions, approximately 4k–16k tokens), and the position of the target code is systematically varied across 11 equidistant positions. Lexical recall (function-level retrieval) and semantic recall (input/output prediction) are evaluated separately.
+    - Design Motivation: Positional variation serves as a diagnostic lens to probe how models integrate information, rather than treating positional effects as an end goal.
 
 ### Loss & Training
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 description: >-
-  [ACL 2026][LLMAlignment][SafeAlignment] This paper proposes SafeMERGE, a lightweight post-fine-tuning framework that detects fine-tuned layers deviating from safe behavior via cosine similarity and selectively merges only those layers with their counterparts from a safety-aligned model, significantly reducing harmful outputs while maintaining or improving task performance across four LLMs.
+  [ACL 2026][LLM Alignment][Safety Alignment] This paper proposes SafeMERGE, a lightweight post-fine-tuning framework that detects layers deviating from safe behavior via cosine similarity, and selectively merges only those layers with their counterparts from a safety model. Across four LLMs, the method significantly reduces harmful outputs while maintaining or even improving task performance.
 tags:
   - ACL 2026
   - LLM Alignment
   - Safety Alignment
   - Model Merging
-  - LoRA Fine-tuning
-  - Post-fine-tuning Defense
-  - Layer-selective Merging
+  - LoRA Fine-Tuning
+  - Post-Fine-Tuning Defense
+  - Layer-Selective Merging
 date: 2026-05-08
 content_hash: da42fb6acc1d1691
 ---
+
 # SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 
 **Conference**: ACL 2026
@@ -129,10 +130,10 @@ The safety model is trained using standard LoRA fine-tuning. SafeMERGE itself re
 
 ## Related Papers
 
-- [\[ICML 2025\] Layer-wise Alignment: Examining Safety Alignment Across Image Encoder Layers in Vision Language Models](../../ICML2025/llm_alignment/layer-wise_alignment_examining_safety_alignment_across_image_encoder_layers_in_v.md)
 - [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](../../AAAI2026/llm_alignment/safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
-- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence](../../ICLR2026/llm_alignment/antibody_strengthening_defense_against_harmful_fine-tuning_for_large_language_mo.md)
+- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](../../AAAI2026/llm_alignment/ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
+- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
+- [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](../../ICLR2026/llm_alignment/a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 
 <!-- RELATED:END -->

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs
 description: >-
-  [ACL 2026][Video Understanding][Diffusion Language Model] This paper proposes Saber, a training-free sampling algorithm for Diffusion Language Models (DLMs) that improves average Pass@1 by 1.9% on code generation while achieving 251.4% inference acceleration, via two strategies: adaptive acceleration (dynamically adjusting parallel decoding based on established context) and backtracking-enhanced remasking (reverting tokens invalidated by new context).
+  [ACL 2026][Video Understanding][diffusion language models] This paper proposes Saber, a training-free sampling algorithm for diffusion language models (DLMs) that achieves an average Pass@1 improvement of 1.9% on code generation while delivering 251.4% inference speedup. This is accomplished through two strategies: adaptive acceleration (dynamically adjusting the amount of parallel decoding based on established context) and backtracking-enhanced remasking (revoking tokens falsified by newly established context).
 tags:
   - ACL 2026
   - Video Understanding
-  - Diffusion Language Model
-  - Adaptive Sampling
-  - Backtracking Remasking
-  - Code Generation Acceleration
-  - Speed-Quality Tradeoff
+  - diffusion language models
+  - adaptive sampling
+  - backtracking remasking
+  - code generation acceleration
+  - speed-quality trade-off
 date: 2026-05-08
 content_hash: 5e9ebdcc21ad82c0
 ---
+
 # Saber: Efficient Sampling with Adaptive Acceleration and Backtracking Enhanced Remasking for DLMs
 
 **Conference**: ACL 2026
@@ -129,9 +130,9 @@ Training-free method. Experiments are conducted on LLaDA-8B-Instruct with temper
 ## Related Papers
 
 - [\[CVPR 2026\] AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding](../../CVPR2026/video_understanding/adaspark_adaptive_sparsity_for_efficient_long_video_understanding.md)
-- [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](../../NeurIPS2025/video_understanding/videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[ICCV 2025\] EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception](../../ICCV2025/video_understanding/egoadapt_adaptive_multisensory_distillation_and_policy_learning_for_efficient_eg.md)
+- [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](../../NeurIPS2025/video_understanding/videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
-- [\[ACL 2025\] Sparse-to-Dense: A Free Lunch for Lossless Acceleration of Video Understanding in LLMs](../../ACL2025/video_understanding/sparse-to-dense_a_free_lunch_for_lossless_acceleration_of_video_understanding_in.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 
 <!-- RELATED:END -->

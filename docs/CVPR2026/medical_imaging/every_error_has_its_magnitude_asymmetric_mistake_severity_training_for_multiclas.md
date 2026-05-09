@@ -147,8 +147,8 @@ These results validate the generalizability of MSCE to the natural image domain.
 
 - [\[CVPR 2026\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](mil-pf_multiple_instance_learning_on_precomputed_features_for_mammography_classi.md)
 - [\[CVPR 2026\] Fair Lung Disease Diagnosis from Chest CT via Gender-Adversarial Attention Multiple Instance Learning](fair_lung_disease_diagnosis_from_chest_ct_via_gend.md)
+- [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](../../ACL2026/medical_imaging/multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
 - [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](../../AAAI2026/medical_imaging/error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
-- [\[NeurIPS 2025\] Ordinal Label-Distribution Learning with Constrained Asymmetric Priors for Imbalanced Retinal Grading](../../NeurIPS2025/medical_imaging/ordinal_label-distribution_learning_with_constrained_asymmetric_priors_for_imbal.md)
 
 <!-- RELATED:END -->

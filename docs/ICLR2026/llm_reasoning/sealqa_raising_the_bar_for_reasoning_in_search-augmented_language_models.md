@@ -140,6 +140,6 @@ Increasing test-time computation does not yield reliable gains; performance freq
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
 - [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_on_multi-modal_la.md)
+- [\[ICLR 2026\] Conflict-Aware Fusion: Resolving Logic Inertia in Large Language Models via Structured Cognitive Priors](conflict-aware_fusion_resolving_logic_inertia_in_large_language_models_via_struc.md)
 
 <!-- RELATED:END -->

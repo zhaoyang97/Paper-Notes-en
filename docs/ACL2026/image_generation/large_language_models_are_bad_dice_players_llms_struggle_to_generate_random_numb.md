@@ -47,21 +47,21 @@ The evaluation pipeline covers 11 frontier LLMs × 15 probability distributions 
 
 1. **Dual-Protocol Experimental Design**:
 
-   - **Function**: Disentangles two failure modes in LLM sampling—context dependence and intrinsic prior bias.
-   - **Mechanism**: Protocol A (batch generation) generates $N=1000$ samples in a single response, allowing the model to self-correct using prior context; Protocol B (independent requests) issues $N=1000$ stateless calls each generating 1 sample, isolating the model's intrinsic prior.
-   - **Design Motivation**: Prior studies used only batch protocols and could not determine whether LLMs possess genuine independent sampling capability.
+    - **Function**: Disentangles two failure modes in LLM sampling—context dependence and intrinsic prior bias.
+    - **Mechanism**: Protocol A (batch generation) generates $N=1000$ samples in a single response, allowing the model to self-correct using prior context; Protocol B (independent requests) issues $N=1000$ stateless calls each generating 1 sample, isolating the model's intrinsic prior.
+    - **Design Motivation**: Prior studies used only batch protocols and could not determine whether LLMs possess genuine independent sampling capability.
 
 2. **Theoretical Analysis of the Context-Fidelity Dilemma**:
 
-   - **Function**: Characterizes the non-monotonic relationship between sampling budget $N$ and distributional fidelity.
-   - **Mechanism**: Under independent requests, the expected error $\mathcal{E}(N) = \Delta_{\text{ind}} + \mathcal{O}(N^{-1/2})$ converges to an irreducible bias $\Delta_{\text{ind}}$; under batch generation, the error decomposes into a Correction Gain (improvement from in-context self-correction) and Drift (degradation from autoregressive drift), with drift dominating beyond a critical length.
-   - **Design Motivation**: Explains why larger $N$ leads to worse distributional fit.
+    - **Function**: Characterizes the non-monotonic relationship between sampling budget $N$ and distributional fidelity.
+    - **Mechanism**: Under independent requests, the expected error $\mathcal{E}(N) = \Delta_{\text{ind}} + \mathcal{O}(N^{-1/2})$ converges to an irreducible bias $\Delta_{\text{ind}}$; under batch generation, the error decomposes into a Correction Gain (improvement from in-context self-correction) and Drift (degradation from autoregressive drift), with drift dominating beyond a critical length.
+    - **Design Motivation**: Explains why larger $N$ leads to worse distributional fit.
 
 3. **Three-Tier Distribution Complexity Classification**:
 
-   - **Function**: Organizes 15 distributions into three tiers according to entropy characteristics, support constraints, and tail behavior.
-   - **Mechanism**: Tier I (basic distributions: Uniform, Gaussian, Bernoulli); Tier II (bounded/discrete: Beta, Binomial, Poisson, Exponential); Tier III (heavy-tailed/multi-parameter: Cauchy, t, Chi-squared, F, Gamma, Weibull, Laplace, Logistic).
-   - **Design Motivation**: Systematically assesses whether sampling fidelity degrades monotonically with distributional complexity.
+    - **Function**: Organizes 15 distributions into three tiers according to entropy characteristics, support constraints, and tail behavior.
+    - **Mechanism**: Tier I (basic distributions: Uniform, Gaussian, Bernoulli); Tier II (bounded/discrete: Beta, Binomial, Poisson, Exponential); Tier III (heavy-tailed/multi-parameter: Cauchy, t, Chi-squared, F, Gamma, Weibull, Laplace, Logistic).
+    - **Design Motivation**: Systematically assesses whether sampling fidelity degrades monotonically with distributional complexity.
 
 ### Loss & Training
 

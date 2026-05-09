@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning
 description: >-
-  [ACL 2026][Other] Proposes PTE (Prefill Token Equivalents), a hardware-aware metric for tool-integrated reasoning efficiency that unifies the cost of internal reasoning and external tool use, and reveals four TIR inefficiency patterns through large-scale experiments: confirmatory tool use, tool mixing, lack of tool priors, and tool format collapse.
+  [ACL 2026][Tool-integrated reasoning] This paper proposes PTE (Prefill Token Equivalents), a hardware-aware efficiency metric for tool-integrated reasoning (TIR) that unifies the costs of internal reasoning and external tool use. Through large-scale experiments, the paper identifies four inefficiency patterns in TIR: confirmatory tool use, tool mixing, lack of tool priors, and tool format collapse.
 tags:
   - ACL 2026
-  - Other
-  - Efficiency Metrics
+  - Tool-integrated reasoning
+  - efficiency metrics
   - KV-Cache
-  - Prefill-Decode Asymmetry
-  - Reasoning Patterns
+  - prefill-decode asymmetry
+  - reasoning patterns
 date: 2026-05-08
 content_hash: 93fc12747ba38b75
 ---
+
 # Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning
 
 **Conference**: ACL 2026
@@ -113,10 +114,10 @@ PTE is an evaluation metric rather than a training objective, though the paper n
 
 ## Related Papers
 
-- [\[ACL 2025\] STRICTA: Structured Reasoning in Critical Text Assessment for Peer Review and Beyond](../../ACL2025/others/stricta_structured_reasoning_in_critical_text_assessment_for_peer_review_and_bey.md)
 - [\[AAAI 2026\] AMS-IO-Bench and AMS-IO-Agent: Benchmarking and Structured Reasoning for Analog and Mixed-Signal Integrated Circuit Input/Output Design](../../AAAI2026/others/ams-io-bench_and_ams-io-agent_benchmarking_and_structured_re.md)
-- [\[ACL 2025\] Divide-Then-Aggregate: An Efficient Tool Learning Method via Parallel Tool Invocation](../../ACL2025/others/dta_llama_parallel_tool_invocation.md)
-- [\[ACL 2025\] PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment](../../ACL2025/others/popalign_diversifying_contrasting_patterns_for_a_more_comprehensive_alignment.md)
 - [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](../../AAAI2026/others/verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[ICLR 2026\] Beyond Linearity in Attention Projections: The Case for Nonlinear Queries](../../ICLR2026/others/beyond_linearity_in_attention_projections_the_case_for_nonlinear_queries.md)
+- [\[AAAI 2026\] Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion](../../AAAI2026/others/towards_temporal_fusion_beyond_the_field_of_view_for_camera-based_semantic_scene.md)
 
 <!-- RELATED:END -->

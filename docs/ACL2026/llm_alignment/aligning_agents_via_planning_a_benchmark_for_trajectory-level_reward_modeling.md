@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 description: >-
-  [ACL 2026][LLMAlignment][RewardModel] Introduces Plan-RewardBench, a trajectory-level preference benchmark for complex tool-augmented scenarios, designed to evaluate reward models' ability to distinguish superior from inferior agent trajectories across multi-step planning, tool use, and error recovery settings.
+  [ACL 2026][LLM Alignment][Reward modeling] This paper proposes Plan-RewardBench, a trajectory-level preference benchmark targeting complex tool-augmented scenarios, designed to evaluate the ability of reward models to distinguish superior from inferior agent trajectories across multi-step planning, tool usage, and error recovery settings.
 tags:
   - ACL 2026
   - LLM Alignment
-  - Reward Model
-  - Agent Evaluation
-  - Trajectory-Level Preference
-  - Tool Calling
-  - Planning Benchmark
+  - Reward modeling
+  - agent evaluation
+  - trajectory-level preference
+  - tool calling
+  - planning benchmark
 date: 2026-05-08
 content_hash: ff4a8e3fa15e0b80
 ---
+
 # Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 
 **Conference**: ACL 2026
@@ -129,9 +130,9 @@ Tasks and tool environments are sourced from Toucan/MCP. Natural trajectories ar
 ## Related Papers
 
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
+- [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](../../NeurIPS2025/llm_alignment/provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
 - [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
-- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](../../NeurIPS2025/llm_alignment/responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/llm_alignment/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 - [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](../../ICLR2026/llm_alignment/chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
+- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](../../NeurIPS2025/llm_alignment/responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 
 <!-- RELATED:END -->

@@ -44,19 +44,22 @@ MAB-DQA consists of three core stages: (1) Query-Aware Page Hypergraph Construct
 ### Key Designs
 
 1. **Query-Aware Page Hypergraph**:
-   - **Function**: Jointly models inter-page relationships and the multi-aspect structure of the query.
-   - **Mechanism**: A query-agnostic page graph $G$ is first constructed based on inter-page similarity. A VLM then decomposes the original query $q$ into $M$ aspect sub-queries $\{q_1, \ldots, q_M\}$. For each sub-query, the Top-$\theta_H$ pages are retrieved to form candidate set $C_j$; pages ranked higher under the sub-query than under the global query are selected to construct hyperedge $\hat{E}_j$. The resulting hypergraph $H = (V_G, \{\hat{E}_j\} \cup E_G)$ encodes both inter-page edges and aspect hyperedges.
-   - **Design Motivation**: Ordinary graphs cannot express the group relationship between a single sub-query and multiple pages; hyperedges naturally model the structure of "one aspect associated with a group of pages."
+
+    - **Function**: Jointly models inter-page relationships and the multi-aspect structure of the query.
+    - **Mechanism**: A query-agnostic page graph $G$ is first constructed based on inter-page similarity. A VLM then decomposes the original query $q$ into $M$ aspect sub-queries $\{q_1, \ldots, q_M\}$. For each sub-query, the Top-$\theta_H$ pages are retrieved to form candidate set $C_j$; pages ranked higher under the sub-query than under the global query are selected to construct hyperedge $\hat{E}_j$. The resulting hypergraph $H = (V_G, \{\hat{E}_j\} \cup E_G)$ encodes both inter-page edges and aspect hyperedges.
+    - **Design Motivation**: Ordinary graphs cannot express the group relationship between a single sub-query and multiple pages; hyperedges naturally model the structure of "one aspect associated with a group of pages."
 
 2. **MAB-Guided Retrieval**:
-   - **Function**: Dynamically evaluates the importance of each aspect and allocates retrieval budget to high-value aspects.
-   - **Mechanism**: Each sub-query $Q_j$ is treated as an arm maintaining a $\text{Beta}(\alpha_j, \beta_j)$ distribution. At each round, Thompson Sampling selects an arm, retrieves pages from the corresponding hyperedge, and uses VLM-assessed page relevance $s_\text{vlm} \in [0, 1]$ as reward to update the Beta parameters. The composite page score is $\text{score}(p_i) = (1-\alpha)\cdot\max\text{LI} + \alpha\cdot s_\text{vlm} + \beta[(1-\lambda)\cdot h_i + \lambda\cdot\bar{s}_\text{cb}]$, where $\bar{s}_\text{cb}$ is the mean Thompson Sampling confidence of associated sub-queries.
-   - **Design Motivation**: The informational value of different query aspects varies substantially; fixed weights cannot capture this dynamic variation. The explore-exploit balance of MAB naturally suits this scenario.
+
+    - **Function**: Dynamically evaluates the importance of each aspect and allocates retrieval budget to high-value aspects.
+    - **Mechanism**: Each sub-query $Q_j$ is treated as an arm maintaining a $\text{Beta}(\alpha_j, \beta_j)$ distribution. At each round, Thompson Sampling selects an arm, retrieves pages from the corresponding hyperedge, and uses VLM-assessed page relevance $s_\text{vlm} \in [0, 1]$ as reward to update the Beta parameters. The composite page score is $\text{score}(p_i) = (1-\alpha)\cdot\max\text{LI} + \alpha\cdot s_\text{vlm} + \beta[(1-\lambda)\cdot h_i + \lambda\cdot\bar{s}_\text{cb}]$, where $\bar{s}_\text{cb}$ is the mean Thompson Sampling confidence of associated sub-queries.
+    - **Design Motivation**: The informational value of different query aspects varies substantially; fixed weights cannot capture this dynamic variation. The explore-exploit balance of MAB naturally suits this scenario.
 
 3. **Hypergraph-based Reflective Reasoning Agent (HRRA)**:
-   - **Function**: Generates and verifies the final answer from retrieved evidence pages.
-   - **Mechanism**: An "initial answer–verification–refinement" pipeline is employed. An initial answer is generated from retrieved evidence; if inconsistencies or evidence gaps are detected, the system re-enters hypergraph construction to build a query-focused subgraph for a reflection loop.
-   - **Design Motivation**: Single-pass generation may miss information or produce hallucinations; the reflective reasoning mechanism provides multi-stage validation.
+
+    - **Function**: Generates and verifies the final answer from retrieved evidence pages.
+    - **Mechanism**: An "initial answer–verification–refinement" pipeline is employed. An initial answer is generated from retrieved evidence; if inconsistencies or evidence gaps are detected, the system re-enters hypergraph construction to build a query-focused subgraph for a reflection loop.
+    - **Design Motivation**: Single-pass generation may miss information or produce hallucinations; the reflective reasoning mechanism provides multi-stage validation.
 
 ### Loss & Training
 

@@ -130,6 +130,6 @@ Knowledge editing is modeled as a triple transformation: modifying existing know
 - [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](../../NeurIPS2025/llm_safety/virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
 - [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](../../CVPR2026/llm_safety/hulluedit_subspace_editing_hallucination.md)
-- [\[ICLR 2026\] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference](../../ICLR2026/llm_safety/purifying_generative_llms_from_backdoors_without_prior_knowledge_or_clean_refere.md)
+- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/llm_safety/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
 
 <!-- RELATED:END -->

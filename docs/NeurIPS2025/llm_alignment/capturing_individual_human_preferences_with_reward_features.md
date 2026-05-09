@@ -128,8 +128,8 @@ RFM decomposes the reward function as $r_{\theta, \mathbf{w}_h}(x,y) = \langle \
 ## Related Papers
 
 - [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
-- [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
 - [\[ICLR 2026\] Learning Ordinal Probabilistic Reward from Preferences (OPRM)](../../ICLR2026/llm_alignment/learning_ordinal_probabilistic_reward_from_preferences.md)
+- [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
 - [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
 

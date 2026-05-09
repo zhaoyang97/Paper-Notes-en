@@ -50,21 +50,21 @@ GRASS operates in two phases: (1) a **probing phase** (first $T_p$ steps)—stan
 
 1. **Mean Gradient Norm (MGN) as Layer Importance Metric**
 
-   - **Function**: Provides task-aware and training-stage-aware layer importance estimation.
-   - **Mechanism**: For each layer $l$, the normalized gradient magnitude is aggregated over $T$ consecutive steps: $m_l(T) = \frac{1}{T}\sum_{t=1}^T \sqrt{\frac{1}{N_p^{(l)}} \|g_t^{(l)}\|_2^2}$. Dividing by the parameter count makes layers of different sizes comparable. Empirical validation shows that the normalized MGN distributions across layers of TinyLlama differ substantially between arithmetic and commonsense reasoning tasks; layer 20, for instance, is highly important for commonsense reasoning but less prominent for arithmetic reasoning.
-   - **Design Motivation**: LISA uses uniform sampling, OWS uses weight norms, and IST uses response suppression with reinforcement learning—all static or heuristic. Gradients are the most direct signal reflecting current optimization demands.
+    - **Function**: Provides task-aware and training-stage-aware layer importance estimation.
+    - **Mechanism**: For each layer $l$, the normalized gradient magnitude is aggregated over $T$ consecutive steps: $m_l(T) = \frac{1}{T}\sum_{t=1}^T \sqrt{\frac{1}{N_p^{(l)}} \|g_t^{(l)}\|_2^2}$. Dividing by the parameter count makes layers of different sizes comparable. Empirical validation shows that the normalized MGN distributions across layers of TinyLlama differ substantially between arithmetic and commonsense reasoning tasks; layer 20, for instance, is highly important for commonsense reasoning but less prominent for arithmetic reasoning.
+    - **Design Motivation**: LISA uses uniform sampling, OWS uses weight norms, and IST uses response suppression with reinforcement learning—all static or heuristic. Gradients are the most direct signal reflecting current optimization demands.
 
 2. **Adaptive Layer Sampling Probability Update**
 
-   - **Function**: Converts the dynamic MGN signal into a continuously optimized layer selection strategy.
-   - **Mechanism**: Every $T_u$ steps, MGN is converted into probabilities via temperature-scaled softmax: $p^{(l)} = \frac{\exp(m_l/\tau)}{\sum_i \exp(m_i/\tau)}$, from which $\gamma$ layers are sampled. Frozen layers retain their MGN from the previous round; sampled layers update their MGN via exponential moving average: $m_l(T) = \alpha m_l(T_u) + (1-\alpha)m_l(T-T_u)$.
-   - **Design Motivation**: Fixing the strategy using only initial MGN (static GRASS) becomes suboptimal as the importance distribution shifts during training.
+    - **Function**: Converts the dynamic MGN signal into a continuously optimized layer selection strategy.
+    - **Mechanism**: Every $T_u$ steps, MGN is converted into probabilities via temperature-scaled softmax: $p^{(l)} = \frac{\exp(m_l/\tau)}{\sum_i \exp(m_i/\tau)}$, from which $\gamma$ layers are sampled. Frozen layers retain their MGN from the previous round; sampled layers update their MGN via exponential moving average: $m_l(T) = \alpha m_l(T_u) + (1-\alpha)m_l(T-T_u)$.
+    - **Design Motivation**: Fixing the strategy using only initial MGN (static GRASS) becomes suboptimal as the importance distribution shifts during training.
 
 3. **Layer-wise Optimizer State Offloading (Overlapped Offloading)**
 
-   - **Function**: Further reduces GPU memory without sacrificing training throughput.
-   - **Mechanism**: Only the optimizer states of the currently updated layers are retained on the GPU; the rest are stored on CPU. The key innovation is computation–communication overlap: while updating layer $i$, the states of layer $i+1$ are asynchronously prefetched (HtoD), and the states of layer $i-1$ are simultaneously written back (DtoH), fully overlapping data transfer with computation.
-   - **Design Motivation**: Retaining all trainable layer optimizer states on the GPU causes memory overflow, while full CPU storage introduces latency. Overlapped offloading achieves the optimal balance, reducing memory growth from 1.63 GB to 0.14 GB.
+    - **Function**: Further reduces GPU memory without sacrificing training throughput.
+    - **Mechanism**: Only the optimizer states of the currently updated layers are retained on the GPU; the rest are stored on CPU. The key innovation is computation–communication overlap: while updating layer $i$, the states of layer $i+1$ are asynchronously prefetched (HtoD), and the states of layer $i-1$ are simultaneously written back (DtoH), fully overlapping data transfer with computation.
+    - **Design Motivation**: Retaining all trainable layer optimizer states on the GPU causes memory overflow, while full CPU storage introduces latency. Overlapped offloading achieves the optimal balance, reducing memory growth from 1.63 GB to 0.14 GB.
 
 ### Loss & Training
 

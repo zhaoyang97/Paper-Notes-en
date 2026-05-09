@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Comparing Human and Large Language Model Interpretation of Implicit Information
 description: >-
-  [ACL 2026][Graph Learning][Implicit Information] Proposes the Implicit Information Extraction (IIE) task with a three-stage LLM pipeline, finding LLMs are more conservative in socially-rich contexts while humans are more conservative in short factual contexts.
+  [ACL 2026][Graph Learning][Implicit Information Extraction] This paper proposes the Implicit Information Extraction (IIE) task and a three-stage LLM pipeline (information extraction → reasoning verification → temporal analysis), building structured knowledge graphs to represent implicit textual meaning. Crowdsourced human comparisons reveal LLMs are more conservative in socially-rich contexts but humans are more conservative in short factual contexts.
 tags:
   - ACL 2026
   - Graph Learning
@@ -10,6 +10,7 @@ tags:
   - Knowledge Graph
   - Human-AI Comparison
   - Reasoning Verification
+  - Temporal Analysis
 content_hash: b75b7c4dd9414ab7
 ---
 
@@ -59,6 +60,6 @@ This paper proposes the Implicit Information Extraction (IIE) task and a three-s
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](graph-based_alternatives_to_llms_for_human_simulation.md)
 - [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
-- [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](../../AAAI2026/graph_learning/human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
+- [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](../../NeurIPS2025/graph_learning/dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
 
 <!-- RELATED:END -->

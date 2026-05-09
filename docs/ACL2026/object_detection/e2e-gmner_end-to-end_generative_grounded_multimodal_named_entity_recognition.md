@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition
 description: >-
-  [ACL 2026][Object Detection][Multimodal Named Entity Recognition] Proposes E2E-GMNER, the first end-to-end GMNER framework that unifies entity recognition, semantic classification, visual grounding, and implicit knowledge reasoning within a single multimodal large language model, adaptively determining the availability of visual/knowledge cues via CoT reasoning, and introduces Gaussian Risk-aware Bounding Box Perturbation (GRBP) to enhance the robustness of generative bounding box prediction.
+  [ACL 2026][Object Detection][Multimodal Named Entity Recognition] This paper proposes E2E-GMNER, the first end-to-end GMNER framework that unifies entity recognition, semantic classification, visual grounding, and implicit knowledge reasoning within a single multimodal large language model. The framework employs CoT reasoning to adaptively assess the utility of visual and knowledge cues, and introduces Gaussian Risk-aware Bounding box Perturbation (GRBP) to enhance the robustness of generative bounding box prediction.
 tags:
   - ACL 2026
   - Object Detection
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: 343c241c6d9c7aea
 ---
+
 # E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition
 
 **Conference**: ACL 2026

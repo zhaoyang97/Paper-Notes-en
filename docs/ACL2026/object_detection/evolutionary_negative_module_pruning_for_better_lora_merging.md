@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evolutionary Negative Module Pruning for Better LoRA Merging
 description: >-
-  [ACL 2026][Object Detection][LoRA Merging] Proposes ENMP, a method that uses evolutionary search to identify and prune "negative modules" in LoRA merging that degrade performance. As a plug-and-play enhancement, it consistently improves existing merging algorithms across NLP and vision tasks.
+  [ACL 2026][Object Detection][LoRA merging] This paper proposes ENMP, a method that leverages evolutionary search to identify and prune "negative modules" that degrade performance during LoRA merging. Designed as a plug-and-play enhancement, ENMP consistently improves existing merging algorithms across both NLP and vision domains.
 tags:
   - ACL 2026
   - Object Detection
-  - LoRA Merging
-  - Negative Module Pruning
-  - Evolutionary Search
-  - Multi-Task Deployment
+  - LoRA merging
+  - negative module pruning
+  - evolutionary search
+  - multi-task deployment
   - CMA-ES
 date: 2026-05-08
 content_hash: 23bd3406323b6510
 ---
+
 # Evolutionary Negative Module Pruning for Better LoRA Merging
 
 **Conference**: ACL 2026
@@ -132,7 +133,7 @@ The evolutionary search is a one-time offline computation. Population size is $N
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](../../ICLR2026/object_detection/adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 - [\[CVPR 2026\] SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras](../../CVPR2026/object_detection/spiraldiff_spiral_diffusion_with_lora_for_rgb-to-raw_conversion_across_cameras.md)
 - [\[AAAI 2026\] T-Rex-Omni: Integrating Negative Visual Prompt in Generic Object Detection](../../AAAI2026/object_detection/t-rex-omni_integrating_negative_visual_prompt_in_generic_object_detection.md)
-- [\[ECCV 2024\] SHINE: Saliency-aware HIerarchical NEgative Ranking for Compositional Temporal Grounding](../../ECCV2024/object_detection/shine_saliency-aware_hierarchical_negative_ranking_for_compositional_temporal_gr.md)
-- [\[ECCV 2024\] Portrait4D-v2: Pseudo Multi-View Data Creates Better 4D Head Synthesizer](../../ECCV2024/object_detection/portrait4d-v2_pseudo_multi-view_data_creates_better_4d_head_synthesizer.md)
+- [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](evaluating_memory_capability_in_continuous_lifelog_scenario.md)
+- [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
 
 <!-- RELATED:END -->

@@ -157,6 +157,6 @@ $$L_{\text{stage2}} = L_{\text{traj}} + L_{\text{action}}$$
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[ICCV 2025\] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion](disentangling_instance_and_scene_contexts_for_3d_semantic_scene_completion.md)
 - [\[ICCV 2025\] NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement](neuraleaf_neural_parametric_leaf_models_with_shape_and_deformation_disentangleme.md)
-- [\[ICCV 2025\] one look is enough seamless patchwise refinement for zero-shot monocular depth e](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
+- [\[ICCV 2025\] ResGS: Residual Densification of 3D Gaussian for Efficient Detail Recovery](resgs_residual_densification_of_3d_gaussian_for_efficient_detail_recovery.md)
 
 <!-- RELATED:END -->

@@ -2,14 +2,15 @@
 title: >-
   [Paper Note] Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 description: >-
-  [ACL 2026][LLM Inference][To be added] To be supplemented after reading the paper in depth
+  [ACL 2026][LLM Reasoning][To be supplemented] To be supplemented after thorough reading.
 tags:
   - ACL 2026
-  - LLM Inference
-  - To be added
+  - LLM Reasoning
+  - To be supplemented
 date: 2026-05-08
 content_hash: 69e7d89a44da4d52
 ---
+
 # Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 
 **Conference**: ACL 2026
@@ -149,10 +150,10 @@ To be supplemented after thorough reading.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](../../NeurIPS2025/llm_reasoning/limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
-- [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](../../NeurIPS2025/llm_reasoning/rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
+- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
+- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
+- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 
 <!-- RELATED:END -->

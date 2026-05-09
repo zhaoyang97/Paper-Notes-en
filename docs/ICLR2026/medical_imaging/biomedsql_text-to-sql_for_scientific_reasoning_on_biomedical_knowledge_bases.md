@@ -146,10 +146,10 @@ Three major reasoning categories:
 
 ## Related Papers
 
-- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](medagentgym_agentic_training_biomedical.md)
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_imaging/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
+- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](medagentgym_agentic_training_biomedical.md)
 - [\[ICLR 2026\] Augmenting Representations with Scientific Papers](augmenting_representations_with_scientific_papers.md)
 - [\[NeurIPS 2025\] Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval](../../NeurIPS2025/medical_imaging/mind_the_gap_aligning_knowledge_bases_with_user_needs_to_enhance_mental_health_r.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](tracing_pharmacological_knowledge_in_large_language_models.md)
+- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](../../ACL2026/medical_imaging/text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
 
 <!-- RELATED:END -->

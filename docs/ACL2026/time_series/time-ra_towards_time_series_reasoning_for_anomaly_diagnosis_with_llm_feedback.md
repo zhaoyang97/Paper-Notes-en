@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 description: >-
-  [ACL 2026][Time Series][Time Series Anomaly Detection] Defines the new Time-RA task, upgrading time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation), constructs the first multimodal benchmark RATs40K containing ~40K samples across 10 domains and 20 anomaly types, and validates the paradigm's feasibility via an AI feedback annotation pipeline and LLM fine-tuning.
+  [ACL 2026][Time Series][Time series anomaly detection] This paper introduces Time-RA, a new task that upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + causal explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40K samples across 10 domains and 20 anomaly types, and validates the feasibility of this paradigm through an AI feedback annotation pipeline and LLM fine-tuning.
 tags:
   - ACL 2026
   - Time Series
-  - Time Series Anomaly Detection
-  - Anomaly Reasoning Diagnosis
-  - Multimodal Benchmark
-  - LLM Fine-tuning
-  - AI Feedback Annotation
+  - Time series anomaly detection
+  - anomaly reasoning diagnosis
+  - multimodal benchmark
+  - LLM fine-tuning
+  - AI feedback annotation
 date: 2026-05-08
 content_hash: b2ae6b9d58095553
 ---
+
 # Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 
 **Conference**: ACL 2026
@@ -126,10 +127,10 @@ Standard SFT objective: $\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log P
 
 ## Related Papers
 
+- [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/time_series/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
 - [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
 - [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/time_series/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[NeurIPS 2025\] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](../../NeurIPS2025/time_series/martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)
-- [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/time_series/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
 
 <!-- RELATED:END -->

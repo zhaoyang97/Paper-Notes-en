@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning
 description: >-
-  [ACL 2026][LLM Inference][Prompt Injection Attack] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios, and introduces a three-stage instruction-level Chain-of-Thought fine-tuning based on a context-aware model, enabling LLMs to effectively identify and reject malicious instructions against various prompt injection attacks, significantly outperforming existing defense methods across three dimensions: behavioral deviation, privacy leakage, and harmful output.
+  [ACL 2026][LLM Reasoning][Prompt Injection Attack] This paper proposes InstruCoT, which synthesizes diverse training data covering multiple injection vectors and threat scenarios, and introduces a three-stage instruction-level chain-of-thought fine-tuning framework based on a situation-aware model. This enables LLMs to effectively identify and reject malicious instructions under various prompt injection attacks, substantially outperforming existing defenses across three evaluation dimensions: behavioral deviation, privacy leakage, and harmful output.
 tags:
   - ACL 2026
-  - LLM Inference
+  - LLM Reasoning
   - Prompt Injection Attack
   - Instruction-Level Alignment
   - Chain-of-Thought Reasoning
@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: e2392d8d8778b8df
 ---
+
 # Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning
 
 **Conference**: ACL 2026  
@@ -133,10 +134,10 @@ Full-parameter supervised fine-tuning is performed on the CoT-augmented dataset 
 
 ## Related Papers
 
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 - [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
 - [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](efficient_prm_training_data_synthesis_via_formal_verification.md)
 - [\[ACL 2026\] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration](self-reinforcing_controllable_synthesis_of_rare_relational_data_via_bayesian_cal.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
-- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](../../ICLR2026/llm_reasoning/designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 
 <!-- RELATED:END -->

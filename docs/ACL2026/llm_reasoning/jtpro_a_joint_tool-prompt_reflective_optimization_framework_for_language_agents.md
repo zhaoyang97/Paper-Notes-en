@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 description: >-
-  [ACL 2026][LLM Inference][Tool Call Optimization] JTPRO proposes a training-free joint optimization framework that simultaneously refines global instructions and per-tool schema/parameter descriptions via reflection-driven iterative editing, achieving significant end-to-end improvements in tool selection and parameter filling for large-scale tool libraries, outperforming baselines such as GEPA by 5%–20% on OSR.
+  [ACL 2026][LLM Reasoning][tool-call optimization] JTPRO proposes a joint optimization framework that requires no model fine-tuning. Through reflection-driven iterative editing, it simultaneously optimizes global instructions and per-tool schema/parameter descriptions, significantly improving end-to-end success rates for tool selection and slot filling in large-scale tool library settings, achieving 5%–20% OSR gains over baselines such as GEPA.
 tags:
   - ACL 2026
-  - LLM Inference
-  - Tool Call Optimization
-  - Prompt Optimization
-  - Reflective Learning
-  - Large Tool Library
-  - Joint Optimization
+  - LLM Reasoning
+  - tool-call optimization
+  - prompt optimization
+  - reflective learning
+  - large tool libraries
+  - joint optimization
 date: 2026-05-08
 content_hash: be8acf6a9bde08eb
 ---
+
 # JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 
 **Conference**: ACL 2026
@@ -124,8 +125,8 @@ The optimization objective minimizes invocation-level loss, which comprises tool
 
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](../../ICLR2026/llm_reasoning/adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
 - [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](../../ICLR2026/llm_reasoning/reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
+- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
 - [\[ACL 2026\] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)
-- [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](../../ICLR2026/llm_reasoning/estimating_the_empowerment_of_language_model_agents.md)
 - [\[ACL 2026\] Semantic-Aware Logical Reasoning via a Semiotic Framework](semantic-aware_logical_reasoning_via_a_semiotic_framework.md)
 
 <!-- RELATED:END -->

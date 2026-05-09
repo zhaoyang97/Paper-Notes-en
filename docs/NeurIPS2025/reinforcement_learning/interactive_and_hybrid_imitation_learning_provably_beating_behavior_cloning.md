@@ -126,7 +126,7 @@ At $C=1$, Stagger consistently outperforms BC; at $C=3$ (Walker), it retains an 
 - [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
 - [\[NeurIPS 2025\] Quantifying Generalisation in Imitation Learning](quantifying_generalisation_in_imitation_learning.md)
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] The Burden of Interactive Alignment with Inconsistent Preferences](the_burden_of_interactive_alignment_with_inconsistent_preferences.md)
+- [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 
 <!-- RELATED:END -->

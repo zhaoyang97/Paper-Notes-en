@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment
 description: >-
-  [ACL 2026][LLM Efficiency][Paper-Code Alignment] SciCoQA is the first benchmark for detecting discrepancies between scientific papers and their code implementations, revealing that the strongest models detect only 46.7% of real discrepancies.
+  [ACL 2026][LLM Efficiency][Paper-Code Discrepancy Detection] SciCoQA is the first benchmark for detecting semantic discrepancies between scientific papers and their code implementations, containing 635 discrepancy instances (92 real + 543 synthetic). Evaluation of 22 LLMs reveals the strongest model detects only 46.7% of real discrepancies, uncovering a critical capability gap in automated scientific quality assurance.
 tags:
   - ACL 2026
   - LLM Efficiency
@@ -10,6 +10,7 @@ tags:
   - Scientific Reproducibility
   - Cross-Modal Verification
   - LLM Evaluation
+  - Quality Assurance
 content_hash: 99b40fded80dd8f1
 ---
 

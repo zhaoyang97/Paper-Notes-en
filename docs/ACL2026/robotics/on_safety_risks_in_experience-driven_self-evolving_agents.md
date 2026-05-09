@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] On Safety Risks in Experience-Driven Self-Evolving Agents
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Agent Safety] Systematically studies safety risks of experience-driven self-evolving agents, finding that experience from harmless tasks alone causes significant safety degradation (ASR increases 13-49%) due to the execution-oriented nature of experience reinforcing action over refusal.
+  [ACL 2026][Robotics][Self-Evolving Agent] This paper systematically studies safety risks of experience-driven self-evolving agents, finding that even experience accumulated solely from harmless tasks causes significant safety degradation (ASR increases 13-49%). The root cause is the execution-oriented nature of accumulated experience, which reinforces action-taking over refusal behaviors.
 tags:
   - ACL 2026
-  - Robotics & Embodied AI
+  - Robotics
   - Self-Evolving Agent
   - Experience-Driven
   - Safety Degradation
+  - Execution Bias
   - Safety-Utility Trade-off
 content_hash: 8b9beaf5bf913fa7
 ---

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 description: >-
-  [ACL 2026][LLMAlignment][GenerativeRewardModel] ConsistRM proposes a consistency-aware self-training framework with two modules—temporal consistency pseudo-labels (integrating online state and historical memory preference consistency) and semantic consistency critique rewards (measuring semantic similarity across multiple generated critiques)—achieving an average 1.5% improvement across five benchmarks for generative reward models without human annotation, while significantly mitigating position bias.
+  [ACL 2026][LLM Alignment][Generative Reward Model] ConsistRM proposes a consistency-aware self-training framework for generative reward models (GRMs). It introduces two modules — temporal consistency pseudo-labels (integrating online-state and memory-driven preference consistency) and semantic consistency critique rewards (measuring semantic similarity across multiple generated critiques) — achieving an average improvement of 1.5% across five benchmarks without human annotation, while significantly mitigating position bias.
 tags:
   - ACL 2026
   - LLM Alignment
   - Generative Reward Model
   - Self-Training
   - Consistency-Aware
-  - Pseudo-Labels
+  - Pseudo Labels
   - Position Bias
 date: 2026-05-08
 content_hash: b9d49a8d446b98c7
 ---
+
 # ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 
 **Conference**: ACL 2026
@@ -131,7 +132,7 @@ GRPO is used for training over 4 epochs, with maximum generation length 1024 (tr
 ## Related Papers
 
 - [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
-- [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_alignment/self-consistency_preference_optimization.md)
+- [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
 - [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
 - [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)

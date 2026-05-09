@@ -50,21 +50,21 @@ The framework consists of three stages: (1) LLM-guided sub-intent discovery and 
 
 1. **LLM-Guided Sub-Intent Discovery and Three-Stage Data Generation**
 
-   - **Function**: Decompose class labels into interpretable semantic factors and generate diverse training data.
-   - **Mechanism**: The LLM decomposes each class into fine-grained sub-intents (e.g., *positive* → *positive_due_to_plot*, *positive_due_to_acting*). Synthetic data are then generated through a three-stage curriculum: the Seed stage produces canonical 15–20-word expressions as anchors; the Core stage preserves lexical stability while varying syntactic structure; the Enriched stage introduces synonyms and compound phrases to expand the lexical space.
-   - **Design Motivation**: Single-step LLM generation tends to collapse into high-probability patterns or overly generic phrases. The three-stage strategy follows curriculum learning principles, ensuring coverage, lexical diversity, and semantic fidelity — each of which is critical for clause formation in Boolean symbolic models.
+    - **Function**: Decompose class labels into interpretable semantic factors and generate diverse training data.
+    - **Mechanism**: The LLM decomposes each class into fine-grained sub-intents (e.g., *positive* → *positive_due_to_plot*, *positive_due_to_acting*). Synthetic data are then generated through a three-stage curriculum: the Seed stage produces canonical 15–20-word expressions as anchors; the Core stage preserves lexical stability while varying syntactic structure; the Enriched stage introduces synonyms and compound phrases to expand the lexical space.
+    - **Design Motivation**: Single-step LLM generation tends to collapse into high-probability patterns or overly generic phrases. The three-stage strategy follows curriculum learning principles, ensuring coverage, lexical diversity, and semantic fidelity — each of which is critical for clause formation in Boolean symbolic models.
 
 2. **Non-Negated Tsetlin Machine (NTM)**
 
-   - **Function**: Extract stable, high-confidence semantic symbolic features from synthetic data.
-   - **Mechanism**: The NTM modifies the standard TM in two respects: (1) negated literals are eliminated, reducing clauses to purely monotone conjunctions $C_\iota^\kappa = \bigwedge_{k \in I_\iota^\kappa} x_k$; (2) Type I feedback is strengthened ($P_{\text{reward}}=1.0$, $P_{\text{penalty}}=0.0$), enabling Tsetlin Automata (TA) to converge rapidly to high-confidence literal sets. Literals corresponding to the deepest TA states are extracted as semantic indicators.
-   - **Design Motivation**: Removing negated literals ensures monotone semantic interpretability of clauses — all learned rules reflect positively associated lexical patterns. Strengthened feedback ensures rapid and stable convergence on synthetic data.
+    - **Function**: Extract stable, high-confidence semantic symbolic features from synthetic data.
+    - **Mechanism**: The NTM modifies the standard TM in two respects: (1) negated literals are eliminated, reducing clauses to purely monotone conjunctions $C_\iota^\kappa = \bigwedge_{k \in I_\iota^\kappa} x_k$; (2) Type I feedback is strengthened ($P_{\text{reward}}=1.0$, $P_{\text{penalty}}=0.0$), enabling Tsetlin Automata (TA) to converge rapidly to high-confidence literal sets. Literals corresponding to the deepest TA states are extracted as semantic indicators.
+    - **Design Motivation**: Removing negated literals ensures monotone semantic interpretability of clauses — all learned rules reflect positively associated lexical patterns. Strengthened feedback ensures rapid and stable convergence on synthetic data.
 
 3. **Semantic Feature Injection and TM Fine-Tuning**
 
-   - **Function**: Inject LLM-derived symbolic semantic knowledge into real data.
-   - **Mechanism**: Real samples are passed through the NTM to predict sub-intents; high-confidence literals from activated clauses are collected, and binary presence indicators for these literals are appended to the original BoW representation. A standard TM is then fine-tuned on this hybrid representation.
-   - **Design Motivation**: The augmentation occurs offline and introduces no new components at inference time — the final model remains purely symbolic and efficient. The semantic features provide cross-lexical associations absent from the original BoW.
+    - **Function**: Inject LLM-derived symbolic semantic knowledge into real data.
+    - **Mechanism**: Real samples are passed through the NTM to predict sub-intents; high-confidence literals from activated clauses are collected, and binary presence indicators for these literals are appended to the original BoW representation. A standard TM is then fine-tuned on this hybrid representation.
+    - **Design Motivation**: The augmentation occurs offline and introduces no new components at inference time — the final model remains purely symbolic and efficient. The semantic features provide cross-lexical associations absent from the original BoW.
 
 ### Loss & Training
 

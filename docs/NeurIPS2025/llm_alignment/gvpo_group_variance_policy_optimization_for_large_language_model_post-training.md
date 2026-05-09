@@ -120,6 +120,6 @@ The GVPO loss is equivalent to MSE between the centered implicit reward and the 
 - [\[NeurIPS 2025\] Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training](trajectory_balance_with_asynchrony_decoupling_exploration_and_learning_for_fast_.md)
 - [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
+- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](../../ICLR2026/llm_alignment/reinforcement_unlearning_via_group_relative_policy_optimization.md)
 
 <!-- RELATED:END -->
